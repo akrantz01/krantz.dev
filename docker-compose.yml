@@ -13,6 +13,7 @@ services:
     build:
       context: ./cms
     environment:
+      COCKPIT_EXTERNAL_DATABASE: "true"
       COCKPIT_DATABASE_SERVER: mongodb://db:27017
       COCKPIT_DATABASE_NAME: cockpit
     env_file:

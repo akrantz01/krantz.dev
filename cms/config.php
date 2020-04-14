@@ -22,11 +22,11 @@ $configs = [
         'maxAge' => 1000,
         'allowCredentials' => 'true',
         'exposedHeaders' => 'true'
-    ]
+    ],
 ];
 
 // MongoDB connection configuration
-if (!empty(getenv('COCKPIT_DATABASE_SERVER'))) {
+if (getenv('COCKPIT_EXTERNAL_DATABASE') == true) {
     $configs['database'] = [
         'server' => getenv('COCKPIT_DATABASE_SERVER'),
         'options' => [
@@ -36,7 +36,7 @@ if (!empty(getenv('COCKPIT_DATABASE_SERVER'))) {
 }
 
 // Mailer connection configuration
-if (!empty(getenv('COCKPIT_MAILER_FROM'))) {
+if (getenv('COCKPIT_MAILER') == true) {
     $configs['mailer'] = [
         'from' => getenv('COCKPIT_MAILER_FROM'),
         'transport' => 'smtp',
@@ -47,6 +47,15 @@ if (!empty(getenv('COCKPIT_MAILER_FROM'))) {
         'auth' => true,
         // Valid values are: '', 'tls', or 'ssl'
         'encryption' => getenv('COCKPIT_MAILER_ENCRYPTION')
+    ];
+}
+
+// Detektivo configuration
+if (getenv('DETEKTIVO_ENABLED') == true) {
+    $configs['detektivo'] = [
+        'engine' => 'algolia',
+        'app_id' => getenv('DETEKTIVO_APP_ID'),
+        'api_key' => getenv('DETEKTIVO_API_KEY')
     ];
 }
 
