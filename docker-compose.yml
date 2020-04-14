@@ -12,6 +12,9 @@ services:
     image: akrantz01/cockpit-cms:latest
     build:
       context: ./cms
+    environment:
+      COCKPIT_DATABASE_SERVER: mongodb://db:27017
+      COCKPIT_DATABASE_NAME: cockpit
     env_file:
       - .env
     depends_on:
