@@ -1,0 +1,53 @@
+<?php
+
+$configs = [
+    // Configure base site
+    'app.name' => getenv('COCKPIT_SITE_NAME'),
+    'site_url' => getenv('COCKPIT_SITE_SCHEME') . getenv('COCKPIT_SITE_DOMAIN') . getenv('COCKPIT_SITE_PATH'),
+
+    // Session configuration
+    'session.name' => 'cockpit',
+    'sec-key' => getenv('COCKPIT_SECRET_KEY'),
+
+    // Assume english
+    'languages' => [
+        'en' => 'English'
+    ],
+
+    // CORS configuration
+    'cors' => [
+        'allowedHeaders' => 'X-Requested-With, Content-Type, Origin, Cache-Control, Pragma, Authorization, Accept, Accept-Encoding, Cockpit-Token',
+        'allowedMethods' => 'PUT, POST, GET, OPTIONS, DELETE',
+        'allowedOrigins' => getenv('COCKPIT_SITE_DOMAIN'),
+        'maxAge' => 1000,
+        'allowCredentials' => 'true',
+        'exposedHeaders' => 'true'
+    ]
+];
+
+// MongoDB connection configuration
+if (!empty(getenv('COCKPIT_DATABASE_SERVER'))) {
+    $configs['database'] = [
+        'server' => getenv('COCKPIT_DATABASE_SERVER'),
+        'options' => [
+            'db' => getenv('COCKPIT_DATABASE_NAME')
+        ]
+    ];
+}
+
+// Mailer connection configuration
+if (!empty(getenv('COCKPIT_MAILER_FROM'))) {
+    $configs['mailer'] = [
+        'from' => getenv('COCKPIT_MAILER_FROM'),
+        'transport' => 'smtp',
+        'host' => getenv('COCKPIT_MAILER_HOST'),
+        'user' => getenv('COCKPIT_MAILER_USER'),
+        'password' => getenv('COCKPIT_MAILER_PASSWORD'),
+        'port' => getenv('COCKPIT_MAILER_PORT'),
+        'auth' => true,
+        // Valid values are: '', 'tls', or 'ssl'
+        'encryption' => getenv('COCKPIT_MAILER_ENCRYPTION')
+    ];
+}
+
+return $configs;
