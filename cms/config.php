@@ -3,7 +3,7 @@
 $configs = [
     // Configure base site
     'app.name' => getenv('COCKPIT_SITE_NAME'),
-    'site_url' => getenv('COCKPIT_SITE_SCHEME') . getenv('COCKPIT_SITE_DOMAIN') . getenv('COCKPIT_SITE_PATH'),
+    'site_url' => getenv('COCKPIT_SITE_URL'),
 
     // Session configuration
     'session.name' => 'cockpit',
@@ -18,7 +18,7 @@ $configs = [
     'cors' => [
         'allowedHeaders' => 'X-Requested-With, Content-Type, Origin, Cache-Control, Pragma, Authorization, Accept, Accept-Encoding, Cockpit-Token',
         'allowedMethods' => 'PUT, POST, GET, OPTIONS, DELETE',
-        'allowedOrigins' => getenv('COCKPIT_SITE_DOMAIN'),
+        'allowedOrigins' => getenv('COCKPIT_SITE_ORIGIN'),
         'maxAge' => 1000,
         'allowCredentials' => 'true',
         'exposedHeaders' => 'true'
