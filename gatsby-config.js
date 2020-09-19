@@ -1,33 +1,41 @@
 module.exports = {
   siteMetadata: {
-    siteTitle: 'Chronoblog Profile Starter',
-    siteDescription: 'Starter for Gatsby Theme Chronoblog',
-    siteImage: '/banner.png', // main image of the site for metadata
-    siteUrl: 'https://chronoblog-profile.now.sh/',
+    siteTitle: 'Alex Krantz',
+    siteDescription: 'a quiet & thoughtful developer',
+    siteImage: '/banner.png',
+    siteUrl: 'https://krantz.dev',
     pathPrefix: '/',
     siteLanguage: 'en',
     ogLanguage: `en_US`,
-    author: 'Site Author', // for example - 'Ivan Ganev'
-    authorDescription: 'short author description', // short text about the author
+    author: 'Alex Krantz',
+    authorDescription: 'a quiet and thoughtful developer',
     avatar: '/avatar.jpg',
-    twitterSite: '', // website account on twitter
-    twitterCreator: '', // creator account on twitter
+    twitterSite: '',
+    twitterCreator: 'akrantz_01',
     social: [
       {
-        icon: `envelope`,
-        url: `mailto:mymail@mail.com`
+        icon: 'envelope',
+        url: 'mailto:alex@krantz.dev'
+      },
+      {
+        icon: 'linkedin',
+        url: 'https://www.linkedin.com/in/akrantz01/'
+      },
+      {
+        icon: 'instagram',
+        url: 'https://www.instagram.com/krantznotalex'
       },
       {
         icon: `twitter`,
-        url: `https://twitter.com/ganevru`
+        url: `https://twitter.com/akrantz_01`
       },
       {
         icon: `github`,
-        url: `https://github.com/Chronoblog/gatsby-theme-chronoblog`
+        url: `https://github.com/akrantz01`
       },
       {
-        icon: `node-js`,
-        url: `https://www.npmjs.com/package/gatsby-theme-chronoblog`
+        icon: 'gitlab',
+        url: 'https://gitlab.com/akrantz01'
       }
     ]
   },
@@ -44,7 +52,7 @@ module.exports = {
         },
         feedItems: {
           // global settings for feed items
-          limit: 50,
+          limit: 5,
           yearSeparator: false,
           yearSeparatorSkipFirst: true,
           contentTypes: {
@@ -61,8 +69,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Chronoblog Gatsby Theme`,
-        short_name: `Chronoblog`,
+        name: `Alex Krantz`,
+        short_name: `Alex Krantz`,
         start_url: `/`,
         background_color: `#fff`,
         theme_color: `#3a5f7d`,
@@ -72,13 +80,6 @@ module.exports = {
     },
     {
       resolve: `gatsby-plugin-sitemap`
-    },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        // replace "UA-XXXXXXXXX-X" with your own Tracking ID
-        trackingId: 'UA-XXXXXXXXX-X'
-      }
     }
   ]
 };

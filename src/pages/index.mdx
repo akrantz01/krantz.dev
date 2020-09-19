@@ -1,33 +1,16 @@
 <AuthorBanner />
 <p>&nbsp;</p>
-<h3>Posts and Articles&nbsp;&nbsp;
-  <Link to='posts-and-articles'>
-    <Button style={{marginTop: '8px'}}>all posts and articles</Button>
+<h3>Blog&nbsp;&nbsp;
+  <Link to='blog'>
+    <Button style={{marginTop: '8px'}}>all posts</Button>
   </Link>
 </h3>
 
-<FeedItems 
-  itemsFormat="compact" 
-  filterByTags={['post', 'article']} 
-  limit={4} 
+<FeedItems
+  itemsFormat="compact"
+  filterByTags={['post', 'article']}
+  limit={4}
 />
-
-<p>&nbsp;</p>
-<h3>Podcasts&nbsp;&nbsp;
-  <Link to='tags/podcast'>
-    <Button style={{marginTop: '8px'}}>all podcasts</Button>
-  </Link>
-</h3>
-
-<FeedItems itemsFormat="compact" filterByTags={['podcast']} limit={3} />
-
-<p>&nbsp;</p>
-
-### Certificates
-
-<FeedItems itemsFormat="compact" filterByTags={['certificate']} />
-
-<p>&nbsp;</p>
 
 ### Projects
 
