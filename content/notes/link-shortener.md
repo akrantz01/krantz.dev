@@ -4,13 +4,8 @@ date: 2020-09-25
 tags: ['project', 'rust', 'js', 'html']
 ---
 
-Vault SSH, or vssh, is a command line tool to automatically SSH into a server that uses SSH certificates signed by [HashiCorp Vault](https://www.vaultproject.io/).
-Given a server to connect to, and a private key to sign, vssh will automatically generate a signed public key and initiate the SSH connection.
-This allows for short TTL SSH certificates to be issued and used without the need to frantically type commands.
-
 A custom URL shortener implementation for my own website that is written in Rust.
-The site is built using the [warp](https://github.com/seanmonstar/warp) framework, with the links stored in a PostgreSQL database and accessed using the [Diesel 
-ORM](https://github.com/diesel-rs/diesel).
+The site is built using the [warp](https://github.com/seanmonstar/warp) framework, with the links stored in a PostgreSQL database and accessed using the [Diesel ORM](https://github.com/diesel-rs/diesel).
 There is also a simple administrative UI written in HTML, CSS, and JavaScript for creating, updating, and deleting short links that uses the server's API.
 To style the management interface, I used the [Halfmoon UI](https://github.com/halfmoonui/halfmoon) framework.
 
