@@ -1,3 +1,4 @@
 # Personal Website
 This repository contains the source for my personal website.
-It is based on the [Gatsby Chronoblog Profile Starter](https://github.com/Chronoblog/gatsby-starter-chronoblog-profile) created by [Ivan Ganev](https://github.com/Ganevru).
+It's hosted on [Vercel](https://vercel.com) and uses [Hugo](https://gethugo.io) to generate it.
+The theme is [Anatole by Alexander Bilz](https://github.com/lxndrblz).
