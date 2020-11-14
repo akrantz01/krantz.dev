@@ -13,4 +13,4 @@ Furthermore, you can create profiles to prevent the need for remembering all you
 
 This was my first published project using Rust.
 
-{{< project GitHub="https://github.com/akrantz01/vssh" Crates.io="https://crates.io/crates/vssh" >}}
+{{< project GitHub="https://github.com/akrantz01/vssh" Crates="https://crates.io/crates/vssh" >}}
