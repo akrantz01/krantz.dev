@@ -1,0 +1,45 @@
+{
+  "name": "krantz-dev",
+  "version": 2,
+  "alias": ["krantz.dev"],
+  "public": false,
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-Clacks-Overhead",
+          "value": "GNU Terry Pratchett"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "same-origin"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "base-uri 'self'; connect-src 'self'; default-src 'self'; frame-ancestors 'none'; font-src 'self' cdnjs.cloudflare.com; img-src 'self'; object-src 'none'; script-src 'self'; style-src 'self' cdnjs.cloudflare.com;"
+        },
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=6307200; includeSubDomains; preload"
+        }
+      ]
+    }
+  ],
+  "github": {
+    "enabled": true,
+    "silent": true
+  }
+}
