@@ -71,8 +71,14 @@ identifier = "about"
 url = "/about/"
 
 [[menu.main]]
-name = "Post Archive"
+name = "Projects"
 weight = 300
+identifier = "projects"
+url = "/projects/"
+
+[[menu.main]]
+name = "Post Archive"
+weight = 400
 identifier = "post"
 url = "/post/"
 

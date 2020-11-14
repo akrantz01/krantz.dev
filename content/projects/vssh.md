@@ -1,8 +1,8 @@
----
-title: Vault SSH
-date: 2020-02-28
-tags: ['project', 'rust']
----
++++
+title = "Vault SSH"
+date = "2020-02-28"
+tags = ['rust']
++++
 
 Vault SSH, or vssh, is a command line tool to automatically SSH into a server that uses SSH certificates signed by [HashiCorp Vault](https://www.vaultproject.io/).
 Given a server to connect to, and a private key to sign, vssh will automatically generate a signed public key and initiate the SSH connection.
@@ -13,8 +13,4 @@ Furthermore, you can create profiles to prevent the need for remembering all you
 
 This was my first published project using Rust.
 
-<p>
-<a href="https://github.com/akrantz01/vssh" target="_blank">GitHub</a>
-&nbsp;&mdash;&nbsp;
-<a href="https://crates.io/crates/vssh" target="_blank">Crates.io</a>
-</p>
+{{< project GitHub="https://github.com/akrantz01/vssh" Crates.io="https://crates.io/crates/vssh" >}}

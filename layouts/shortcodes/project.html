@@ -1,0 +1,10 @@
+{{ $idx := 1 }}
+{{ $len := len .Params }}
+<p>
+{{ range $key, $val := .Params }}
+  <a href="{{ $val }}" target="_blank">{{ $key }}</a>
+
+  {{ if ne $idx $len }}&nbsp;&mdash;&nbsp;{{ end }}
+  {{ $idx = add $idx 1 }}
+{{ end }}
+</p>
