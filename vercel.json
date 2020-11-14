@@ -3,6 +3,7 @@
   "version": 2,
   "alias": ["krantz.dev"],
   "public": false,
+  "trailingSlash": false,
   "headers": [
     {
       "source": "/(.*)",
