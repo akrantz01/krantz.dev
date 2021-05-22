@@ -42,5 +42,10 @@
   "github": {
     "enabled": true,
     "silent": true
+  },
+  "build": {
+    "env": {
+      "HUGO_VERSION": "0.83.1"
+    }
   }
 }
