@@ -13,6 +13,6 @@ The pre-made responses allow for easy answers to commonly asked questions or sim
 Similarly to the ticket logs, the pre-made responses are configured through the web UI.
 
 WaffleBot is built on top of [discord.py](https://github.com/Rapptz/discord.py) for the bot, and [FastAPI](https://fastapi.tiangolo.com/) and [Svelte](https://svelte.dev/) for the web UI.
-This was built for the [WaffleHacks](https://wafflehacks.tech) hackathon which is occurring from July 9th to 11th, 2021.
+This was built for the [WaffleHacks](https://wafflehacks.tech) hackathon which is occurring from August 27th to 29th, 2021.
 
 {{< project GitHub="https://github.com/WaffleHacks/wafflebot" >}}

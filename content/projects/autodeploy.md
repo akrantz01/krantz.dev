@@ -12,6 +12,6 @@ When a webhook is received, it automatically pulls the repository from the remot
 Then it reads a file named `autodeploy.toml` for the actions to run while deploying the service.
 There are currently two possible actions that can be run: executing a command and copying a file/directory.
 
-This was built for the [WaffleHacks](https://wafflehacks.tech) hackathon which is occurring from July 9th to 11th, 2021.
+This was built for the [WaffleHacks](https://wafflehacks.tech) hackathon which is occurring from August 27th to 29th, 2021.
 
 {{< project GitHub="https://github.com/WaffleHacks/autodeploy" >}}

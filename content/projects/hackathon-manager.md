@@ -14,6 +14,6 @@ The following changes were made:
 - added login with Discord
 - added outgoing webhooks
 
-This was built for the [WaffleHacks](https://wafflehacks.tech) hackathon which is occurring from July 9th to 11th, 2021.
+This was built for the [WaffleHacks](https://wafflehacks.tech) hackathon which is occurring from August 27th to 29th, 2021.
 
 {{< project GitHub="https://github.com/WaffleHacks/hackathon-manager" >}}
