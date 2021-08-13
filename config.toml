@@ -10,89 +10,89 @@ pygmentsCodeFences = true
 
 # Site configuration
 [params]
-title = "I'm Alex Krantz"
-author = "Alex Krantz"
-description = "a quiet and thoughtful developer"
-profilePicture = "images/profile.jpg"
-keywords = ""
-favicon = "favicons/"
-customCss = ["css/syntax.css"]
-customJs = []
-mainSections = ["post"]
-images = []
+  title = "I'm Alex Krantz"
+  author = "Alex Krantz"
+  description = "a quiet and thoughtful developer"
+  profilePicture = "images/profile.jpg"
+  keywords = ""
+  favicon = "favicons/"
+  customCss = ["css/syntax.css"]
+  customJs = []
+  mainSections = ["post"]
+  images = []
 
-[params.math]
-enable = true
-use = "katex"
+  [params.math]
+    enable = true
+    use = "katex"
 
-# Social buttons configuration
-[[params.socialIcons]]
-icon = "fas fa-envelope"
-title = "email"
-url = "mailto:alex@krantz.dev"
+  # Social buttons configuration
+  [[params.socialIcons]]
+    icon = "fas fa-envelope"
+    title = "email"
+    url = "mailto:alex@krantz.dev"
 
-[[params.socialIcons]]
-icon = "fab fa-linkedin"
-title = "linkedin"
-url = "https://www.linkedin.com/in/akrantz01"
+  [[params.socialIcons]]
+    icon = "fab fa-linkedin"
+    title = "linkedin"
+    url = "https://www.linkedin.com/in/akrantz01"
 
-[[params.socialIcons]]
-icon = "fab fa-instagram"
-title = "instagram"
-url = "https://www.instagram.com/krantznotalex"
+  [[params.socialIcons]]
+    icon = "fab fa-instagram"
+    title = "instagram"
+    url = "https://www.instagram.com/krantznotalex"
 
-[[params.socialIcons]]
-icon = "fab fa-twitter"
-title = "twitter"
-url = "https://twitter.com/akrantz_01"
+  [[params.socialIcons]]
+    icon = "fab fa-twitter"
+    title = "twitter"
+    url = "https://twitter.com/akrantz_01"
 
-[[params.socialIcons]]
-icon = "fab fa-github"
-title = "github"
-url = "https://github.com/akrantz01"
+  [[params.socialIcons]]
+    icon = "fab fa-github"
+    title = "github"
+    url = "https://github.com/akrantz01"
 
-[[params.socialIcons]]
-icon = "fab fa-gitlab"
-title = "gitlab"
-url = "https://gitlab.com/akrantz01"
+  [[params.socialIcons]]
+    icon = "fab fa-gitlab"
+    title = "gitlab"
+    url = "https://gitlab.com/akrantz01"
 
 
 # Menu items
 [[menu.main]]
-name = "Blog"
-identifier = "blog"
-weight = 100
-url = "/"
+  name = "Blog"
+  identifier = "blog"
+  weight = 100
+  url = "/"
 
 [[menu.main]]
-name = "About"
-weight = 200
-identifier = "about"
-url = "/about/"
+  name = "About"
+  weight = 200
+  identifier = "about"
+  url = "/about/"
 
 [[menu.main]]
-name = "Projects"
-weight = 300
-identifier = "projects"
-url = "/projects/"
+  name = "Projects"
+  weight = 300
+  identifier = "projects"
+  url = "/projects/"
 
 [[menu.main]]
-name = "Post Archive"
-weight = 400
-identifier = "post"
-url = "/post/"
+  name = "Post Archive"
+  weight = 400
+  identifier = "post"
+  url = "/post/"
 
 
 # Syntax highlighting
 [markup.highlight]
-anchorLineNos = false
-codeFences = true
-guessSyntax = false
-hl_Lines = ""
-lineAnchors = ""
-lineNoStart = 1
-lineNos = true
-lineNumbersInTable = true
-noClasses = true
-style = "darcula"
-tabWidth = 2
+  anchorLineNos = false
+  codeFences = true
+  guessSyntax = false
+  hl_Lines = ""
+  lineAnchors = ""
+  lineNoStart = 1
+  lineNos = true
+  lineNumbersInTable = true
+  noClasses = true
+  style = "darcula"
+  tabWidth = 2
