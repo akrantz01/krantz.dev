@@ -30,7 +30,7 @@
         },
         {
           "key": "Content-Security-Policy",
-          "value": " default-src 'none'; font-src https://cdnjs.cloudflare.com; frame-src https://drive.google.com; img-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/ "
+          "value": "default-src 'none'; font-src https://cdnjs.cloudflare.com; frame-src https://drive.google.com https://giscus.app; img-src 'self'; script-src 'self' 'unsafe-eval' 'unsafe-inline' https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/4.3.1/iframeResizer.min.js https://giscus.app/client.js; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/"
         },
         {
           "key": "Strict-Transport-Security",
