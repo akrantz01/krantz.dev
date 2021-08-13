@@ -16,8 +16,9 @@ pygmentsCodeFences = true
   profilePicture = "images/profile.jpg"
   keywords = ""
   favicon = "favicons/"
-  customCss = ["css/syntax.css"]
+  customCss = ["css/syntax.css", "css/theme.css"]
   customJs = []
+  contentratio = 0.75
   mainSections = ["post"]
   images = []
 

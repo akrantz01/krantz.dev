@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+:root {
+    --bg-color: #e1e1e1;
+    --secondary-bg-color: #dadada;
+}
+
+html[data-theme='dark'] {
+    --bg-color: #282828;
+    --secondary-bg-color: rgb(80, 80, 80);
+}
