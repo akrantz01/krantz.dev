@@ -19,6 +19,8 @@ pygmentsCodeFences = true
   customCss = ["css/syntax.css", "css/theme.css"]
   customJs = []
   contentratio = 0.75
+  displayMode = "dark"
+  disableThemeSwitcher = true
   mainSections = ["post"]
   images = []
 
