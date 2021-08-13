@@ -22,8 +22,7 @@ pygmentsCodeFences = true
   images = []
 
   [params.math]
-    enable = true
-    use = "katex"
+    enable = false
 
   # Social buttons configuration
   [[params.socialIcons]]
