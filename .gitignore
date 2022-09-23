@@ -268,3 +268,11 @@ dist
 
 # and uncomment the following lines
 # .pnp.*
+
+### Project Files ###
+.env*.local
+
+# next.js
+next-env.d.ts
+/.next/
+/out/
