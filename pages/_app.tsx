@@ -1,9 +1,16 @@
+import { ThemeProvider } from 'next-themes';
 import type { AppProps } from 'next/app';
 
-import '@styles/globals.css';
+import { Theme } from '@/types';
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
-}
+import 'inter-ui/inter.css';
+// eslint-disable-next-line import/no-unresolved
+import 'windi.css';
 
-export default MyApp;
+const App = ({ Component, pageProps }: AppProps) => (
+  <ThemeProvider attribute="class" defaultTheme={Theme.SYSTEM} themes={Object.values(Theme)}>
+    <Component {...pageProps} />
+  </ThemeProvider>
+);
+
+export default App;
