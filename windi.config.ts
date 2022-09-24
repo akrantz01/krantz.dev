@@ -1,6 +1,8 @@
 import defaultTheme from 'windicss/defaultTheme';
 import { defineConfig } from 'windicss/helpers';
 
+import { colors } from './lib/colors';
+
 export default defineConfig({
   darkMode: 'class',
   extract: {
@@ -20,6 +22,7 @@ export default defineConfig({
       backgroundOpacity: {
         15: '0.15',
       },
+      colors,
       fontFamily: {
         sans: ['Inter', ...defaultTheme.fontFamily.sans],
       },
