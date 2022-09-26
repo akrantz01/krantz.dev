@@ -19,7 +19,7 @@ const NAVIGATION: NavigationItem[] = [
   {
     type: 'link',
     href: '/projects',
-    icon: 'feather:copy',
+    icon: 'feather:code',
     text: 'Projects',
   },
   {

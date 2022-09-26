@@ -6,16 +6,17 @@ interface BaseItem {
 interface ActionItem extends BaseItem {
   type: 'action';
   onClick?: () => void;
+  endIcon?: string;
 }
 
-interface DividerItem extends BaseItem {
+interface DividerItem {
   type: 'divider';
 }
 
 interface LinkItem extends BaseItem {
   type: 'link';
   external?: boolean;
-  href?: string;
+  href: string;
 }
 
 export type NavigationItem = ActionItem | DividerItem | LinkItem;

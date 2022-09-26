@@ -3,6 +3,7 @@ import { ReactNode } from 'react';
 import { useMedia } from 'react-use';
 
 import Background from '@/components/Background';
+import Navbar from '@/components/Navbar';
 import { useSeo } from '@/lib';
 import { WithProps } from '@/types';
 
@@ -18,6 +19,7 @@ const DefaultLayout = ({ children, seo: extra }: Props): JSX.Element => {
   return (
     <>
       <NextSeo {...seo} />
+      <Navbar />
       <main className="flex flex-col justify-center px-8">
         {!disableBackground && <Background />}
         {children}
