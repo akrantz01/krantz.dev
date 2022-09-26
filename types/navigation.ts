@@ -1,8 +1,5 @@
-import type { ReactNode } from 'react';
-
 interface BaseItem {
-  endIcon?: string | ReactNode;
-  icon: string | ReactNode;
+  icon: string;
   text: string;
 }
 

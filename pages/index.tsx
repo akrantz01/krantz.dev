@@ -1,4 +1,3 @@
-import { Icon } from '@iconify/react';
 import type { NextPage } from 'next';
 import dynamic from 'next/dynamic';
 
@@ -14,20 +13,20 @@ const NAVIGATION: NavigationItem[] = [
   {
     type: 'link',
     href: '/blog',
-    icon: <Icon className="mr-3" icon="feather:edit-3" />,
+    icon: 'feather:edit-3',
     text: 'Blog',
   },
   {
     type: 'link',
     href: '/projects',
-    icon: <Icon className="mr-3" icon="feather:copy" />,
+    icon: 'feather:copy',
     text: 'Projects',
   },
   {
     type: 'link',
     external: true,
     href: 'https://github.com/akrantz01',
-    icon: <Icon className="mr-3" icon="feather:github" />,
+    icon: 'feather:github',
     text: 'GitHub',
   },
 ];
@@ -72,8 +71,7 @@ const Home: NextPage = () => {
                   animation={{ y: [50, 0], opacity: [0, 1] }}
                   transition={{ delay: 0.1 * (index + 2) + 0.5 }}
                 >
-                  <Button href={link.href} outline>
-                    {link.icon}
+                  <Button href={link.href} icon={link.icon} outline>
                     <span>{link.text}</span>
                   </Button>
                 </Animate>
