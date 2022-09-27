@@ -2,9 +2,8 @@ import { Icon } from '@iconify/react';
 import classNames from 'classnames';
 import Link from 'next/link';
 
+import { isExternal } from '@/lib';
 import { NavigationItem } from '@/types';
-
-const isExternal = /^http(s)?:\/\//;
 
 const styles = (active: boolean, group: boolean) =>
   classNames(
@@ -40,7 +39,7 @@ const Item = ({ active, item }: Props): JSX.Element => {
       );
 
     case 'link':
-      if (isExternal.test(item.href)) {
+      if (isExternal(item.href)) {
         return (
           <a href={item.href} className={styles(active, true)} rel="noreferrer" target="_blank">
             <Icon icon={item.icon} className="w-5 h-5 mr-3" aria-hidden="true" />

@@ -1,5 +1,8 @@
 import classNames from 'classnames';
-import { DetailedHTMLProps, HTMLAttributes } from 'react';
+import Link from 'next/link';
+import { AnchorHTMLAttributes, DetailedHTMLProps, HTMLAttributes } from 'react';
+
+import { isExternal } from '@/lib/url';
 
 type Props<T> = DetailedHTMLProps<HTMLAttributes<T>, T>;
 
@@ -22,19 +25,28 @@ export const MDX_COMPONENTS = {
   h6: (props: Props<HTMLHeadingElement>) => (
     <h6 className={classNames('dark:text-white', props.className)}>{props.children}</h6>
   ),
-  a: (props: Props<HTMLAnchorElement>) => (
-    <a
-      className={classNames(
-        'dark:text-white no-underline rounded transition duration-300 ease-in-out focus:(outline-none ring-4 ring-primary-500 ring-offset-2 opacity-100 no-underline) hover:(opacity-100 no-underline)',
-        props.className,
-      )}
-      target="_blank"
-      rel="noreferrer"
-      {...props}
-    >
-      {props.children}
-    </a>
-  ),
+  a: ({ href, ...props }: AnchorHTMLAttributes<HTMLAnchorElement>) => {
+    const style = classNames(
+      'dark:text-white no-underline rounded transition duration-300 ease-in-out focus:(outline-none ring-4 ring-primary-500 ring-offset-2 opacity-100 no-underline) hover:(opacity-100 no-underline)',
+      props.className,
+    );
+
+    if (href && !isExternal(href)) {
+      return (
+        <Link href={href} passHref>
+          <a className={style} {...props}>
+            {props.children}
+          </a>
+        </Link>
+      );
+    } else {
+      return (
+        <a className={style} target="_blank" rel="noreferrer" {...props}>
+          {props.children}
+        </a>
+      );
+    }
+  },
   p: (props: Props<HTMLParagraphElement>) => (
     <p className={classNames('text-gray-400', props.className)} {...props}>
       {props.children}

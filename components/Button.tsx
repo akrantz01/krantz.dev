@@ -3,6 +3,8 @@ import classNames from 'classnames';
 import Link from 'next/link';
 import { MouseEvent, ReactNode } from 'react';
 
+import { isExternal } from '@/lib';
+
 interface Props {
   className?: string;
   icon?: string;
@@ -18,8 +20,6 @@ const filledStyle =
 const outlinedStyle =
   'inline-flex items-center justify-center w-full sm:w-auto bg-gray-50 bg-opacity-75 hover:(bg-gray-100 bg-opacity-75 text-gray-500) dark:(bg-gray-900 bg-opacity-75 hover:bg-gray-800 hover:bg-opacity-75 border-gray-700 text-primary-500 hover:text-primary-400) backdrop-filter backdrop-blur-sm saturate-200 text-gray-400 font-medium border-2 border-gray-200 rounded-lg cursor-pointer default-transition default-focus';
 
-const isExternal = /^http(s)?:\/\//;
-
 const Button = ({ className, children, icon, onClick, href, outline = false, small = false }: Props): JSX.Element => {
   const classes = classNames(
     outline ? outlinedStyle : filledStyle,
@@ -28,7 +28,7 @@ const Button = ({ className, children, icon, onClick, href, outline = false, sma
   );
 
   if (href) {
-    if (isExternal.test(href)) {
+    if (isExternal(href)) {
       return (
         <a href={href} target="_blank" rel="noreferrer" className={classes}>
           {icon && <Icon className="mr-2" icon={icon} />}
