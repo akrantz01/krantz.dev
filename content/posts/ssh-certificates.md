@@ -1,9 +1,9 @@
-+++
-author = "Alex Krantz"
-title = "Securing servers with SSH certificates"
-date = "2020-11-13"
-tags = ['ssh', 'servers']
-+++
+---
+title: Securing servers with SSH certificates
+description: Learn how to SSH certificates instead of public keys using SmallStep 
+category: Write-up
+date: 2020-11-13
+---
 
 First off, hello to anyone reading this.
 Welcome to my personal website/blog where I'll be posting every-so-often about stuff I've been working on or find interesting.
@@ -18,16 +18,16 @@ Everytime I've provisioned a new server, I always have to go through the same, t
 This process appears to be unavoidable, unless you only want to use root (which you ABSOLUTELY SHOULD NOT BE DOING!).
 
 At the start of the lockdown in March, I had a desire to completely redo my server setup since my mail server was being a pain.
-In my research to find the services I wanted to run and how to best do it, I came across {{<extlink "https://smallstep.com/blog/use-ssh-certificates/" "this blog post" >}} about SSH certificates.
+In my research to find the services I wanted to run and how to best do it, I came across [this blog post][] about SSH certificates.
 **TLDR**: SSH certificates allow you to have a single certificate authority that signs all your public keys allowing you to use any private key you approve of, and you should be using them.
 After reading that, I sought to implement it for my own servers.
 
 Now, I should note that I am by no means running anything at scale.
 I was planning on using 5 servers with 3 in a Docker Swarm cluster, 1 dedicated for mail, and the other for general testing (I have since cut back to 3 standalone servers due to changes in pricing).
 I chose to use SSH certificates mainly out of curiosity about the technology.
-Rather than using Smallstep's solution that they were pushing in {{< extlink "https://smallstep.com/blog/use-ssh-certificates/" "that blog post" >}}, I chose to almost roll my own version of it.
+Rather than using Smallstep's solution that they were pushing in [that blog post][], I chose to almost roll my own version of it.
 Don't worry, I didn't try to roll my own crypto and create a fully custom implementation of it.
-I instead used {{< extlink "https://vaultproject.io" "Hashicorp Vault" >}}, a general purpose secret store, and {{< extlink "https://github.com/akrantz01/vssh" "a tool I wrote" >}} to sign the public keys.
+I instead used [Hashicorp Vault][], a general purpose secret store, and [a tool I wrote][] to sign the public keys.
 
 This worked, but it was a bit clunky.
 Vault is really intended for more than just signing SSH certificates so that was a bit overkill.
@@ -41,18 +41,18 @@ I decided to do away with that old system and switch to Smallstep's all-in-one s
 Unfortunately, they only allow you to use external providers on their platform if you pay $10/host which is WAY too expensive for me.
 As such, I'm hosting it myself which unfortunately means that I have to find some authentication source to use.
 
-I've been following the development of {{< extlink "https://ory.sh" "ORY" >}} for a while now, their Hydra product in particular since it provides a light-weight OAuth/OIDC server.
+I've been following the development of [ORY][] for a while now, their Hydra product in particular since it provides a light-weight OAuth/OIDC server.
 However, it still seems a bit too new to me, and I'm honestly not entirely sure how to add users to it.
-Then there's also {{< extlink "https://www.keycloak.org" "Keycloak" >}} that provides similar features, but is a bit of a memory hog which I'd rather not have since I'm in a memory-constrained environment.
-I couldn't find any other services that seemed like they fit my needs, so I opted to use {{< extlink "https://auth0.com" "Auth0" >}} instead.
+Then there's also [Keycloak][] that provides similar features, but is a bit of a memory hog which I'd rather not have since I'm in a memory-constrained environment.
+I couldn't find any other services that seemed like they fit my needs, so I opted to use [Auth0][] instead.
 My goal is to host most of my own services, so I'll probably be switching out Auth0 for ORY Hydra at some point. 
 In the meantime, Auth0 works very well and is free for up to 7000 users.
 
-The Smallstep {{< extlink "https://github.com/smallstep/cli" "CLI" >}} and {{< extlink "https://github.com/smallstep/certificates" "CA" >}} are quite easy to setup.
-I was mostly following {{< extlink "https://smallstep.com/blog/diy-single-sign-on-for-ssh/" "this guide" >}} and made a few modifications, especially since I'm not on AWS.
+The Smallstep [CLI][] and [CA][] are quite easy to setup.
+I was mostly following [this guide][] and made a few modifications, especially since I'm not on AWS.
 Using Smallstep is especially nice since I am able to just use SSH as I normally would, and it automatically hooks into the step CLI to issue certificates when needed.
 
-```shell script
+```shell:Terminal
 # Before
 vssh profiles connect krantz.dev/mail
 
@@ -72,4 +72,14 @@ Just make sure to always leave an SSH connection open or have some way of access
 Anyway, I'd highly recommend anyone who has at least 2 servers they own/rent to use SSH certificates.
 Bye for now!
 
-{{< comments >}}
+
+[this blog post]: https://smallstep.com/blog/use-ssh-certificates/
+[that blog post]: https://smallstep.com/blog/use-ssh-certificates/
+[Hashicorp Vault]: https://vaultproject.io
+[a tool I wrote]: https://github.com/akrantz01/vssh
+[ORY]: https://ory.sh
+[Keycloak]: https://www.keycloak.org
+[Auth0]: https://auth0.com
+[CLI]: https://github.com/smallstep/cli
+[CA]: https://github.com/smallstep/certificates
+[this guide]: https://smallstep.com/blog/diy-single-sign-on-for-ssh/

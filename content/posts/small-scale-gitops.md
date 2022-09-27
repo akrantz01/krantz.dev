@@ -1,9 +1,8 @@
-+++
-author = "Alex Krantz"
-title = "Small Scale GitOps"
-date = "2021-09-11"
-tags = ["gitops", "wafflehacks"]
-+++
+---
+title: Small Scale GitOps
+description: Implementing GitOps principles for a small organization
+date: 2021-09-11
+---
 
 While working on a bunch of tools for WaffleHacks, a hackathon I helped organize that recently finished, I kept running 
 into issues deciding when to deploy something onto our server. No matter whether it was a small or large change, I would
@@ -88,9 +87,6 @@ changes and process improvements I would like to make:
 
 That's all for this post, thanks for reading! If you know of any existing solutions or see anywhere WaffleMaker could be
 improved, feel free to comment below.
-
-
-{{< comments >}}
 
 
 [AutoDeploy]: https://github.com/WaffleHacks/autodeploy

@@ -8,12 +8,13 @@ import { useSeo } from '@/lib';
 import { WithProps } from '@/types';
 
 interface Props {
+  background?: boolean;
   children: ReactNode;
   seo?: Partial<WithProps<typeof NextSeo>>;
 }
 
-const DefaultLayout = ({ children, seo: extra }: Props): JSX.Element => {
-  const disableBackground = useMedia('(prefers-reduced-motion)', true);
+const DefaultLayout = ({ background = true, children, seo: extra }: Props): JSX.Element => {
+  const disableBackground = useMedia('(prefers-reduced-motion)', true) || !background;
   const seo = useSeo(extra);
 
   return (
