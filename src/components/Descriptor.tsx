@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
-import Animate from '@/components/Animate';
-import Pill from '@/components/Pill';
+import Animate from './Animate';
+import Pill from './Pill';
 
 const DESCRIPTORS = ['developer', 'hiker', 'photographer', 'biker', 'backpacker'];
 

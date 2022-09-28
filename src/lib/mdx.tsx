@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import Link from 'next/link';
 import { AnchorHTMLAttributes, DetailedHTMLProps, HTMLAttributes } from 'react';
 
-import { isExternal } from '@/lib/url';
+import { isExternal } from './url';
 
 type Props<T> = DetailedHTMLProps<HTMLAttributes<T>, T>;
 

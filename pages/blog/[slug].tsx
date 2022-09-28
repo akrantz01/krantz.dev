@@ -1,7 +1,6 @@
 import type { ParsedUrlQuery } from 'querystring';
 
 import { faArrowLeft, faCalendarDays } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import type { GetStaticPaths, GetStaticProps } from 'next';
 import { MDXRemote } from 'next-mdx-remote';
 
