@@ -4,7 +4,7 @@ import { GetStaticProps } from 'next';
 import Button from '@/components/Button';
 import Layout from '@/components/Layout';
 import Pill from '@/components/Pill';
-import { loadTimeline } from '@/lib/timeline';
+import { loadTimeline } from '@/lib';
 import { Timeline } from '@/types';
 
 interface Props {
