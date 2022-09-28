@@ -9,10 +9,10 @@ import RemarkEmoji from 'remark-emoji';
 import RemarkGfm from 'remark-gfm';
 import RemarkPrism from 'remark-prism';
 
-import remarkCodeTitles from '@/lib/remark-code-titles';
+import { formatDate } from '@/lib';
 import { FrontMatter, Post } from '@/types';
 
-import { formatDate } from './date';
+import remarkCodeTitles from './remark-code-titles';
 
 const POSTS_DIRECTORY = path.join(process.cwd(), 'content', 'posts');
 
