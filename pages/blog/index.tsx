@@ -1,7 +1,7 @@
 import type { GetStaticProps } from 'next';
 
 import BlogPostCard from '@/components/BlogPostCard';
-import DefaultLayout from '@/layout/Default';
+import Layout from '@/components/Layout';
 import { getAllPostMetadata } from '@/lib/blog';
 import type { FrontMatter } from '@/types';
 
@@ -19,7 +19,7 @@ const Blog = ({ metadata: rawMeta }: Props): JSX.Element => {
   const latest = metadata.shift() as FrontMatter;
 
   return (
-    <DefaultLayout seo={{ title: 'Alex Krantz - Blog' }}>
+    <Layout seo={{ title: 'Alex Krantz - Blog' }}>
       <div className="mt-8 sm:mt-16 mb-20 mx-0 sm:mx-6 lg:mb-28 lg:mx-8">
         <div className="relative max-w-6xl mx-auto">
           <BlogPostCard latest {...latest} />
@@ -30,7 +30,7 @@ const Blog = ({ metadata: rawMeta }: Props): JSX.Element => {
           </div>
         </div>
       </div>
-    </DefaultLayout>
+    </Layout>
   );
 };
 

@@ -1,10 +1,10 @@
 import { Icon } from '@iconify/react';
 
 import Button from '@/components/Button';
-import DefaultLayout from '@/layout/Default';
+import Layout from '@/components/Layout';
 
 const NotFound = (): JSX.Element => (
-  <DefaultLayout>
+  <Layout>
     <div className="relative h-screen pt-24 sm:pt-16 pb-20 px-4 sm:px-6 lg:pb-28 lg:px-8">
       <div className="flex flex-grow min-h-full pt-16 pb-12">
         <div className="flex flex-grow flex-col justify-center max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8">
@@ -30,7 +30,7 @@ const NotFound = (): JSX.Element => (
         </div>
       </div>
     </div>
-  </DefaultLayout>
+  </Layout>
 );
 
 export default NotFound;

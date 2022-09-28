@@ -3,8 +3,8 @@ import dynamic from 'next/dynamic';
 
 import Animate from '@/components/Animate';
 import Button from '@/components/Button';
+import Layout from '@/components/Layout';
 import Pill from '@/components/Pill';
-import DefaultLayout from '@/layout/Default';
 import { NavigationItem } from '@/types';
 
 const BirthdayConfetti = dynamic(() => import('@/components/BirthdayConfetti'), { ssr: false });
@@ -38,7 +38,7 @@ const Home: NextPage = () => {
   const age = Math.floor((today.getTime() - birthday.getTime()) / 1000 / 60 / 60 / 24 / 365);
 
   return (
-    <DefaultLayout>
+    <Layout>
       {isBirthday && <BirthdayConfetti />}
       <div className="min-h-screen flex items-center justify-center py-12">
         <div className="max-w-md sm:max-w-lg md:sm:max-w-2xl lg:sm:max-w-3xl w-full space-y-8 text-center">
@@ -80,7 +80,7 @@ const Home: NextPage = () => {
           </div>
         </div>
       </div>
-    </DefaultLayout>
+    </Layout>
   );
 };
 

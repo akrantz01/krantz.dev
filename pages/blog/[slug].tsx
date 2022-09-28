@@ -6,8 +6,8 @@ import { MDXRemote } from 'next-mdx-remote';
 
 import Button from '@/components/Button';
 import Comments from '@/components/Comments';
+import Layout from '@/components/Layout';
 import Pill from '@/components/Pill';
-import DefaultLayout from '@/layout/Default';
 import { MDX_COMPONENTS } from '@/lib';
 import { getAllPostSlugs, getPost } from '@/lib/blog';
 import type { Post } from '@/types';
@@ -28,7 +28,7 @@ export const getStaticProps: GetStaticProps<Post, PathProps> = async ({ params }
 };
 
 const Post = (post: Post): JSX.Element => (
-  <DefaultLayout
+  <Layout
     background={false}
     seo={{
       title: `Alex Krantz - Blog - ${post.frontmatter.title}`,
@@ -80,7 +80,7 @@ const Post = (post: Post): JSX.Element => (
         </div>
       </div>
     </div>
-  </DefaultLayout>
+  </Layout>
 );
 
 export default Post;

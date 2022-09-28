@@ -2,8 +2,8 @@ import { Icon } from '@iconify/react';
 import { GetStaticProps } from 'next';
 
 import Button from '@/components/Button';
+import Layout from '@/components/Layout';
 import Pill from '@/components/Pill';
-import DefaultLayout from '@/layout/Default';
 import { loadTimeline } from '@/lib/timeline';
 import { Timeline } from '@/types';
 
@@ -17,7 +17,7 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
 };
 
 const Timeline = ({ timeline }: Props): JSX.Element => (
-  <DefaultLayout seo={{ title: 'Alex Krantz - Timeline' }}>
+  <Layout seo={{ title: 'Alex Krantz - Timeline' }}>
     <div className="flex flex-grow min-h-screen pt-16 pb-12">
       <div className="flex-grow flex flex-col justify-center max-w-sm sm:max-w-4xl w-full mx-auto px-0 sm:px-16">
         <ul className="-mb-8" role="list">
@@ -60,7 +60,7 @@ const Timeline = ({ timeline }: Props): JSX.Element => (
         </ul>
       </div>
     </div>
-  </DefaultLayout>
+  </Layout>
 );
 
 export default Timeline;

@@ -2,8 +2,8 @@ import { NextSeo } from 'next-seo';
 import { ReactNode } from 'react';
 import { useMedia } from 'react-use';
 
-import Background from '@/components/Background';
-import Navbar from '@/components/Navbar';
+import Background from '@/components/Layout/Background';
+import Navbar from '@/components/Layout/Navbar';
 import { useSeo } from '@/lib';
 import { WithProps } from '@/types';
 
@@ -13,7 +13,7 @@ interface Props {
   seo?: Partial<WithProps<typeof NextSeo>>;
 }
 
-const DefaultLayout = ({ background = true, children, seo: extra }: Props): JSX.Element => {
+export const Layout = ({ background = true, children, seo: extra }: Props): JSX.Element => {
   const disableBackground = useMedia('(prefers-reduced-motion)', true) || !background;
   const seo = useSeo(extra);
 
@@ -28,5 +28,3 @@ const DefaultLayout = ({ background = true, children, seo: extra }: Props): JSX.
     </>
   );
 };
-
-export default DefaultLayout;
