@@ -1,0 +1,36 @@
+[
+  {
+    "type": "career",
+    "date": "2022-05-18",
+    "title": "Internship at Shopify",
+    "description": "Began a 4 month internship as a developer intern at Shopify"
+  },
+  {
+    "type": "career",
+    "date": "2021-05-10",
+    "title": "Internship at InfluxData",
+    "description": "Began a 4 month internship as a software engineer at InfluxData"
+  },
+  {
+    "type": "launch",
+    "date": "2021-04-19",
+    "title": "Launched WaffleHacks!",
+    "description": "A student-run hackathon for high school and university students around the world",
+    "link": {
+      "text": "wafflehacks.org",
+      "href": "https://wafflehacks.org"
+    }
+  },
+  {
+    "type": "school",
+    "date": "2020-09-08",
+    "title": "Started University at UBC",
+    "description": "Studying Electrical Engineering at the University of British Columbia, Vancouver"
+  },
+  {
+    "type": "celebration",
+    "date": "2001-12-15",
+    "title": "Birthday!",
+    "description": "I was born on December 15th, 2001!"
+  }
+]

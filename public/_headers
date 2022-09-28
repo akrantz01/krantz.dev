@@ -1,0 +1,9 @@
+/*
+  X-Frame-Options: DENY
+  X-Clacks-Overhead: GNU Terry Pratchett
+  X-XSS-Protection: 1; mode=block
+  X-Content-Type-Options: nosniff
+  X-DNS-Prefetch-Control: on
+  Referrer-Policy: origin-when-cross-origin
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  Permissions-Policy: camera=(), microphone=(), geolocation=()

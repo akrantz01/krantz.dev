@@ -1,0 +1,67 @@
+[
+  {
+    "title": "DAVOxide",
+    "description": "A simple WebDAV server with a basic web UI, authentication, and permissions",
+    "icon": "\uD83D\uDDC4️",
+    "links": {
+      "github": "https://github.com/akrantz01/davoxide"
+    }
+  },
+  {
+    "title": "Lights",
+    "description": "Internet-controlled LEDs for my dorm",
+    "icon": "\uD83D\uDCA1",
+    "links": {
+      "github": "https://github.com/akrantz01/lights",
+      "homepage": "https://lights.krantz.dev"
+    }
+  },
+  {
+    "title": "WaffleMaker",
+    "description": "A light-weight deployment layer for resource-constrained environments",
+    "icon": "\uD83D\uDC0B",
+    "links": {
+      "github": "https://github.com/wafflehacks/wafflemaker"
+    }
+  },
+  {
+    "title": "MailGunner",
+    "description": "Send and receive email through MailGun",
+    "icon": "✉️",
+    "links": {
+      "github": "https://github.com/wafflehacks/mailgunner"
+    }
+  },
+  {
+    "title": "Vault SSH",
+    "description": "Easily connect to a server that requires a certificate signed by a HashiCorp Vault server",
+    "icon": "\uD83D\uDD12",
+    "links": {
+      "github": "https://github.com/akrantz01/vssh"
+    }
+  },
+  {
+    "title": "BookPi",
+    "description": "Turn a book into a portable server with a Raspberry Pi Zero W",
+    "icon": "\uD83D\uDD6E",
+    "links": {
+      "github": "https://github.com/akrantz01/bookpi"
+    }
+  },
+  {
+    "title": "Custom DNS",
+    "description": "A custom DNS server with a web UI",
+    "icon": "\uD83D\uDCC7",
+    "links": {
+      "github": "https://github.com/akrantz01/dns"
+    }
+  },
+  {
+    "title": "Capture the Flag",
+    "description": "A multiplayer capture the flag game in BabylonJS",
+    "icon": "\uD83D\uDEA9",
+    "links": {
+      "github": "https://github.com/akrantz01/capture-the-flag"
+    }
+  }
+]
