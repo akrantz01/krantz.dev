@@ -55,7 +55,7 @@ export const Background = (): JSX.Element => {
       fragment: FragmentShader,
       uniforms: {
         uTime: { value: 0 },
-        uColor: { value: new Color(colors.primary[500]) },
+        uColor: { value: new Color(colors.primary[600]) },
       },
       transparent: true,
       depthTest: false,

@@ -12,7 +12,7 @@ const styles = (active: boolean, group: boolean) =>
     'flex items-center px-4 py-3 text-sm font-medium tracking-wide default-transition',
     active
       ? 'bg-gray-100 bg-opacity-50 text-gray-900 dark:(bg-gray-700 bg-opacity-50 text-white)'
-      : 'text-gray-300 hover:text-gray-700 dark:hover:text-white',
+      : 'text-gray-400 hover:text-gray-700 dark:text-gray-300 dark:hover:text-white',
     group ? 'group' : '',
   );
 

@@ -30,7 +30,7 @@ const BlogPostCard = ({ latest, ...frontmatter }: Props): JSX.Element => {
         )}
       >
         <div className="flex-1 flex flex-col justify-between p-6 bg-transparent rounded-2xl bg-transparent">
-          <div className="flex flex-col flex-1 justify-around rounded-lg text-gray-300 dark:text-gray-400 default-focus">
+          <div className="flex flex-col flex-1 justify-around rounded-lg text-gray-400 dark:text-gray-300 default-focus">
             <Heading
               className={classNames(
                 'font-bold text-gray-900 dark:text-gray-100',

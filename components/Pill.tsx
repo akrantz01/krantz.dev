@@ -13,7 +13,7 @@ interface Props {
 const Pill = ({ children, className, icon, small }: Props): JSX.Element => (
   <div
     className={classNames(
-      'inline-flex bg-primary-500 bg-opacity-15 backdrop-filter backdrop-blur-sm filter saturate-200 text-primary-200 rounded-2xl default-transition default-focus',
+      'inline-flex bg-primary-300 bg-opacity-15 backdrop-filter backdrop-blur-sm filter saturate-200 text-primary-600 rounded-2xl default-transition default-focus',
       small ? 'px-2 py-1' : 'px-4 py-2',
       className,
     )}

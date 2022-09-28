@@ -58,7 +58,7 @@ const Timeline = ({ timeline }: Props): JSX.Element => (
                       </Pill>
                     </h1>
 
-                    <p className="my-2 text-gray-300 text-base">{event.description}</p>
+                    <p className="my-2 text-gray-400 dark:text-gray-300 text-base">{event.description}</p>
 
                     {event.link && (
                       <Button className="mt-2" href={event.link.href} small outline>
