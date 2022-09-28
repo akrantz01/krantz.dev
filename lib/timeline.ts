@@ -1,5 +1,5 @@
 import { formatDate } from '@/lib';
-import { Timeline } from '@/types';
+import { Timeline, TimelineEventType } from '@/types';
 
 /**
  * Load the timeline from the content folder
@@ -12,6 +12,7 @@ export const loadTimeline = async (): Promise<Timeline> => {
 
   return timeline.map((event) => ({
     ...event,
+    type: event.type as TimelineEventType,
     date: formatDate(event.date),
   }));
 };

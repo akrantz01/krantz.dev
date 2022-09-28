@@ -1,3 +1,5 @@
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faCode, faPenNib } from '@fortawesome/free-solid-svg-icons';
 import type { NextPage } from 'next';
 import dynamic from 'next/dynamic';
 
@@ -13,20 +15,20 @@ const NAVIGATION: NavigationItem[] = [
   {
     type: 'link',
     href: '/blog',
-    icon: 'feather:edit-3',
+    icon: faPenNib,
     text: 'Blog',
   },
   {
     type: 'link',
     href: '/projects',
-    icon: 'feather:code',
+    icon: faCode,
     text: 'Projects',
   },
   {
     type: 'link',
     external: true,
     href: 'https://github.com/akrantz01',
-    icon: 'feather:github',
+    icon: faGithub,
     text: 'GitHub',
   },
 ];

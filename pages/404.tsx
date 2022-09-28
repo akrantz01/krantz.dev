@@ -1,4 +1,5 @@
-import { Icon } from '@iconify/react';
+import { faArrowLeft, faHouse, faTriangleExclamation } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import Button from '@/components/Button';
 import Layout from '@/components/Layout';
@@ -9,7 +10,7 @@ const NotFound = (): JSX.Element => (
       <div className="flex flex-grow min-h-full pt-16 pb-12">
         <div className="flex flex-grow flex-col justify-center max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-shrink-0 justify-center">
-            <Icon icon="feather:alert-triangle" className="h-12 text-primary-500 w-auto" />
+            <FontAwesomeIcon icon={faTriangleExclamation} className="h-12 text-primary-500 w-auto" />
           </div>
           <div className="py-4 text-center">
             <h1 className="mt-2 text-4xl font-extrabold text-gray-500 dark:text-white tracking-tight sm:text-5xl">
@@ -19,10 +20,10 @@ const NotFound = (): JSX.Element => (
               We searched everywhere for the requested page, but we couldn&apos;t find anything.
             </p>
             <div className="mt-6 flex justify-center items-center space-x-4">
-              <Button onClick={() => history.go(-1)} icon="feather:arrow-left">
+              <Button onClick={() => history.go(-1)} icon={faArrowLeft}>
                 Back
               </Button>
-              <Button href="/" icon="feather:home">
+              <Button href="/" icon={faHouse}>
                 Home
               </Button>
             </div>

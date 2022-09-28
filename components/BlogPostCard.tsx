@@ -1,4 +1,4 @@
-import { Icon } from '@iconify/react';
+import { faCalendarDays } from '@fortawesome/free-solid-svg-icons';
 import classNames from 'classnames';
 import Link from 'next/link';
 import { HTMLAttributes } from 'react';
@@ -43,10 +43,7 @@ const BlogPostCard = ({ latest, ...frontmatter }: Props): JSX.Element => {
               {frontmatter.description}
             </p>
             <div className={classNames('flex items-start space-x-1 mt-4', { 'text-sm': !latest })}>
-              <Pill>
-                <Icon className="mt-0.5 mr-3" icon="feather:calendar" />
-                {frontmatter.date}
-              </Pill>
+              <Pill icon={faCalendarDays}>{frontmatter.date}</Pill>
             </div>
           </div>
         </div>

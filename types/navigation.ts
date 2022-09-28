@@ -1,12 +1,14 @@
+import { IconDefinition } from '@fortawesome/free-brands-svg-icons';
+
 interface BaseItem {
-  icon: string;
+  icon: IconDefinition;
   text: string;
 }
 
 interface ActionItem extends BaseItem {
   type: 'action';
   onClick?: () => void;
-  endIcon?: string;
+  endIcon?: IconDefinition;
 }
 
 interface DividerItem {

@@ -1,4 +1,5 @@
-import { Icon } from '@iconify/react';
+import { IconDefinition } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
 import Link from 'next/link';
 import { ForwardedRef, MouseEvent, ReactNode, forwardRef } from 'react';
@@ -7,7 +8,7 @@ import { isExternal } from '@/lib';
 
 interface Props {
   className?: string;
-  icon?: string;
+  icon?: IconDefinition;
   children?: ReactNode;
   onClick?: (e: MouseEvent) => void;
   href?: string;
@@ -27,6 +28,7 @@ const Button = forwardRef<HTMLAnchorElement | HTMLButtonElement, Props>(
       small ? 'px-4 py-1 text-sm' : 'px-8 py-4',
       className,
     );
+    const iconClasses = classNames('mr-2', small ? 'w-4 h-4' : 'w-6 h-6');
 
     if (href) {
       if (isExternal(href)) {
@@ -38,7 +40,7 @@ const Button = forwardRef<HTMLAnchorElement | HTMLButtonElement, Props>(
             rel="noreferrer"
             className={classes}
           >
-            {icon && <Icon className="mr-2" icon={icon} />}
+            {icon && <FontAwesomeIcon className={iconClasses} icon={icon} />}
             {children}
           </a>
         );
@@ -46,7 +48,7 @@ const Button = forwardRef<HTMLAnchorElement | HTMLButtonElement, Props>(
         return (
           <Link ref={ref as ForwardedRef<HTMLAnchorElement>} href={href} passHref>
             <a href={href} className={classes}>
-              {icon && <Icon className="mr-2" icon={icon} />}
+              {icon && <FontAwesomeIcon className={iconClasses} icon={icon} />}
               {children}
             </a>
           </Link>
@@ -57,7 +59,7 @@ const Button = forwardRef<HTMLAnchorElement | HTMLButtonElement, Props>(
     if (onClick) {
       return (
         <button ref={ref as ForwardedRef<HTMLButtonElement>} className={classes} onClick={onClick} type="button">
-          {icon && <Icon className="mr-2" icon={icon} />}
+          {icon && <FontAwesomeIcon className={iconClasses} icon={icon} />}
           {children}
         </button>
       );

@@ -1,6 +1,7 @@
 import type { ParsedUrlQuery } from 'querystring';
 
-import { Icon } from '@iconify/react';
+import { faArrowLeft, faCalendarDays } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import type { GetStaticPaths, GetStaticProps } from 'next';
 import { MDXRemote } from 'next-mdx-remote';
 
@@ -58,10 +59,7 @@ const Post = (post: Post): JSX.Element => (
           </div>
 
           <span className="flex justify-center items-center">
-            <Pill>
-              <Icon className="mt-0.5 mr-3" icon="feather:calendar" />
-              {post.frontmatter.date}
-            </Pill>
+            <Pill icon={faCalendarDays}>{post.frontmatter.date}</Pill>
           </span>
 
           <p className="mt-8 text-xl text-gray-400 leading-8">{post.frontmatter.description}</p>
@@ -74,7 +72,7 @@ const Post = (post: Post): JSX.Element => (
         </article>
 
         <div className="max-w-prose mx-auto my-4">
-          <Button className="-ml-8" href="/blog" outline small icon="feather:arrow-left">
+          <Button className="-ml-8" href="/blog" outline small icon={faArrowLeft}>
             Back
           </Button>
         </div>

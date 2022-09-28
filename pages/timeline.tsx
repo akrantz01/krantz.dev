@@ -1,4 +1,11 @@
-import { Icon } from '@iconify/react';
+import {
+  faArrowUpRightFromSquare,
+  faBriefcase,
+  faCakeCandles,
+  faGraduationCap,
+  faRocket,
+} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { GetStaticProps } from 'next';
 
 import Button from '@/components/Button';
@@ -6,6 +13,13 @@ import Layout from '@/components/Layout';
 import Pill from '@/components/Pill';
 import { loadTimeline } from '@/lib';
 import { Timeline } from '@/types';
+
+const ICONS = {
+  celebration: faCakeCandles,
+  career: faBriefcase,
+  launch: faRocket,
+  school: faGraduationCap,
+};
 
 interface Props {
   timeline: Timeline;
@@ -32,7 +46,7 @@ const Timeline = ({ timeline }: Props): JSX.Element => (
                 )}
                 <div className="relative flex items-center space-x-3 bg-gray-50 bg-opacity-75 dark:bg-gray-900 dark:bg-opacity-75 backdrop-filter backdrop-blur-sm px-2 py-3 border-2 border-gray-200 dark:border-gray-600 rounded-lg">
                   <div className="relative flex items-center justify-center w-12 h-12 bg-primary-500 bg-opacity-15 backdrop-filter backdrop-blur-sm saturate-200 mx-2 px-1 rounded-full">
-                    <Icon aria-hidden="true" className="w-6 h-6 text-primary-500" icon={event.icon} />
+                    <FontAwesomeIcon aria-hidden="true" className="w-6 h-6 text-primary-500" icon={ICONS[event.type]} />
                   </div>
 
                   <div className="min-w-0 flex-1">
@@ -49,7 +63,7 @@ const Timeline = ({ timeline }: Props): JSX.Element => (
                     {event.link && (
                       <Button className="mt-2" href={event.link.href} small outline>
                         {event.link.text}
-                        <Icon aria-hidden="true" className="ml-3" icon="feather:external-link" />
+                        <FontAwesomeIcon aria-hidden="true" className="ml-3 h-4 w-4" icon={faArrowUpRightFromSquare} />
                       </Button>
                     )}
                   </div>

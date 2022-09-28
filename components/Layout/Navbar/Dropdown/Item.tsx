@@ -1,4 +1,5 @@
-import { Icon } from '@iconify/react';
+import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
 import Link from 'next/link';
 import { ForwardedRef, forwardRef } from 'react';
@@ -36,12 +37,12 @@ const Item = forwardRef<HTMLAnchorElement | HTMLButtonElement | HTMLHRElement, P
             className={styles(active, true)}
             onClick={item.onClick}
           >
-            <Icon icon={item.icon} className="w-5 h-5 mr-3" aria-hidden="true" />
+            <FontAwesomeIcon icon={item.icon} className="w-5 h-5 mr-3" aria-hidden="true" />
             {item.text}
             {item.endIcon && (
               <>
                 <span className="flex-1" />
-                <Icon icon={item.endIcon} className="w-4 h-4 ml-3" aria-hidden="true" />
+                <FontAwesomeIcon icon={item.endIcon} className="w-4 h-4 ml-3" aria-hidden="true" />
               </>
             )}
           </button>
@@ -57,17 +58,17 @@ const Item = forwardRef<HTMLAnchorElement | HTMLButtonElement | HTMLHRElement, P
               rel="noreferrer"
               target="_blank"
             >
-              <Icon icon={item.icon} className="w-5 h-5 mr-3" aria-hidden="true" />
+              <FontAwesomeIcon icon={item.icon} className="w-5 h-5 mr-3" aria-hidden="true" />
               {item.text}
               <span className="flex-1" />
-              <Icon icon="feather:external-link" className="w-4 h-4 ml-3" aria-hidden="true" />
+              <FontAwesomeIcon icon={faArrowUpRightFromSquare} className="w-4 h-4 ml-3" aria-hidden="true" />
             </a>
           );
         } else {
           return (
             <Link ref={ref as ForwardedRef<HTMLAnchorElement>} href={item.href} passHref>
               <a className={styles(active, false)}>
-                <Icon icon={item.icon} className="w-5 h-5 mr-3" aria-hidden="true" />
+                <FontAwesomeIcon icon={item.icon} className="w-5 h-5 mr-3" aria-hidden="true" />
                 {item.text}
               </a>
             </Link>

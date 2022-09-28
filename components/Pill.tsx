@@ -1,4 +1,5 @@
-import { Icon } from '@iconify/react';
+import { IconDefinition } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames';
 import { ReactNode } from 'react';
 
@@ -6,7 +7,7 @@ interface Props {
   className?: string;
   children: ReactNode;
   small?: boolean;
-  icon?: string;
+  icon?: IconDefinition;
 }
 
 const Pill = ({ children, className, icon, small }: Props): JSX.Element => (
@@ -17,7 +18,9 @@ const Pill = ({ children, className, icon, small }: Props): JSX.Element => (
       className,
     )}
   >
-    {icon && <Icon className={classNames('mt-0.5', small ? 'mr-1.5' : 'mr-3', className)} icon={icon} />}
+    {icon && (
+      <FontAwesomeIcon className={classNames('mt-1 h-4 w-4', small ? 'mr-1.5' : 'mr-3', className)} icon={icon} />
+    )}
     {children}
   </div>
 );

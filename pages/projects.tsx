@@ -1,4 +1,6 @@
-import { Icon } from '@iconify/react';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faHouse, faPenNib } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { GetStaticProps } from 'next';
 import Link from 'next/link';
 
@@ -43,7 +45,7 @@ const Projects = ({ projects }: Props): JSX.Element => (
                       <Link aria-label={`${project.title} blog post`} href={`/blog/${project.links.post}`} passHref>
                         <a className={actionClasses}>
                           <span className="sr-only">Blog post</span>
-                          <Icon className="mt-1" icon="feather:edit-3" />
+                          <FontAwesomeIcon icon={faPenNib} />
                         </a>
                       </Link>
                     )}
@@ -56,7 +58,7 @@ const Projects = ({ projects }: Props): JSX.Element => (
                         target="_blank"
                       >
                         <span className="sr-only">Homepage</span>
-                        <Icon className="mt-1" icon="feather:home" />
+                        <FontAwesomeIcon icon={faHouse} />
                       </a>
                     )}
                     <a
@@ -67,7 +69,7 @@ const Projects = ({ projects }: Props): JSX.Element => (
                       target="_blank"
                     >
                       <span className="sr-only">GitHub</span>
-                      <Icon className="mt-1" icon="feather:github" />
+                      <FontAwesomeIcon icon={faGithub} />
                     </a>
                   </div>
                 </div>
