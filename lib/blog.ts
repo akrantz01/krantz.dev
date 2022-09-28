@@ -12,9 +12,9 @@ import RemarkPrism from 'remark-prism';
 import remarkCodeTitles from '@/lib/remark-code-titles';
 import { FrontMatter, Post } from '@/types';
 
-const POSTS_DIRECTORY = path.join(process.cwd(), 'content', 'posts');
+import { formatDate } from './date';
 
-const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
+const POSTS_DIRECTORY = path.join(process.cwd(), 'content', 'posts');
 
 interface RawFrontMatter {
   title: string;
@@ -22,21 +22,6 @@ interface RawFrontMatter {
   category?: string;
   date: string;
 }
-
-const getOrdinal = (day: number): string => {
-  if (day === 11 || day === 12 || day === 13) return 'th';
-
-  switch (day % 10) {
-    case 1:
-      return 'st';
-    case 2:
-      return 'nd';
-    case 3:
-      return 'rd';
-    default:
-      return 'th';
-  }
-};
 
 /**
  * Get all the available posts
@@ -48,13 +33,11 @@ export async function getAllPostSlugs(): Promise<string[]> {
 
 const buildMetadata = (slug: string, frontmatter: RawFrontMatter): FrontMatter => {
   const date = new Date(frontmatter.date);
-  const month = MONTHS[date.getMonth()];
-  const ordinal = getOrdinal(date.getDate());
 
   return {
     ...frontmatter,
     slug,
-    date: `${month} ${date.getDate()}${ordinal}, ${date.getFullYear()}`,
+    date: formatDate(date),
     timestamp: date.getTime(),
   };
 };
