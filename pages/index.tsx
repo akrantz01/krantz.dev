@@ -5,8 +5,8 @@ import dynamic from 'next/dynamic';
 
 import Animate from '@/components/Animate';
 import Button from '@/components/Button';
+import Descriptor from '@/components/Descriptor';
 import Layout from '@/components/Layout';
-import Pill from '@/components/Pill';
 import { NavigationItem } from '@/types';
 
 const BirthdayConfetti = dynamic(() => import('@/components/BirthdayConfetti'), { ssr: false });
@@ -50,7 +50,7 @@ const Home: NextPage = () => {
             className="text-gray-500 dark:text-white text-5xl sm:text-6xl md:text-6xl lg:text-8xl tracking-tight font-extrabold"
           >
             Hey <span className="inline-block origin-70 hover:(animate-wave)">👋</span> I&apos;m Alex,{' '}
-            <br className="hidden sm:block" />a <Pill className="mt-4">developer</Pill>
+            <br className="hidden sm:block" />a <Descriptor />
           </Animate>
 
           <Animate
