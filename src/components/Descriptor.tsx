@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import Animate from './Animate';
 import Pill from './Pill';
 
-const DESCRIPTORS = ['developer', 'hiker', 'photographer', 'biker', 'backpacker'];
+const DESCRIPTORS = ['developer', 'hiker', 'photographer', 'backpacker'];
 
 const Descriptor = (): JSX.Element => {
   const [index, setIndex] = useState(0);
