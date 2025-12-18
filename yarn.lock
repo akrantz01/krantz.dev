@@ -2247,10 +2247,10 @@ loader-utils@^2.0.0:
     emojis-list "^3.0.0"
     json5 "^2.1.2"
 
-loader-utils@^3.2.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/loader-utils/-/loader-utils-3.2.0.tgz#bcecc51a7898bee7473d4bc6b845b23af8304d4f"
-  integrity sha512-HVl9ZqccQihZ7JM85dco1MvO9G+ONvxoGa9rkhzFsneGLKSUg1gJf9bWzhRhcvm2qChhWpebQhP44qxjKIUCaQ==
+loader-utils@^3.3.1:
+  version "3.3.1"
+  resolved "https://registry.yarnpkg.com/loader-utils/-/loader-utils-3.3.1.tgz#735b9a19fd63648ca7adbd31c2327dfe281304e5"
+  integrity sha512-FMJTLMXfCLMLfJxcX9PFqX5qD88Z5MRGaZCVzfuqeZSPsyiBzs+pahDQjbIWz2QIzPZz0NX9Zy4FX3lmK6YHIg==
 
 locate-path@^6.0.0:
   version "6.0.0"
@@ -3945,11 +3945,11 @@ ts-easing@^0.2.0:
   integrity sha512-Z86EW+fFFh/IFB1fqQ3/+7Zpf9t2ebOAxNI/V6Wo7r5gqiqtxmgTlQ1qbqQcjLKYeSHPTsEmvlJUDg/EuL0uHQ==
 
 ts-shader-loader@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/ts-shader-loader/-/ts-shader-loader-2.0.1.tgz#075ab16435e97a0302bb2b36eb1c74ec1eccc563"
-  integrity sha512-nCXbIxxada8p8XrunZnkfQgA5n1EuVRW/0C4lIGjDMo7kkYoLjjaf6I8I4+ZpneOi1oSVaXvJmDuv/7nfheB3w==
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/ts-shader-loader/-/ts-shader-loader-2.1.0.tgz#ef10200ee8c67e4d21bfd475b0162e8cba833e56"
+  integrity sha512-B77gxK6H9SYORmL+EWIMqsPU5CTHHXSG0ZeZrMdML8yWDNoCd1mcJij35kD2FezcyPQYDFF3HPLygn48lpG9Og==
   dependencies:
-    loader-utils "^3.2.0"
+    loader-utils "^3.3.1"
 
 tsconfig-paths@^3.14.1:
   version "3.14.1"
