@@ -1,6 +1,6 @@
 ---
 title: Securing servers with SSH certificates
-description: Learn how to SSH certificates instead of public keys using SmallStep 
+description: Learn how to SSH certificates instead of public keys using SmallStep
 category: Write-up
 date: 2020-11-13
 ---
@@ -45,7 +45,7 @@ I've been following the development of [ORY][] for a while now, their Hydra prod
 However, it still seems a bit too new to me, and I'm honestly not entirely sure how to add users to it.
 Then there's also [Keycloak][] that provides similar features, but is a bit of a memory hog which I'd rather not have since I'm in a memory-constrained environment.
 I couldn't find any other services that seemed like they fit my needs, so I opted to use [Auth0][] instead.
-My goal is to host most of my own services, so I'll probably be switching out Auth0 for ORY Hydra at some point. 
+My goal is to host most of my own services, so I'll probably be switching out Auth0 for ORY Hydra at some point.
 In the meantime, Auth0 works very well and is free for up to 7000 users.
 
 The Smallstep [CLI][] and [CA][] are quite easy to setup.
@@ -71,7 +71,6 @@ Just make sure to always leave an SSH connection open or have some way of access
 
 Anyway, I'd highly recommend anyone who has at least 2 servers they own/rent to use SSH certificates.
 Bye for now!
-
 
 [this blog post]: https://smallstep.com/blog/use-ssh-certificates/
 [that blog post]: https://smallstep.com/blog/use-ssh-certificates/

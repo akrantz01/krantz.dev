@@ -4,7 +4,7 @@ description: Implementing GitOps principles for a small organization
 date: 2021-09-11
 ---
 
-While working on a bunch of tools for WaffleHacks, a hackathon I helped organize that recently finished, I kept running 
+While working on a bunch of tools for WaffleHacks, a hackathon I helped organize that recently finished, I kept running
 into issues deciding when to deploy something onto our server. No matter whether it was a small or large change, I would
 still need to go through the same arduous process of:
 
@@ -17,26 +17,26 @@ Depending on how long I waited between deployments, this could take anywhere fro
 spending being more productive, like working on new features or maybe doing homework.
 
 This same process continued for around 2 months when I decided to attempt to automate this workflow. I began working on
-a quick and dirty tool I sensibly named [AutoDeploy][]. Using webhooks from GitHub and a [configuration file][] located 
-at the root of the repository, it would pull and run a set of predefined commands on every push. It worked well enough 
-for a while, but it was very brittle. If any dependencies changed or a new application needed to be added, AutoDeploy 
-would blindly run through its commands and the deployment would most likely fail. Not to mention that there was no way 
+a quick and dirty tool I sensibly named [AutoDeploy][]. Using webhooks from GitHub and a [configuration file][] located
+at the root of the repository, it would pull and run a set of predefined commands on every push. It worked well enough
+for a while, but it was very brittle. If any dependencies changed or a new application needed to be added, AutoDeploy
+would blindly run through its commands and the deployment would most likely fail. Not to mention that there was no way
 to know whether the deployment was successful because AutoDeploy never reported its status anywhere.
 
 Shortly after setting up AutoDeploy, I stopped making and deploying as many changes since it was becoming more of a
 burden to deploy than before. I quickly realized I needed a new solution.
 
-
 ## Enter GitOps
 
 > A system development/management pattern where
+>
 > - git is the **SINGLE** source of truth for a system
 > - git is the **SINGLE** place where we operate **ALL** environments
 > - **ALL** changes are observable _and_ verifiable
 
 ###### Credit: [@victorsilva][]
 
-Using something like [ArgoCD][] or [Flux][] seemed like the perfect solution to my deployments problem. Just 
+Using something like [ArgoCD][] or [Flux][] seemed like the perfect solution to my deployments problem. Just
 containerize all the applications and use a single repository to store all the Kubernetes manifests.
 
 All done, right? Unfortunately not.
@@ -53,7 +53,6 @@ decided to write one myself.
 Around 3 months later, after weeks of on-off work interspersed throughout my internship, [WaffleMaker][] was born. Why
 the name? One of my inspirations for the tool was [Beekeeper][] made by [HackGT][], so WaffleMaker seemed fitting given
 the hackathon's name was WaffleHacks.
-
 
 ## About WaffleMaker
 
@@ -75,7 +74,6 @@ Our tagging scheme is such that each image is tagged with the commit hash and th
 configuring the service, we can specify which tags are allowed to be updated from, preventing development versions from
 accidentally being deployed.
 
-
 ## The future
 
 Currently, WaffleMaker is deployed and being used ([our source of truth][]). Looking ahead, there are a handful of
@@ -87,7 +85,6 @@ changes and process improvements I would like to make:
 
 That's all for this post, thanks for reading! If you know of any existing solutions or see anywhere WaffleMaker could be
 improved, feel free to comment below.
-
 
 [AutoDeploy]: https://github.com/WaffleHacks/autodeploy
 [configuration file]: https://github.com/WaffleHacks/autodeploy/tree/master/autodeploy.example.toml
