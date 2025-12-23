@@ -24,10 +24,13 @@
 		"eslint-config-prettier": "^10.1.8",
 		"eslint-plugin-svelte": "^3.13.1",
 		"globals": "^16.5.0",
+		"ico-endec": "^0.1.6",
 		"prettier": "^3.7.4",
 		"prettier-plugin-svelte": "^3.4.0",
+		"sharp": "^0.34.5",
 		"svelte": "^5.45.6",
 		"svelte-check": "^4.3.4",
+		"svgo": "^4.0.0",
 		"typescript": "^5.9.3",
 		"typescript-eslint": "^8.48.1",
 		"vite": "^7.2.6"
