@@ -4,5 +4,5 @@ import { defineConfig } from 'vite';
 import generateFavicons from './plugins/generate-favicons';
 
 export default defineConfig({
-	plugins: [generateFavicons(), sveltekit()]
+	plugins: [generateFavicons({ source: 'src/lib/assets/favicon.svg' }), sveltekit()]
 });
