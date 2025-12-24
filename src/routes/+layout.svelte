@@ -1,4 +1,6 @@
 <script lang="ts">
+	import Header from '$lib/components/Header.svelte';
+
 	let { children } = $props();
 </script>
 
@@ -6,7 +8,10 @@
 	<title>Alex Krantz</title>
 </svelte:head>
 
-{@render children()}
+<Header />
+<main>
+	{@render children()}
+</main>
 
 <style>
 	:global {
