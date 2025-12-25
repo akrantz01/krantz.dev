@@ -260,5 +260,10 @@
 			background-color: var(--background);
 			color: var(--on-background);
 		}
+
+		main {
+			max-width: 80rem;
+			margin: 0 auto;
+		}
 	}
 </style>
