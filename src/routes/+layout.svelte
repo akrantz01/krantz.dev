@@ -30,18 +30,18 @@
 			/* Backgrounds, surfaces, and containers */
 			--background-light: oklch(93% 0.126 8deg);
 			--background-dark: oklch(13% 0.126 8deg);
-			--on-background-light: var(--body-text-light);
-			--on-background-dark: var(--body-text-dark);
+			--on-background-light: var(--text-body-light);
+			--on-background-dark: var(--text-body-dark);
 
 			--surface-light: oklch(97% 0.06 8deg);
 			--surface-dark: oklch(16% 0.08 8deg);
-			--on-surface-light: var(--body-text-light);
-			--on-surface-dark: var(--body-text-dark);
+			--on-surface-light: var(--text-body-light);
+			--on-surface-dark: var(--text-body-dark);
 
 			--surface-variant-light: oklch(97% 0.04 8deg);
 			--surface-variant-dark: oklch(16% 0.06 8deg);
-			--on-surface-variant-light: var(--muted-text-light);
-			--on-surface-variant-dark: var(--muted-text-dark);
+			--on-surface-variant-light: var(--text-muted-light);
+			--on-surface-variant-dark: var(--text-muted-dark);
 
 			--outline-light: oklch(75% 0.08 8deg);
 			--outline-dark: oklch(25% 0.08 8deg);
@@ -49,12 +49,12 @@
 			--primary-container-light: oklch(72% 0.126 8deg);
 			--primary-container-dark: oklch(28% 0.08 8deg);
 			--on-primary-container-light: var(--background-dark);
-			--on-primary-container-dark: var(--body-text-dark);
+			--on-primary-container-dark: var(--text-body-dark);
 
 			--secondary-container-light: oklch(72% 0.126 188deg);
 			--secondary-container-dark: oklch(28% 0.095 188deg);
 			--on-secondary-container-light: var(--background-dark);
-			--on-secondary-container-dark: var(--body-text-dark);
+			--on-secondary-container-dark: var(--text-body-dark);
 
 			/* Actions */
 			--primary-light: oklch(28% 0.08 8deg);
