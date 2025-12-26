@@ -24,6 +24,7 @@
 		"eslint-config-prettier": "^10.1.8",
 		"eslint-plugin-svelte": "^3.13.1",
 		"globals": "^16.5.0",
+		"gray-matter": "^4.0.3",
 		"ico-endec": "^0.1.6",
 		"prettier": "^3.7.4",
 		"prettier-plugin-svelte": "^3.4.0",
