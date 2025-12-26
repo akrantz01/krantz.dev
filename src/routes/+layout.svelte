@@ -262,7 +262,7 @@
 		}
 
 		main {
-			max-width: 80rem;
+			max-width: 56rem;
 			margin: 0 auto;
 		}
 	}
