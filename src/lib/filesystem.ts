@@ -1,7 +1,9 @@
 import matter from 'gray-matter';
+import type { ZodType } from 'zod';
+import * as z from 'zod';
 
 export class FileSystem<C> {
-	protected content: Map<string, C>;
+	protected readonly content: Map<string, C>;
 
 	constructor(modules: Record<string, C>) {
 		const prefix = findDirectoryPrefix(Object.keys(modules));
@@ -25,33 +27,43 @@ export class FileSystem<C> {
 	}
 }
 
-export interface MarkdownFile<M extends { [key: string]: unknown }> {
+export interface MarkdownFile<M> {
 	path: string;
-	meta: M | null;
+	meta: M;
 }
 
-export class MarkdownFileSystem<M extends { [key: string]: unknown }> extends FileSystem<string> {
-	private metadata: Map<string, M | null>;
+type MetaOf<S extends ZodType> = z.output<S>;
 
-	constructor(modules: Record<string, string>) {
+export class MarkdownFileSystem<S extends ZodType> extends FileSystem<string> {
+	private readonly metadata: Map<string, MetaOf<S>>;
+
+	constructor(
+		modules: Record<string, string>,
+		private readonly schema: S
+	) {
 		super(modules);
 
 		this.metadata = new Map();
 		this.content.forEach((value, path) => {
 			const fm = matter(value, { language: 'yaml' });
 			this.content.set(path, fm.content);
-			this.metadata.set(path, fm.data);
+
+			const parsed = this.schema.safeParse(fm.data as unknown);
+			if (!parsed.success) {
+				throw new Error(`Invalid frontmatter for '${path}':\n${parsed.error}`);
+			}
+			this.metadata.set(path, parsed.data);
 		});
 	}
 
-	listWithMeta(): MarkdownFile<M>[] {
+	listWithFrontmatter(): MarkdownFile<MetaOf<S>>[] {
 		return this.metadata
 			.entries()
 			.map(([path, meta]) => ({ path, meta }))
 			.toArray();
 	}
 
-	meta(name: string): M | null {
+	frontmatter(name: string): MetaOf<S> | null {
 		const meta = this.metadata.get(name);
 		if (meta === undefined) return null;
 		return meta;
