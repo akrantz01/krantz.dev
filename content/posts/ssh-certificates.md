@@ -7,7 +7,7 @@ date: 2020-11-13
 
 First off, hello to anyone reading this.
 Welcome to my personal website/blog where I'll be posting every-so-often about stuff I've been working on or find interesting.
-If you're curious about me, head over to my [about page](/about/).
+If you're curious about me, head over to my [about page](/).
 
 > Before I start this, I should say that I am by no means endorsed by Smallstep.
 > I am simply a big fan of their SSH certificates tool.

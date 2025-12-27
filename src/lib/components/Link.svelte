@@ -7,6 +7,7 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
 	import { page } from '$app/state';
+	import { resolve } from '$app/paths';
 
 	interface Props {
 		href: string;
@@ -25,7 +26,7 @@
 </script>
 
 <a
-	{href}
+	href={external ? href : resolve(href)}
 	class:current={!external && matcher(href, page)}
 	target={newTab || external ? '_blank' : null}
 	rel={external ? 'noopener noreferrer' : null}
