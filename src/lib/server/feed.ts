@@ -5,7 +5,9 @@ import { Parser } from '$lib/markdown';
 import { fs } from './posts';
 import { compareDesc } from 'date-fns';
 
-const feedLink = (ext: string): string =>
+export const SUPPORTED_FORMATS = ['atom', 'rss', 'json'];
+
+export const feedLink = (ext: string): string =>
 	publicUrl(resolve('/feed.[format=feed]', { format: ext }));
 
 export type FeedGenerator = Pick<Feed, 'atom1' | 'json1' | 'rss2'>;
@@ -23,11 +25,7 @@ export default async function populateFeed(): Promise<Feed> {
 		favicon: publicUrl('favicon.ico'),
 		copyright: `All rights reserved ${new Date().getFullYear()}, Alex Krantz`,
 		generator: 'krantz.dev',
-		feedLinks: {
-			atom: feedLink('atom'),
-			rss: feedLink('rss'),
-			json: feedLink('json')
-		}
+		feedLinks: Object.fromEntries(SUPPORTED_FORMATS.map((format) => [format, feedLink(format)]))
 	});
 
 	const files = fs.listWithFrontmatter();

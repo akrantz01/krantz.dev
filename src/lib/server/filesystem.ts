@@ -29,10 +29,10 @@ export class FileSystem<C> {
 	}
 }
 
-export interface MarkdownFile<M> {
+export interface MarkdownFile<M extends ZodType> {
 	path: string;
 	slug: string;
-	meta: M;
+	meta: MetaOf<M>;
 }
 
 type MetaOf<S extends ZodType> = z.output<S>;
@@ -59,7 +59,7 @@ export class MarkdownFileSystem<S extends ZodType> extends FileSystem<string> {
 		});
 	}
 
-	listWithFrontmatter(): MarkdownFile<MetaOf<S>>[] {
+	listWithFrontmatter(): MarkdownFile<S>[] {
 		return this.metadata
 			.entries()
 			.map(([path, meta]) => ({ path, slug: path.replace(FILE_EXTENSION_REGEX, ''), meta }))

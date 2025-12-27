@@ -9,7 +9,6 @@
 
 <h1>Blog</h1>
 
-<!-- TODO: add atom feed -->
 <p>
 	Subscribe via
 	<Link href="/feed.rss">RSS</Link> /
