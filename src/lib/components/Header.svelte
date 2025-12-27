@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/state';
-	import Link from './Link.svelte';
+	import Link, { type Matcher } from './Link.svelte';
 	import icon from '$lib/assets/favicon.svg';
 
 	const MINIMAL_ROUTES = ['/'];
@@ -9,9 +9,10 @@
 	const minimal = $derived(MINIMAL_ROUTES.includes(route));
 </script>
 
-{#snippet navlink(href: string, label: string)}
+{#snippet navlink(href: string, label: string, matcher: Matcher | undefined = undefined)}
 	<Link
 		{href}
+		{matcher}
 		--link-fg="var(--on-primary)"
 		--link-bg="var(--primary)"
 		--link-current-fg="var(--on-secondary)"
@@ -33,7 +34,11 @@
 
 	<nav>
 		{@render navlink('/', 'About me')}
-		{@render navlink('/blog', 'Blog')}
+		{@render navlink(
+			'/blog',
+			'Blog',
+			(href, page) => page.route.id === '/blog' || page.url.pathname.startsWith('/blog/')
+		)}
 		{@render navlink('https://resume.krantz.dev', 'Resume')}
 	</nav>
 </header>

@@ -1,3 +1,9 @@
+<script lang="ts" module>
+	import type { Page } from '@sveltejs/kit';
+
+	export type Matcher = (href: string, page: Page) => boolean;
+</script>
+
 <script lang="ts">
 	import type { Snippet } from 'svelte';
 	import { page } from '$app/state';
@@ -5,16 +11,22 @@
 	interface Props {
 		href: string;
 		newTab?: boolean;
+		matcher?: Matcher;
 		children: Snippet;
 	}
 
-	const { href, newTab = false, children }: Props = $props();
+	const {
+		href,
+		newTab = false,
+		matcher = (href, page) => page.route.id === href,
+		children
+	}: Props = $props();
 	const external = $derived(href.startsWith('https://') || href.startsWith('http://'));
 </script>
 
 <a
 	{href}
-	class:current={!external && page.route.id === href}
+	class:current={!external && matcher(href, page)}
 	target={newTab || external ? '_blank' : null}
 	rel={external ? 'noopener noreferrer' : null}
 >
