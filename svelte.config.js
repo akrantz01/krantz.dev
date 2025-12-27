@@ -16,6 +16,12 @@ const config = {
 		alias: {
 			$content: 'content'
 		}
+	},
+
+	compilerOptions: {
+		experimental: {
+			async: true
+		}
 	}
 };
 

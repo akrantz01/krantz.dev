@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { PageProps } from './$types';
+	import Markdown from '$lib/markdown';
 
 	const { data }: PageProps = $props();
 </script>
@@ -9,4 +10,4 @@
 <!-- TODO: find better way of formatting date -->
 <p>{data.meta.date}</p>
 
-{data.content}
+<Markdown src={data.content} />
