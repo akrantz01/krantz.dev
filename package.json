@@ -23,6 +23,7 @@
 		"@types/mdast": "^4.0.4",
 		"@types/node": "^24",
 		"@types/unist": "^3.0.3",
+		"date-fns": "^4.1.0",
 		"eslint": "^9.39.1",
 		"eslint-config-prettier": "^10.1.8",
 		"eslint-plugin-svelte": "^3.13.1",
