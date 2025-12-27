@@ -31,11 +31,21 @@
 
 		&.current {
 			background-color: var(--link-current-bg, var(--link-bg));
-			color: var(--link-current-fg, var(--link-fg));
 		}
 
 		&:hover {
 			text-decoration: none;
+		}
+	}
+
+	a,
+	a:visited,
+	a:hover,
+	a:active {
+		color: var(--link-fg, inherit);
+
+		&.current {
+			color: var(--link-current-fg, var(--link-fg));
 		}
 	}
 </style>
