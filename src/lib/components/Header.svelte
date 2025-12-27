@@ -2,6 +2,7 @@
 	import { page } from '$app/state';
 	import Link, { type Matcher } from './Link.svelte';
 	import icon from '$lib/assets/favicon.svg';
+	import { resolve } from '$app/paths';
 
 	const MINIMAL_ROUTES = ['/'];
 
@@ -28,7 +29,7 @@
 	<div class="name">
 		<img src={icon} alt="Blog logo" height="56rem" />
 		{#if !minimal}
-			<h1>Alex Krantz</h1>
+			<h1><a href={resolve('/')}>Alex Krantz</a></h1>
 		{/if}
 	</div>
 
@@ -61,6 +62,21 @@
 
 		h1 {
 			margin: 0;
+
+			a,
+			a:visited,
+			a:hover,
+			a:active {
+				color: var(--on-surface);
+			}
+
+			a {
+				text-decoration: none;
+			}
+
+			a:hover {
+				text-decoration: underline;
+			}
 		}
 	}
 
