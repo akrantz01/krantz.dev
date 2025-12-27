@@ -3,7 +3,7 @@ title: Securing servers with SSH certificates
 description: Learn how to SSH certificates instead of public keys using SmallStep
 category: Write-up
 date: 2020-11-13T00:00:00.000Z
-lastModified: 2025-12-27T09:57:16.370Z
+lastModified: 2025-12-27T06:40:40.000Z
 ---
 
 First off, hello to anyone reading this.
