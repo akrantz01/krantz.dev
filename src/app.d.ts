@@ -10,4 +10,10 @@ declare global {
 	}
 }
 
+declare module 'vfile' {
+	interface DataMap {
+		stripDirectives?: boolean;
+	}
+}
+
 export {};

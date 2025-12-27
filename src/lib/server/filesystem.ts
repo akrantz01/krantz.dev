@@ -2,6 +2,8 @@ import matter from 'gray-matter';
 import type { ZodType } from 'zod';
 import * as z from 'zod';
 
+const FILE_EXTENSION_REGEX = /\.[^.]+$/;
+
 export class FileSystem<C> {
 	protected readonly content: Map<string, C>;
 
@@ -29,6 +31,7 @@ export class FileSystem<C> {
 
 export interface MarkdownFile<M> {
 	path: string;
+	slug: string;
 	meta: M;
 }
 
@@ -59,7 +62,7 @@ export class MarkdownFileSystem<S extends ZodType> extends FileSystem<string> {
 	listWithFrontmatter(): MarkdownFile<MetaOf<S>>[] {
 		return this.metadata
 			.entries()
-			.map(([path, meta]) => ({ path, meta }))
+			.map(([path, meta]) => ({ path, slug: path.replace(FILE_EXTENSION_REGEX, ''), meta }))
 			.toArray();
 	}
 

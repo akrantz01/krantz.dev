@@ -4,23 +4,25 @@
 	import { resolve } from '$app/paths';
 	import Date from '$lib/components/Date.svelte';
 
-	const FILE_EXTENSION_REGEX = /\.[^.]+$/;
-
 	const { data }: PageProps = $props();
 </script>
 
 <h1>Blog</h1>
 
 <!-- TODO: add atom feed -->
-<p>Subscribe via <Link href="#">RSS/Atom</Link></p>
+<p>
+	Subscribe via
+	<Link href="/feed.rss">RSS</Link> /
+	<Link href="/feed.atom">Atom</Link> /
+	<Link href="/feed.json">JSON feed</Link>
+</p>
 
 <section>
 	{#each data.posts as post (post.path)}
 		{@const meta = post.meta}
-		{@const slug = post.path.replace(FILE_EXTENSION_REGEX, '')}
 		<article>
 			<div>
-				<h2><Link href={resolve('/blog/[slug]', { slug })}>{meta.title}</Link></h2>
+				<h2><Link href={resolve('/blog/[slug]', { slug: post.slug })}>{meta.title}</Link></h2>
 				<Date value={meta.date} />
 			</div>
 
