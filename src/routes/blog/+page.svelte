@@ -2,6 +2,7 @@
 	import Link from '$lib/components/Link.svelte';
 	import type { PageProps } from './$types';
 	import { resolve } from '$app/paths';
+	import Date from '$lib/components/Date.svelte';
 
 	const FILE_EXTENSION_REGEX = /\.[^.]+$/;
 
@@ -20,8 +21,7 @@
 		<article>
 			<div>
 				<h2><Link href={resolve('/blog/[slug]', { slug })}>{meta.title}</Link></h2>
-				<!-- TODO: find better way to display date -->
-				<p>{meta.date}</p>
+				<Date value={meta.date} />
 			</div>
 
 			<p>{meta.description}</p>
