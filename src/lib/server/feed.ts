@@ -23,8 +23,6 @@ export default async function populateFeed(): Promise<Feed> {
 		favicon: publicUrl('favicon.ico'),
 		copyright: `All rights reserved ${new Date().getFullYear()}, Alex Krantz`,
 		generator: 'krantz.dev',
-		// TODO: choose based on last update to post
-		updated: new Date(),
 		feedLinks: {
 			atom: feedLink('atom'),
 			rss: feedLink('rss'),
@@ -33,9 +31,17 @@ export default async function populateFeed(): Promise<Feed> {
 	});
 
 	const files = fs.listWithFrontmatter();
-	files.sort((a, b) => compareDesc(a.meta.date, b.meta.date));
 
-	const rendered = await Promise.all(files.map((f) => parser.render(fs.read(f.path)!)));
+	const byLastModified = files.toSorted((a, b) =>
+		compareDesc(a.meta.lastModified ?? a.meta.date, b.meta.lastModified ?? b.meta.date)
+	);
+	feed.options.updated = byLastModified[0].meta.lastModified ?? byLastModified[0].meta.date;
+
+	const rendered = await Promise.all(
+		files
+			.toSorted((a, b) => compareDesc(a.meta.date, b.meta.date))
+			.map((f) => parser.render(fs.read(f.path)!))
+	);
 	for (let i = 0; i < files.length; i++) {
 		const post = files[i];
 		const url = publicUrl(resolve('/blog/[slug]', { slug: post.slug }));
@@ -43,8 +49,7 @@ export default async function populateFeed(): Promise<Feed> {
 			id: url,
 			title: post.meta.title,
 			description: post.meta.description,
-			// TODO: distinguished between updated (date) and published
-			date: post.meta.date,
+			date: post.meta.lastModified ?? post.meta.date,
 			published: post.meta.date,
 			link: url,
 			content: rendered[i]

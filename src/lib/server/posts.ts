@@ -4,7 +4,8 @@ import * as z from 'zod';
 export const Metadata = z.object({
 	title: z.string().min(1),
 	description: z.string().min(1),
-	date: z.date()
+	date: z.date(),
+	lastModified: z.date().nullable()
 });
 
 export const fs = new MarkdownFileSystem(
