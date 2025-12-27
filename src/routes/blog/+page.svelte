@@ -19,7 +19,7 @@
 		{@const slug = post.path.replace(FILE_EXTENSION_REGEX, '')}
 		<article>
 			<div>
-				<h2><a href={resolve('/blog/[slug]', { slug })}>{meta.title}</a></h2>
+				<h2><Link href={resolve('/blog/[slug]', { slug })}>{meta.title}</Link></h2>
 				<!-- TODO: find better way to display date -->
 				<p>{meta.date}</p>
 			</div>
