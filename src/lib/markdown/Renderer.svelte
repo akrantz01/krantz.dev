@@ -66,3 +66,10 @@
 {:else if node.type === 'text' || node.type === 'raw'}
 	{node.value}
 {/if}
+
+<style>
+	/* TODO: make rendered styling more customizable */
+	p {
+		font-size: 13pt;
+	}
+</style>
