@@ -1,3 +1,9 @@
+<script lang="ts">
+	import SEO from '$lib/components/SEO.svelte';
+</script>
+
+<SEO />
+
 <div class="hero">
 	<h1>Alex Krantz</h1>
 

@@ -3,9 +3,12 @@
 	import type { PageProps } from './$types';
 	import { resolve } from '$app/paths';
 	import Date from '$lib/components/Date.svelte';
+	import SEO from '$lib/components/SEO.svelte';
 
 	const { data }: PageProps = $props();
 </script>
+
+<SEO title="Blog" />
 
 <h1>Blog</h1>
 
