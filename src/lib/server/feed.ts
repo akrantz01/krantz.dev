@@ -4,6 +4,7 @@ import { resolve } from '$app/paths';
 import { Parser } from '$lib/markdown';
 import { fs } from './posts';
 import { compareDesc } from 'date-fns';
+import * as meta from '$lib/meta';
 
 export const SUPPORTED_FORMATS = ['atom', 'rss', 'json'];
 
@@ -15,16 +16,16 @@ export type FeedGenerator = Pick<Feed, 'atom1' | 'json1' | 'rss2'>;
 export default async function populateFeed(): Promise<Feed> {
 	const parser = new Parser();
 
-	// TODO: extract common metadata (i.e. title, description, etc) into shared location
 	const feed = new Feed({
-		title: 'Alex Krantz',
-		description: 'My little corner of the internet',
+		title: meta.siteName,
+		description: meta.description,
 		id: PUBLIC_URL,
 		link: PUBLIC_URL,
-		language: 'en',
+		language: meta.language,
 		favicon: publicUrl('favicon.ico'),
-		copyright: `All rights reserved ${new Date().getFullYear()}, Alex Krantz`,
+		copyright: `All rights reserved ${new Date().getFullYear()}, ${meta.author}`,
 		generator: 'krantz.dev',
+		author: { name: meta.author },
 		feedLinks: Object.fromEntries(SUPPORTED_FORMATS.map((format) => [format, feedLink(format)]))
 	});
 
