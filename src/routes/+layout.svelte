@@ -1,7 +1,11 @@
 <script lang="ts">
+	import { config } from '@fortawesome/fontawesome-svg-core';
 	import Header from '$lib/components/Header.svelte';
+	import '@fortawesome/fontawesome-svg-core/styles.css';
 
 	let { children } = $props();
+
+	config.autoAddCss = false;
 </script>
 
 <Header />
