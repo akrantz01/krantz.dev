@@ -1,0 +1,37 @@
+{
+	"name": "markdown",
+	"version": "1.0.0",
+	"description": "A customzied markdown renderer",
+	"type": "module",
+	"exports": {
+		".": {
+			"import": "./dist/markdown.js",
+			"types": "./dist/index.d.ts"
+		}
+	},
+	"scripts": {
+		"build": "vite build",
+		"test": "vitest"
+	},
+	"dependencies": {
+		"hast-util-to-html": "^9.0.5",
+		"mdast-util-directive": "^3.1.0",
+		"mdast-util-to-hast": "^13.2.1",
+		"remark-directive": "^4.0.0",
+		"remark-gfm": "^4.0.1",
+		"remark-parse": "^11.0.0",
+		"remark-rehype": "^11.1.2",
+		"unified": "^11.0.5",
+		"unist-util-visit": "^5.0.0",
+		"vfile": "^6.0.3"
+	},
+	"devDependencies": {
+		"@types/hast": "^3.0.4",
+		"@types/mdast": "^4.0.4",
+		"@types/unist": "^3.0.3",
+		"typescript": "^5.9.3",
+		"vite": "^7.3.0",
+		"vite-plugin-dts": "^4.5.4",
+		"vitest": "^4.0.16"
+	}
+}
