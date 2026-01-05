@@ -8,8 +8,9 @@
 	import type { Snippet } from 'svelte';
 	import { page } from '$app/state';
 	import { resolve } from '$app/paths';
+	import type { HTMLAnchorAttributes } from 'svelte/elements';
 
-	interface Props {
+	interface Props extends HTMLAnchorAttributes {
 		href: string;
 		newTab?: boolean;
 		matcher?: Matcher;
@@ -17,19 +18,23 @@
 	}
 
 	const {
-		href,
+		href: to,
 		newTab = false,
 		matcher = (href, page) => page.route.id === href,
-		children
+		children,
+		...rest
 	}: Props = $props();
-	const external = $derived(href.startsWith('https://') || href.startsWith('http://'));
+	const anchor = $derived(to.startsWith('#'));
+	const external = $derived(to.startsWith('https://') || to.startsWith('http://'));
+	const href = $derived(anchor || external ? to : resolve(to));
 </script>
 
 <a
-	href={external ? href : resolve(href)}
+	{href}
 	class:current={!external && matcher(href, page)}
 	target={newTab || external ? '_blank' : null}
 	rel={external ? 'noopener noreferrer' : null}
+	{...rest}
 >
 	{@render children()}
 </a>
