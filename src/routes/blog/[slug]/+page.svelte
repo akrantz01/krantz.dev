@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { PageProps } from './$types';
-	import Markdown from '$lib/markdown';
+	import Markdown from '$lib/components/markdown';
 	import Link from '$lib/components/Link.svelte';
 	import Date from '$lib/components/Date.svelte';
 	import SEO from '$lib/components/SEO.svelte';
