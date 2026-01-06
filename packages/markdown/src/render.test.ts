@@ -28,7 +28,11 @@ describe('hast conversion', () => {
 			]
 		});
 		expect(rendered).toStrictEqual([
-			{ type: 'html', html: '<!doctype html><!--this is a test--><p>hello world</p>' }
+			{
+				type: 'html',
+				html: '<!doctype html><!--this is a test--><p>hello world</p>',
+				key: '0:html'
+			}
 		]);
 	});
 
@@ -40,7 +44,13 @@ describe('hast conversion', () => {
 			]
 		});
 		expect(rendered).toStrictEqual([
-			{ type: 'custom-element', name: 'fancy', properties: { color: 'rainbow' }, children: [] }
+			{
+				type: 'custom-element',
+				name: 'fancy',
+				properties: { color: 'rainbow' },
+				children: [],
+				key: '0:custom'
+			}
 		]);
 	});
 
@@ -61,9 +71,9 @@ describe('hast conversion', () => {
 			]
 		});
 		expect(rendered).toStrictEqual([
-			{ type: 'html', html: '<p>hello ' },
-			{ type: 'custom-element', name: 'fancy', properties: {}, children: [] },
-			{ type: 'html', html: 'world</p>' }
+			{ type: 'html', html: '<p>hello ', key: '0:open' },
+			{ type: 'custom-element', name: 'fancy', properties: {}, children: [], key: '0.1:custom' },
+			{ type: 'html', html: 'world</p>', key: '0.2:html' }
 		]);
 	});
 
@@ -82,7 +92,8 @@ describe('hast conversion', () => {
 		expect(rendered).toStrictEqual([
 			{
 				type: 'html',
-				html: '<input class="a b" disabled title="a&#x22;b &#x26; c">'
+				html: '<input class="a b" disabled title="a&#x22;b &#x26; c">',
+				key: '0:open'
 			}
 		]);
 	});
@@ -99,7 +110,9 @@ describe('hast conversion', () => {
 				}
 			]
 		});
-		expect(rendered).toStrictEqual([{ type: 'html', html: '<p>&#x3C;&#x26;</p>' }]);
+		expect(rendered).toStrictEqual([
+			{ type: 'html', html: '<p>&#x3C;&#x26;</p>', key: '0:open' }
+		]);
 	});
 
 	test('does not escape text in script/style', () => {
@@ -121,7 +134,7 @@ describe('hast conversion', () => {
 			]
 		});
 		expect(rendered).toStrictEqual([
-			{ type: 'html', html: '<script><&</script><style><&</style>' }
+			{ type: 'html', html: '<script><&</script><style><&</style>', key: '0:open' }
 		]);
 	});
 
@@ -130,7 +143,7 @@ describe('hast conversion', () => {
 			type: 'root',
 			children: [{ type: 'raw', value: '<&' }]
 		});
-		expect(rendered).toStrictEqual([{ type: 'html', html: '&#x3C;&#x26;' }]);
+		expect(rendered).toStrictEqual([{ type: 'html', html: '&#x3C;&#x26;', key: '0:html' }]);
 	});
 
 	test('serializes void elements with unexpected children', () => {
@@ -146,7 +159,7 @@ describe('hast conversion', () => {
 			]
 		});
 		expect(rendered).toStrictEqual([
-			{ type: 'html', html: '<img alt="x">oops</img>' }
+			{ type: 'html', html: '<img alt="x">oops</img>', key: '0:open' }
 		]);
 	});
 
@@ -166,7 +179,9 @@ describe('hast conversion', () => {
 				}
 			]
 		});
-		expect(rendered).toStrictEqual([{ type: 'html', html: '<template>hi</template>' }]);
+		expect(rendered).toStrictEqual([
+			{ type: 'html', html: '<template>hi</template>', key: '0:open' }
+		]);
 	});
 });
 
@@ -179,7 +194,9 @@ describe('HtmlSerializer parity', () => {
 			type: 'root',
 			children: [{ type: 'doctype' }]
 		});
-		expect(rendered).toStrictEqual([{ type: 'html', html: '<!doctype html>' }]);
+		expect(rendered).toStrictEqual([
+			{ type: 'html', html: '<!doctype html>', key: '0:html' }
+		]);
 	});
 
 	test('escapes comments per html rules', () => {
@@ -187,7 +204,9 @@ describe('HtmlSerializer parity', () => {
 			type: 'root',
 			children: [{ type: 'comment', value: '-->' }]
 		});
-		expect(rendered).toStrictEqual([{ type: 'html', html: '<!----&#x3E;-->' }]);
+		expect(rendered).toStrictEqual([
+			{ type: 'html', html: '<!----&#x3E;-->', key: '0:html' }
+		]);
 	});
 
 	test('collapses boolean attributes', () => {
@@ -202,7 +221,9 @@ describe('HtmlSerializer parity', () => {
 				}
 			]
 		});
-		expect(rendered).toStrictEqual([{ type: 'html', html: '<input disabled>' }]);
+		expect(rendered).toStrictEqual([
+			{ type: 'html', html: '<input disabled>', key: '0:open' }
+		]);
 	});
 
 	test('serializes space and comma separated attribute values', () => {
@@ -218,7 +239,7 @@ describe('HtmlSerializer parity', () => {
 			]
 		});
 		expect(rendered).toStrictEqual([
-			{ type: 'html', html: '<div class="a b" accept="a, b"></div>' }
+			{ type: 'html', html: '<div class="a b" accept="a, b"></div>', key: '0:open' }
 		]);
 	});
 
@@ -235,7 +256,7 @@ describe('HtmlSerializer parity', () => {
 			]
 		});
 		expect(rendered).toStrictEqual([
-			{ type: 'html', html: '<input tabindex="0" value="0">' }
+			{ type: 'html', html: '<input tabindex="0" value="0">', key: '0:open' }
 		]);
 	});
 
@@ -252,7 +273,87 @@ describe('HtmlSerializer parity', () => {
 			]
 		});
 		expect(rendered).toStrictEqual([
-			{ type: 'html', html: '<div title="a<&#x26;&#x22;b"></div>' }
+			{ type: 'html', html: '<div title="a<&#x26;&#x22;b"></div>', key: '0:open' }
+		]);
+	});
+});
+
+describe('key generation', () => {
+	const processor = unified().use(rehypeRender).freeze();
+	const stringify = (node: Root): ResultRoot => processor.stringify(node);
+
+	test('assigns path keys for nested elements and custom nodes', () => {
+		const rendered = stringify({
+			type: 'root',
+			children: [
+				{
+					type: 'element',
+					tagName: 'div',
+					properties: {},
+					children: [
+						{ type: 'text', value: 'a' },
+						{ type: 'custom-element', name: 'x', properties: {}, children: [] },
+						{
+							type: 'element',
+							tagName: 'span',
+							properties: {},
+							children: [{ type: 'text', value: 'b' }]
+						}
+					]
+				}
+			]
+		});
+		expect(rendered).toStrictEqual([
+			{ type: 'html', html: '<div>a', key: '0:open' },
+			{ type: 'custom-element', name: 'x', properties: {}, children: [], key: '0.1:custom' },
+			{ type: 'html', html: '<span>b</span></div>', key: '0.2:open' }
+		]);
+	});
+
+	test('keeps distinct keys for sibling nodes', () => {
+		const rendered = stringify({
+			type: 'root',
+			children: [
+				{ type: 'text', value: 'hi' },
+				{ type: 'custom-element', name: 'mid', properties: {}, children: [] },
+				{ type: 'text', value: 'bye' }
+			]
+		});
+		expect(rendered).toStrictEqual([
+			{ type: 'html', html: 'hi', key: '0:html' },
+			{ type: 'custom-element', name: 'mid', properties: {}, children: [], key: '1:custom' },
+			{ type: 'html', html: 'bye', key: '2:html' }
+		]);
+	});
+
+	test('assigns keys within custom element children', () => {
+		const rendered = stringify({
+			type: 'root',
+			children: [
+				{
+					type: 'custom-element',
+					name: 'outer',
+					properties: {},
+					children: [
+						{ type: 'text', value: 'a' },
+						{ type: 'custom-element', name: 'inner', properties: {}, children: [] },
+						{ type: 'text', value: 'b' }
+					]
+				}
+			]
+		});
+		expect(rendered).toStrictEqual([
+			{
+				type: 'custom-element',
+				name: 'outer',
+				properties: {},
+				children: [
+					{ type: 'html', html: 'a', key: '0.0:html' },
+					{ type: 'custom-element', name: 'inner', properties: {}, children: [], key: '0.1:custom' },
+					{ type: 'html', html: 'b', key: '0.2:html' }
+				],
+				key: '0:custom'
+			}
 		]);
 	});
 });

@@ -13,6 +13,7 @@ export type Result = Html | CustomElement;
 interface Html {
 	type: 'html';
 	html: string;
+	key?: string;
 }
 
 interface CustomElement {
@@ -20,13 +21,14 @@ interface CustomElement {
 	name: string;
 	properties: Record<string, unknown>;
 	children: Result[];
+	key?: string;
 }
 
 const rehypeRender: Plugin<[], Root, ResultRoot> = function () {
 	this.compiler = (tree: Node): ResultRoot => {
 		const serializer = new HtmlSerializer();
 		const root = tree as Root;
-		return processNodes(root.children, serializer, root);
+		return processNodes(root.children, serializer, root, '');
 	};
 };
 
@@ -35,18 +37,26 @@ export default rehypeRender;
 const processNodes = (
 	nodes: RootContent[],
 	serializer: HtmlSerializer,
-	parent?: Node
+	parent?: Node,
+	parentKey?: string
 ): ResultRoot => {
 	const results: ResultRoot = [];
 
-	for (const node of nodes) {
-		appendResults(results, processNode(node, serializer, parent));
+	for (let index = 0; index < nodes.length; index += 1) {
+		const node = nodes[index];
+		const nodeKeyBase = buildKeyBase(parentKey, index);
+		appendResults(results, processNode(node, serializer, parent, nodeKeyBase));
 	}
 
 	return results;
 };
 
-const processNode = (node: RootContent, serializer: HtmlSerializer, parent?: Node): Result[] => {
+const processNode = (
+	node: RootContent,
+	serializer: HtmlSerializer,
+	parent: Node | undefined,
+	nodeKeyBase: string
+): Result[] => {
 	switch (node.type) {
 		case 'custom-element':
 			return [
@@ -54,7 +64,8 @@ const processNode = (node: RootContent, serializer: HtmlSerializer, parent?: Nod
 					type: 'custom-element',
 					name: node.name,
 					properties: node.properties,
-					children: processNodes(node.children as RootContent[], serializer, node)
+					children: processNodes(node.children as RootContent[], serializer, node, nodeKeyBase),
+					key: `${nodeKeyBase}:custom`
 				}
 			];
 		case 'element': {
@@ -67,38 +78,49 @@ const processNode = (node: RootContent, serializer: HtmlSerializer, parent?: Nod
 			const close = selfClosing ? '' : `</${tagName}>`;
 			const results: Result[] = [];
 
-			appendHtml(results, open);
-			for (const child of children) {
-				appendResults(results, processNode(child, serializer, node));
+			appendHtml(results, open, `${nodeKeyBase}:open`);
+			for (let index = 0; index < children.length; index += 1) {
+				const child = children[index];
+				const childKeyBase = buildKeyBase(nodeKeyBase, index);
+				appendResults(results, processNode(child, serializer, node, childKeyBase));
 			}
-			appendHtml(results, close);
+			appendHtml(results, close, `${nodeKeyBase}:close`);
 
 			return results;
 		}
 		default:
-			return [{ type: 'html', html: serializer.serializeNode(node, parent) }];
+			return [
+				{
+					type: 'html',
+					html: serializer.serializeNode(node, parent),
+					key: `${nodeKeyBase}:html`
+				}
+			];
 	}
 };
 
 const appendResults = (results: Result[], next: Result[]): void => {
 	for (const entry of next) {
 		if (entry.type === 'html') {
-			appendHtml(results, entry.html);
+			appendHtml(results, entry.html, entry.key);
 		} else {
 			results.push(entry);
 		}
 	}
 };
 
-const appendHtml = (results: Result[], html: string): void => {
+const appendHtml = (results: Result[], html: string, key?: string): void => {
 	if (!html) return;
 	const last = results[results.length - 1];
 	if (last?.type === 'html') {
 		last.html += html;
 	} else {
-		results.push({ type: 'html', html });
+		results.push(key ? { type: 'html', html, key } : { type: 'html', html });
 	}
 };
+
+const buildKeyBase = (parentKey: string | undefined, index: number): string =>
+	parentKey ? `${parentKey}.${index}` : `${index}`;
 
 class HtmlSerializer {
 	settings = {
