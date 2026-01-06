@@ -149,15 +149,21 @@ importers:
 
   packages/markdown:
     dependencies:
-      hast-util-to-html:
-        specifier: ^9.0.5
-        version: 9.0.5
+      comma-separated-tokens:
+        specifier: ^2.0.3
+        version: 2.0.3
+      html-void-elements:
+        specifier: ^3.0.0
+        version: 3.0.0
       mdast-util-directive:
         specifier: ^3.1.0
         version: 3.1.0
       mdast-util-to-hast:
         specifier: ^13.2.1
         version: 13.2.1
+      property-information:
+        specifier: ^7.1.0
+        version: 7.1.0
       remark-directive:
         specifier: ^4.0.0
         version: 4.0.0
@@ -170,6 +176,12 @@ importers:
       remark-rehype:
         specifier: ^11.1.2
         version: 11.1.2
+      space-separated-tokens:
+        specifier: ^2.0.2
+        version: 2.0.2
+      stringify-entities:
+        specifier: ^4.0.4
+        version: 4.0.4
       unified:
         specifier: ^11.0.5
         version: 11.0.5
@@ -179,6 +191,9 @@ importers:
       vfile:
         specifier: ^6.0.3
         version: 6.0.3
+      vfile-message:
+        specifier: ^4.0.3
+        version: 4.0.3
     devDependencies:
       '@types/hast':
         specifier: ^3.0.4

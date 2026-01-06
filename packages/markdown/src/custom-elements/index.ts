@@ -1,10 +1,11 @@
 import type { ElementContent, Parent, Properties } from 'hast';
 import type { Node } from 'mdast';
-import { type Handler } from 'mdast-util-to-hast';
+import type { Handler } from 'mdast-util-to-hast';
 import type { Options } from 'remark-rehype';
+import { TextDirective } from 'mdast-util-directive';
 
 import textDirectives from './text-directives';
-import { TextDirective } from 'mdast-util-directive';
+import Reporter from './reporter';
 
 export interface CustomElement extends Parent {
 	type: 'custom-element';
@@ -12,11 +13,12 @@ export interface CustomElement extends Parent {
 	properties: Properties;
 }
 
-export const unknownHandler: Handler = (_state, node: Node): ElementContent | undefined => {
+export const unknownHandler: Handler = (state, node: Node): ElementContent | undefined => {
+	const reporter = new Reporter(state);
+
 	switch (node.type) {
 		case 'textDirective':
-			// return textDirectives(node as TextDirective);
-			throw new Error('not yet implemented');
+			return textDirectives(reporter, node as TextDirective);
 
 		case 'leafDirective':
 			throw new Error('not yet implemented');
