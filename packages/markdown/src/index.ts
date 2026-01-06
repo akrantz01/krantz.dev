@@ -4,6 +4,7 @@ import type { Root as HastRoot } from 'hast';
 import remarkParse from 'remark-parse';
 import remarkGfm from 'remark-gfm';
 import remarkDirective from 'remark-directive';
+import remarkEmoji from 'remark-emoji';
 import remarkRehype from 'remark-rehype';
 import type { VFileMessage } from 'vfile-message';
 import type { Point, Position } from 'unist';
@@ -15,6 +16,7 @@ const processor: Processor<MdastRoot, MdastRoot, HastRoot, HastRoot, ResultRoot>
 	.use(remarkParse)
 	.use(remarkGfm)
 	.use(remarkDirective)
+	.use(remarkEmoji, { accessible: true })
 	.use(remarkRehype, remarkRehypeOptions)
 	.use(rehypeRender)
 	.freeze();
