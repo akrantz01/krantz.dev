@@ -6,19 +6,18 @@ import remarkGfm from 'remark-gfm';
 import remarkDirective from 'remark-directive';
 import remarkEmoji from 'remark-emoji';
 import remarkRehype from 'remark-rehype';
-import type { VFileMessage } from 'vfile-message';
 import type { Point, Position } from 'unist';
+import { VFile } from 'vfile';
+import type { VFileMessage } from 'vfile-message';
 
-import rehypeRender, { type ResultRoot } from './render';
 import remarkRehypeOptions from './custom-elements';
 
-const processor: Processor<MdastRoot, MdastRoot, HastRoot, HastRoot, ResultRoot> = unified()
+const processor: Processor<MdastRoot, MdastRoot, HastRoot, undefined, undefined> = unified()
 	.use(remarkParse)
 	.use(remarkGfm)
 	.use(remarkDirective)
 	.use(remarkEmoji, { accessible: true })
 	.use(remarkRehype, remarkRehypeOptions)
-	.use(rehypeRender)
 	.freeze();
 
 export type MessageStatus = 'error' | 'warning' | 'info';
@@ -37,13 +36,16 @@ export interface Message {
 }
 
 export interface Rendered {
-	result: ResultRoot;
+	ast: HastRoot;
 	messages: Message[];
 }
 
 export async function render(src: string): Promise<Rendered> {
-	const { messages, result } = await processor.process(src);
-	return { result, messages: messages.map(convertMessage) };
+	const file = new VFile(src);
+	const ast = processor.parse(file);
+	const html = await processor.run(ast, file);
+
+	return { ast: html, messages: file.messages.map(convertMessage) };
 }
 
 const convertMessage = (vmsg: VFileMessage): Message => {
