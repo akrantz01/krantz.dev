@@ -9,8 +9,10 @@ import remarkRehype from 'remark-rehype';
 import type { Point, Position } from 'unist';
 import { VFile } from 'vfile';
 import type { VFileMessage } from 'vfile-message';
+import { remove } from 'unist-util-remove';
 
 import remarkRehypeOptions from './custom-elements';
+import { toHtml } from 'hast-util-to-html';
 
 const processor: Processor<MdastRoot, MdastRoot, HastRoot, undefined, undefined> = unified()
 	.use(remarkParse)
@@ -48,6 +50,12 @@ export async function render(src: string): Promise<Rendered> {
 	const html = await processor.run(ast, file);
 
 	return { ast: html, messages: file.messages.map(convertMessage) };
+}
+
+export async function renderToString(src: string): Promise<string> {
+	const { ast } = await render(src);
+	remove(ast, 'custom-element');
+	return toHtml(ast);
 }
 
 const convertMessage = (vmsg: VFileMessage): Message => {

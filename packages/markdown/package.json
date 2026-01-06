@@ -14,6 +14,7 @@
 		"test": "vitest"
 	},
 	"dependencies": {
+		"hast-util-to-html": "^9.0.5",
 		"mdast-util-directive": "^3.1.0",
 		"mdast-util-to-hast": "^13.2.1",
 		"remark-directive": "^4.0.0",
@@ -22,6 +23,7 @@
 		"remark-parse": "^11.0.0",
 		"remark-rehype": "^11.1.2",
 		"unified": "^11.0.5",
+		"unist-util-remove": "^4.0.0",
 		"vfile": "^6.0.3",
 		"vfile-message": "^4.0.3"
 	},
