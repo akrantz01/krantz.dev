@@ -1,10 +1,11 @@
 <script lang="ts" module>
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	export type AnyComponent = Component<any>;
-	export type Renderers = Record<string, AnyComponent | string | null>;
+	export type Overrides = Record<string, AnyComponent | string | null>;
+	export type CustomElements = Record<string, AnyComponent>;
 
-	function resolveRenderers(
-		available: Renderers,
+	function resolveOverrides(
+		available: Overrides,
 		tag: string,
 		resolutionChain: string[] = []
 	): AnyComponent | string | null {
@@ -15,7 +16,7 @@
 
 		const resolved = available[tag];
 		if (typeof resolved === 'string')
-			return resolveRenderers(available, resolved, [...resolutionChain, tag]);
+			return resolveOverrides(available, resolved, [...resolutionChain, tag]);
 
 		if (resolved === null) return null;
 		if (resolved === undefined) return tag;
@@ -24,28 +25,31 @@
 </script>
 
 <script lang="ts">
-	import type { Component } from 'svelte';
+	import type { CustomElement } from 'markdown';
+	import type { Component, Snippet } from 'svelte';
 	import type { HastNode } from './parser';
 	import Renderer from './Renderer.svelte';
 
 	interface Props {
 		node: HastNode;
-		renderers: Renderers;
+		overrides: Overrides;
+		customElements: CustomElements;
+		customElementFallback?: Snippet<[CustomElement]>;
 	}
-	const { node, renderers }: Props = $props();
+	const { node, overrides, customElements, customElementFallback = undefined }: Props = $props();
 </script>
 
 {#snippet children(nodes: HastNode[])}
 	<!-- eslint-disable-next-line svelte/require-each-key -->
 	{#each nodes as child}
-		<Renderer node={child} {renderers} />
+		<Renderer node={child} {overrides} {customElements} />
 	{/each}
 {/snippet}
 
 {#if node.type === 'root'}
 	{@render children(node.children)}
 {:else if node.type === 'element'}
-	{@const Resolved = resolveRenderers(renderers, node.tagName)}
+	{@const Resolved = resolveOverrides(overrides, node.tagName)}
 	{#if typeof Resolved === 'string'}
 		{#if Array.isArray(node.children) && node.children.length > 0}
 			<svelte:element this={Resolved} {...node.properties}>
@@ -62,6 +66,19 @@
 		{:else}
 			<Resolved {...node.properties} />
 		{/if}
+	{/if}
+{:else if node.type === 'custom-element'}
+	{@const CustomElement = customElements[node.name]}
+	{#if CustomElement !== undefined}
+		{#if node.children.length > 0}
+			<CustomElement {...node.properties}>
+				{@render children(node.children)}
+			</CustomElement>
+		{:else}
+			<CustomElement {...node.properties} />
+		{/if}
+	{:else}
+		{@render customElementFallback?.(node)}
 	{/if}
 {:else if node.type === 'text' || node.type === 'raw'}
 	{node.value}

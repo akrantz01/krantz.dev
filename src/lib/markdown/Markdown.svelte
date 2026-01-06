@@ -1,15 +1,24 @@
 <script lang="ts">
-	import Parser from './parser';
-	import Renderer, { type Renderers } from './Renderer.svelte';
+	import { render, type CustomElement } from 'markdown';
+	import Renderer, { type CustomElements, type Overrides } from './Renderer.svelte';
+	import type { Snippet } from 'svelte';
 
 	interface Props {
 		src: string;
-		renderers?: Renderers;
+		overrides?: Overrides;
+		customElements?: CustomElements;
+		customElementFallback?: Snippet<[CustomElement]>;
 	}
-	const { src, renderers = {} }: Props = $props();
+	const {
+		src,
+		overrides = {},
+		customElements = {},
+		customElementFallback = undefined
+	}: Props = $props();
 
-	const parser = $state(new Parser());
-	const ast = $derived(parser.parse(src));
+	const { ast } = $derived(await render(src));
 </script>
 
-<Renderer node={await ast} {renderers} />
+<Renderer node={ast} {overrides} {customElements} {customElementFallback} />
+
+<!-- TODO: display messages somewhere/somehow (probably a toggleable modal?) -->

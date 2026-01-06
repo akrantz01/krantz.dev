@@ -19,7 +19,7 @@
 	{/if}
 </p>
 
-<Markdown src={data.content} renderers={{ a: Link }} />
+<Markdown src={data.content} overrides={{ a: Link }} />
 
 <style>
 	.timestamps {

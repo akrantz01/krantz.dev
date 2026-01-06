@@ -40,6 +40,8 @@ export interface Rendered {
 	messages: Message[];
 }
 
+export type { CustomElement } from './custom-elements';
+
 export async function render(src: string): Promise<Rendered> {
 	const file = new VFile(src);
 	const ast = processor.parse(file);
