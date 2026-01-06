@@ -23,10 +23,4 @@ declare module 'hast' {
 	}
 }
 
-declare module 'vfile' {
-	interface DataMap {
-		stripDirectives?: boolean;
-	}
-}
-
 export {};

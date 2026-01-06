@@ -25,9 +25,8 @@
 </script>
 
 <script lang="ts">
-	import type { CustomElement } from 'markdown';
+	import type { CustomElement, HastNode } from 'markdown';
 	import type { Component, Snippet } from 'svelte';
-	import type { HastNode } from './parser';
 	import Renderer from './Renderer.svelte';
 
 	interface Props {

@@ -24,10 +24,7 @@
 		"@sveltejs/adapter-static": "^3.0.10",
 		"@sveltejs/kit": "^2.49.1",
 		"@sveltejs/vite-plugin-svelte": "^6.2.1",
-		"@types/hast": "^3.0.4",
-		"@types/mdast": "^4.0.4",
 		"@types/node": "^24",
-		"@types/unist": "^3.0.3",
 		"date-fns": "^4.1.0",
 		"dotenv": "^17.2.3",
 		"eslint": "^9.39.1",
@@ -40,7 +37,6 @@
 		"ico-endec": "^0.1.6",
 		"isomorphic-git": "^1.36.1",
 		"markdown": "workspace:*",
-		"mdast-util-directive": "^3.1.0",
 		"prettier": "^3.7.4",
 		"prettier-plugin-svelte": "^3.4.0",
 		"rehype-stringify": "^10.0.1",
@@ -54,13 +50,13 @@
 		"svgo": "^4.0.0",
 		"typescript": "^5.9.3",
 		"typescript-eslint": "^8.48.1",
-		"unified": "^11.0.5",
-		"unist-util-visit": "^5.0.0",
-		"vfile": "^6.0.3",
 		"vite": "^7.2.6",
 		"vite-plugin-devtools-json": "^1.0.0",
 		"xml-js": "^1.6.11",
 		"zod": "^4.2.1"
 	},
-	"packageManager": "pnpm@10.26.2+sha512.0e308ff2005fc7410366f154f625f6631ab2b16b1d2e70238444dd6ae9d630a8482d92a451144debc492416896ed16f7b114a86ec68b8404b2443869e68ffda6"
+	"packageManager": "pnpm@10.26.2+sha512.0e308ff2005fc7410366f154f625f6631ab2b16b1d2e70238444dd6ae9d630a8482d92a451144debc492416896ed16f7b114a86ec68b8404b2443869e68ffda6",
+	"dependencies": {
+		"@types/hast": "^3.0.4"
+	}
 }

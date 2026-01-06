@@ -1,6 +1,6 @@
 import { unified, type Processor } from 'unified';
-import type { Root as MdastRoot } from 'mdast';
-import type { Root as HastRoot } from 'hast';
+import type { Root as MdastRoot, Nodes as MdastNode } from 'mdast';
+import type { Root as HastRoot, Nodes as HastNode } from 'hast';
 import remarkParse from 'remark-parse';
 import remarkGfm from 'remark-gfm';
 import remarkDirective from 'remark-directive';
@@ -43,6 +43,7 @@ export interface Rendered {
 }
 
 export type { CustomElement } from './custom-elements';
+export type { HastRoot, HastNode, MdastRoot, MdastNode };
 
 export async function render(src: string): Promise<Rendered> {
 	const file = new VFile(src);
