@@ -1,7 +1,7 @@
 import { Feed } from 'feed';
+import { renderToString } from 'markdown';
 import { publicUrl, PUBLIC_URL } from '$lib/urls';
 import { resolve } from '$app/paths';
-import { Parser } from '$lib/markdown';
 import { fs } from './posts';
 import { compareDesc } from 'date-fns';
 import * as meta from '$lib/meta';
@@ -14,8 +14,6 @@ export const feedLink = (ext: string): string =>
 export type FeedGenerator = Pick<Feed, 'atom1' | 'json1' | 'rss2'>;
 
 export default async function populateFeed(): Promise<Feed> {
-	const parser = new Parser();
-
 	const feed = new Feed({
 		title: meta.siteName,
 		description: meta.description,
@@ -39,7 +37,7 @@ export default async function populateFeed(): Promise<Feed> {
 	const rendered = await Promise.all(
 		files
 			.toSorted((a, b) => compareDesc(a.meta.date, b.meta.date))
-			.map((f) => parser.render(fs.read(f.path)!))
+			.map((f) => renderToString(fs.read(f.path)!))
 	);
 	for (let i = 0; i < files.length; i++) {
 		const post = files[i];
