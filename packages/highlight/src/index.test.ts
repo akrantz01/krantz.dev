@@ -1,7 +1,6 @@
 import { readFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import { describe, test, expect, beforeEach, beforeAll, vi } from 'vitest';
-import arboriumHost from '$arborium-host/arborium_host_bg.wasm?url';
 import * as typescriptGrammar from '@arborium/typescript/grammar.js';
 import * as rustGrammar from '@arborium/rust/grammar.js';
 import * as svelteGrammar from '@arborium/svelte/grammar.js';
@@ -13,14 +12,19 @@ import { registerLanguage, highlight } from './index';
 
 const wasmModule = async (id: string): Promise<WebAssembly.Module> => {
 	const url = import.meta.resolve(`@arborium/${id}/grammar_bg.wasm`);
-	const path = fileURLToPath(url);
-	const wasm = await readFile(path);
+	const wasm = await readFile(fileURLToPath(url));
 	return WebAssembly.compile(wasm);
 };
 
+const arborium = import.meta.resolve('@arborium/arborium');
+vi.mock('/src/arborium_host.js', () => {
+	const host = new URL('arborium_host.js', arborium);
+	return vi.importActual(fileURLToPath(host));
+});
+
 beforeAll(async () => {
-	const path = arboriumHost.replace(/^\/@fs/, '');
-	const wasm = await readFile(path);
+	const url = new URL('arborium_host_bg.wasm', arborium);
+	const wasm = await readFile(fileURLToPath(url));
 	setHostWasmModule(await WebAssembly.compile(wasm));
 });
 
@@ -103,6 +107,7 @@ describe('single language highlight', () => {
 		expect(hasLanguage('typescript')).toBe(true);
 
 		const highlighted = await highlight('typescript', `const variable = true;`);
+		expect(vi.mocked(console.error).mock.calls).toEqual([]);
 		expect(highlighted).toEqual(
 			'<a-k>const</a-k> <a-v>variable</a-v> <a-o>=</a-o> <a-co>true</a-co><a-p>;</a-p>'
 		);

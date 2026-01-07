@@ -1,5 +1,4 @@
 import type { ParseResult } from '@arborium/arborium';
-import * as arboriumHost from '$arborium-host/arborium_host.js';
 
 import { loadLanguage, hasLanguage, type InitializedLanguagePlugin } from './languages';
 
@@ -44,6 +43,13 @@ interface HostModule {
 	isLanguageAvailable: (language: string) => boolean;
 }
 
+type InitInput = RequestInfo | URL | Response | BufferSource | WebAssembly.Module;
+interface ImportedHostModule extends HostModule {
+	default: (module_or_path: {
+		module_or_path?: InitInput | Promise<InitInput>;
+	}) => Promise<unknown>;
+}
+
 let hostWasm: WebAssembly.Module | null = null;
 let hostModule: HostModule | null = null;
 let hostLoadPromise: Promise<HostModule | null> | null = null;
@@ -65,11 +71,13 @@ export default async function loadHost(): Promise<HostModule | null> {
 
 		console.debug('[highlight] loading host module');
 		try {
-			await arboriumHost.default({ module_or_path: hostWasm });
+			// @ts-expect-error cannot provide types for dynamic import of local file
+			const module = (await import('./arborium_host.js')) as ImportedHostModule;
+			await module.default({ module_or_path: hostWasm });
 
 			hostModule = {
-				highlight: arboriumHost.highlight,
-				isLanguageAvailable: arboriumHost.isLanguageAvailable
+				highlight: module.highlight,
+				isLanguageAvailable: module.isLanguageAvailable
 			};
 			console.debug(`[highlight] host loaded successfully`);
 			return hostModule;
