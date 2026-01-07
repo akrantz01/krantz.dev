@@ -13,8 +13,14 @@
 		"build": "vite build",
 		"test": "vitest"
 	},
-	"dependencies": {},
+	"dependencies": {
+		"@arborium/arborium": "^2.6.0"
+	},
 	"devDependencies": {
+		"@arborium/css": "^2.6.0",
+		"@arborium/rust": "^2.6.0",
+		"@arborium/svelte": "^2.6.0",
+		"@arborium/typescript": "^2.6.0",
 		"typescript": "^5.9.3",
 		"vite": "^7.3.0",
 		"vite-plugin-dts": "^4.5.4",

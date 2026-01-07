@@ -134,7 +134,23 @@ importers:
         version: 4.2.1
 
   packages/highlight:
+    dependencies:
+      '@arborium/arborium':
+        specifier: ^2.6.0
+        version: 2.6.0
     devDependencies:
+      '@arborium/css':
+        specifier: ^2.6.0
+        version: 2.6.0
+      '@arborium/rust':
+        specifier: ^2.6.0
+        version: 2.6.0
+      '@arborium/svelte':
+        specifier: ^2.6.0
+        version: 2.6.0
+      '@arborium/typescript':
+        specifier: ^2.6.0
+        version: 2.6.0
       typescript:
         specifier: ^5.9.3
         version: 5.9.3
@@ -210,6 +226,25 @@ importers:
         version: 4.0.16(@types/node@24.10.4)
 
 packages:
+
+  '@arborium/arborium@2.6.0':
+    resolution: {integrity: sha512-AFAj0SaNJRam427BleCBnKio4D4f5rjansARD0oL69Gx46dtCszOVXQYx4uDueUhyw3jBhw8NnevSfyX+watsA==}
+
+  '@arborium/css@2.6.0':
+    resolution: {integrity: sha512-XGIZPS2AJdmtw+1gIM+eCGRwQbR86qLiq2PMq7Tf0zv2YglYPnCzDp3Y1ynhhD+y2OeHYlUsrKctCNLYCWCyIg==}
+    engines: {node: '>=18'}
+
+  '@arborium/rust@2.6.0':
+    resolution: {integrity: sha512-z2S9YzKQbHahr3F/KEOk8nDu2ere63NA45rakkPFyaeqtub9jjz7xBVqLH/q94/mHa3TA5RRT9ca0CkEfb/yVA==}
+    engines: {node: '>=18'}
+
+  '@arborium/svelte@2.6.0':
+    resolution: {integrity: sha512-u9lMgSmkdjEHUGHhfiXdzXIOHXxDOqqHLWAlQWhZHyaOOvXHZrJJjN1OQOPUQbwlFJtAWGhM6DgPxhOMi0aU0Q==}
+    engines: {node: '>=18'}
+
+  '@arborium/typescript@2.6.0':
+    resolution: {integrity: sha512-zOEJVGf6VoFRwtMO64Pi5BGBuEclRPpm9+4mU/LTuF4UmO8zHA7OJFYWAu0caHVObkz+/JJWDurwxexU+/LU+g==}
+    engines: {node: '>=18'}
 
   '@babel/helper-string-parser@7.27.1':
     resolution: {integrity: sha512-qMlSxKbpRlAridDExk92nSobyDdpPijUq2DW6oDnUqd0iOGxmQjyqhMIihI9+zv4LPyZdRje2cavWPbCbWm3eA==}
@@ -2477,6 +2512,16 @@ packages:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
 
 snapshots:
+
+  '@arborium/arborium@2.6.0': {}
+
+  '@arborium/css@2.6.0': {}
+
+  '@arborium/rust@2.6.0': {}
+
+  '@arborium/svelte@2.6.0': {}
+
+  '@arborium/typescript@2.6.0': {}
 
   '@babel/helper-string-parser@7.27.1': {}
 
