@@ -33,6 +33,12 @@ importers:
       '@fortawesome/svelte-fontawesome':
         specifier: ^0.2.4
         version: 0.2.4(@fortawesome/fontawesome-svg-core@7.1.0)(svelte@5.46.1)
+      '@krantz-dev/highlight':
+        specifier: workspace:*
+        version: link:packages/highlight
+      '@krantz-dev/markdown':
+        specifier: workspace:*
+        version: link:packages/markdown
       '@sveltejs/adapter-static':
         specifier: ^3.0.10
         version: 3.0.10(@sveltejs/kit@2.49.2(@sveltejs/vite-plugin-svelte@6.2.1(svelte@5.46.1)(vite@7.3.0(@types/node@24.10.4)))(svelte@5.46.1)(vite@7.3.0(@types/node@24.10.4)))
@@ -69,9 +75,6 @@ importers:
       gray-matter:
         specifier: ^4.0.3
         version: 4.0.3
-      highlight:
-        specifier: workspace:*
-        version: link:packages/highlight
       husky:
         specifier: ^9.1.7
         version: 9.1.7
@@ -81,9 +84,6 @@ importers:
       isomorphic-git:
         specifier: ^1.36.1
         version: 1.36.1
-      markdown:
-        specifier: workspace:*
-        version: link:packages/markdown
       prettier:
         specifier: ^3.7.4
         version: 3.7.4

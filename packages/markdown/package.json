@@ -1,5 +1,5 @@
 {
-	"name": "markdown",
+	"name": "@krantz-dev/markdown",
 	"version": "1.0.0",
 	"description": "A customzied markdown renderer",
 	"type": "module",

@@ -1,5 +1,5 @@
 import { Feed } from 'feed';
-import { renderToString } from 'markdown';
+import { renderToString } from '@krantz-dev/markdown';
 import { publicUrl, PUBLIC_URL } from '$lib/urls';
 import { resolve } from '$app/paths';
 import { fs } from './posts';

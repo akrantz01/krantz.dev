@@ -1,7 +1,7 @@
 // See https://svelte.dev/docs/kit/types#app.d.ts
 // for information about these interfaces
 
-import type { CustomElement } from 'markdown';
+import type { CustomElement } from '@krantz-dev/markdown';
 
 declare global {
 	namespace App {

@@ -1,5 +1,5 @@
 {
-	"name": "highlight",
+	"name": "@krantz-dev/highlight",
 	"version": "1.0.0",
 	"description": "A server-side syntax highlighter built on arborium",
 	"type": "module",
