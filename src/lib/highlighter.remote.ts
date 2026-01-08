@@ -1,14 +1,21 @@
 import { prerender } from '$app/server';
-import { highlight } from '@krantz-dev/highlight';
+import { highlight, setHostWasmModule } from '@krantz-dev/highlight';
+import host from '@krantz-dev/highlight/host.wasm?module';
 import * as z from 'zod';
+import { once } from './once';
 
-// TODO: register languages for highlighting
+once(Symbol.for('highlighter'), () => {
+	// TODO: register languages for highlighting
+	setHostWasmModule(host);
+});
 
 const Schema = z.object({
 	language: z.string(),
 	text: z.string()
 });
 
-const highlighter = prerender(Schema, async ({ language, text }) => highlight(language, text));
-
-export default highlighter;
+export const highlighter = prerender(
+	Schema,
+	async ({ language, text }) => highlight(language, text),
+	{ dynamic: true }
+);
