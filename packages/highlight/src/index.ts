@@ -5,6 +5,8 @@ import { loadLanguage } from './languages';
 export { setHostWasmModule } from './host';
 export { registerLanguage, hasLanguage } from './languages';
 
+import './theme.css';
+
 export async function highlight(language: string, source: string): Promise<string> {
 	const host = await loadHost();
 	if (host !== null) {

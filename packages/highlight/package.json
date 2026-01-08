@@ -8,7 +8,8 @@
 			"import": "./dist/highlight.js",
 			"types": "./dist/index.d.ts"
 		},
-		"./host.wasm": "./dist/arborium_host_bg.wasm"
+		"./host.wasm": "./dist/arborium_host_bg.wasm",
+		"./theme.css": "./dist/highlight.css"
 	},
 	"scripts": {
 		"build": "vite build",
