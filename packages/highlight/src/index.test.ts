@@ -56,9 +56,8 @@ test('language registered twice', async () => {
 });
 
 test.each(['rust', 'typescript', 'python'])('unregistered language/%s', async (language) => {
-	await expect(highlight(language, 'let a = 3;')).rejects.toThrow(
-		`unsupported language: ${language}`
-	);
+	const highlighted = await highlight(language, 'let a = 3;');
+	expect(highlighted).toStrictEqual('let a = 3;');
 });
 
 describe('alias handling', () => {

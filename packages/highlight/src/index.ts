@@ -9,8 +9,12 @@ export async function highlight(language: string, source: string): Promise<strin
 	const host = await loadHost();
 	if (host !== null) {
 		try {
-			return host.highlight(language, source);
+			return await host.highlight(language, source);
 		} catch (e) {
+			if (typeof e === 'string' && e.startsWith('unsupported language:')) {
+				return escapeHtml(source);
+			}
+
 			console.warn('Host highlight failed, falling back to JS:', e);
 		}
 	}
