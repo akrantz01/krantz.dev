@@ -15,6 +15,15 @@
 		"cf-typegen": "wrangler types ./src/worker-configuration.d.ts"
 	},
 	"devDependencies": {
+		"@arborium/bash": "^2.6.0",
+		"@arborium/diff": "^2.6.0",
+		"@arborium/fish": "^2.6.0",
+		"@arborium/json": "^2.6.0",
+		"@arborium/nix": "^2.6.0",
+		"@arborium/python": "^2.6.0",
+		"@arborium/rust": "^2.6.0",
+		"@arborium/toml": "^2.6.0",
+		"@arborium/yaml": "^2.6.0",
 		"@date-fns/utc": "^2.1.1",
 		"@eslint/compat": "^1.4.0",
 		"@eslint/js": "^9.39.1",
