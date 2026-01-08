@@ -24,7 +24,7 @@ import yamlWasm from '@arborium/yaml/grammar_bg.wasm?module';
 
 import { once } from './once';
 
-once(Symbol.for('highlighter'), () => {
+await once(Symbol.for('highlighter'), () => {
 	setHostWasmModule(host);
 	registerLanguage('bash', bashGrammar, bashWasm);
 	registerLanguage('diff', diffGrammar, diffWasm);
