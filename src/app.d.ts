@@ -1,8 +1,6 @@
 // See https://svelte.dev/docs/kit/types#app.d.ts
 // for information about these interfaces
 
-import type { CustomElement } from '@krantz-dev/markdown';
-
 declare global {
 	namespace App {
 		// interface Error {}
@@ -14,16 +12,6 @@ declare global {
 			cf: CfProperties;
 			ctx: ExecutionContext;
 		}
-	}
-}
-
-declare module 'hast' {
-	interface RootContentMap {
-		customElement: CustomElement;
-	}
-
-	interface ElementContentMap {
-		customElement: CustomElement;
 	}
 }
 

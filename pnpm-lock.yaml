@@ -7,10 +7,6 @@ settings:
 importers:
 
   .:
-    dependencies:
-      '@types/hast':
-        specifier: ^3.0.4
-        version: 3.0.4
     devDependencies:
       '@date-fns/utc':
         specifier: ^2.1.1
@@ -48,6 +44,9 @@ importers:
       '@sveltejs/vite-plugin-svelte':
         specifier: ^6.2.1
         version: 6.2.1(svelte@5.46.1)(vite@7.3.0(@types/node@24.10.4))
+      '@types/hast':
+        specifier: ^3.0.4
+        version: 3.0.4
       '@types/node':
         specifier: ^24
         version: 24.10.4
