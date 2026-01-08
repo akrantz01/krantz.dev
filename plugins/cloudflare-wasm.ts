@@ -35,9 +35,14 @@ export default function vitePlugin(): Plugin {
 
 			additionalModulePaths.add(resolved.id);
 
-			const id = MODULE_PREFIX + resolved.id;
-			this.debug(`registering virtual module: ${id}`);
-			return { id };
+			if (resolved.id.startsWith(MODULE_PREFIX)) {
+				this.debug(`forwarding existing virtual module`);
+				return { id: resolved.id };
+			} else {
+				const id = MODULE_PREFIX + resolved.id;
+				this.debug(`registering virtual module: ${id}`);
+				return { id };
+			}
 		},
 
 		async load(id) {
