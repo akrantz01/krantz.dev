@@ -26,9 +26,11 @@
 	}: Props = $props();
 	const anchor = $derived(to.startsWith('#'));
 	const external = $derived(to.startsWith('https://') || to.startsWith('http://'));
+	// @ts-expect-error resolve can be passed a string and be fine
 	const href = $derived(anchor || external ? to : resolve(to));
 </script>
 
+<!-- eslint-disable svelte/no-navigation-without-resolve -->
 <a
 	{href}
 	class:current={!external && matcher(href, page)}
