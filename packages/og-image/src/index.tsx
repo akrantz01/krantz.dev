@@ -1,6 +1,7 @@
 import ImageResponse from '@takumi-rs/image-response/wasm';
 import type { Font } from '@takumi-rs/wasm';
 import DefaultImage from './DefaultImage';
+import PostImage from './PostImage';
 
 interface DefaultImage {
 	type: 'default';
@@ -8,7 +9,15 @@ interface DefaultImage {
 	description: string;
 }
 
-export type Image = DefaultImage;
+interface PostImage {
+	type: 'post';
+	title: string;
+	timestamp: Date;
+	siteName: string;
+	siteDescription: string;
+}
+
+export type Image = DefaultImage | PostImage;
 
 interface InputImage {
 	src: string;
@@ -38,9 +47,17 @@ export default function render(
 	});
 }
 
-const selectImage = ({ type, ...props }: Image) => {
-	switch (type) {
+const selectImage = (image: Image) => {
+	switch (image.type) {
 		case 'default':
-			return <DefaultImage {...props} />;
+			return <DefaultImage title={image.title} description={image.description} />;
+		case 'post':
+			return (
+				<PostImage
+					title={image.title}
+					date={image.timestamp}
+					site={{ title: image.siteName, description: image.siteDescription }}
+				/>
+			);
 	}
 };

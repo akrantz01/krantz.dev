@@ -271,6 +271,9 @@ importers:
       '@takumi-rs/wasm':
         specifier: ^0.62.6
         version: 0.62.6
+      date-fns:
+        specifier: ^4.1.0
+        version: 4.1.0
       hono:
         specifier: ^4.11.3
         version: 4.11.3

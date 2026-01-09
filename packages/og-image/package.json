@@ -16,6 +16,7 @@
 	"dependencies": {
 		"@takumi-rs/image-response": "^0.62.6",
 		"@takumi-rs/wasm": "^0.62.6",
+		"date-fns": "^4.1.0",
 		"hono": "^4.11.3"
 	},
 	"devDependencies": {
