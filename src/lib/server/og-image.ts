@@ -3,10 +3,11 @@ import notoSans400 from '@fontsource/noto-sans/files/noto-sans-latin-400-normal.
 import notoSans800 from '@fontsource/noto-sans/files/noto-sans-latin-800-normal.woff2';
 import icon from '$lib/assets/favicon.svg?as=png&svg-as';
 import renderImage, { type Image } from '@krantz-dev/og-image';
+import { dev } from '$app/environment';
 import * as z from 'zod';
 
 const render = (url: URL, image: Image) => {
-	const debug = z.parse(z.stringbool().catch(false), url.searchParams.get('debug'));
+	const debug = dev && z.parse(z.stringbool().catch(false), url.searchParams.get('debug'));
 
 	return renderImage(image, {
 		module: takumi,
