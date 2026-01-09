@@ -51,7 +51,6 @@
 		"gray-matter": "^4.0.3",
 		"hono": "^4.11.3",
 		"husky": "^9.1.7",
-		"ico-endec": "^0.1.6",
 		"isomorphic-git": "^1.36.1",
 		"prettier": "^3.7.4",
 		"prettier-plugin-svelte": "^3.4.0",

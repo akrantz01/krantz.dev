@@ -1,9 +1,10 @@
 import * as fs from 'node:fs/promises';
 import path from 'node:path';
-import icoEndec from 'ico-endec';
-import sharp from 'sharp';
+import sharp, { type Sharp } from 'sharp';
 import * as svgo from 'svgo';
 import type { Plugin } from 'vite';
+
+import toIco from './ico';
 
 interface SvgIcon {
 	format: 'svg';
@@ -137,16 +138,20 @@ async function generateIcon(svg: string, icon: Icon): Promise<Uint8Array> {
 		case 'svg':
 			return Buffer.from(svg);
 		case 'png':
-			return toPng(svg, icon.size);
+			return toPng(svg, icon.size).toBuffer();
 		case 'ico':
-			return icoEndec.encode(await Promise.all(icon.sizes.map((size) => toPng(svg, size))));
+			return toIco(await Promise.all(icon.sizes.map((size) => toRaw(svg, size))));
 	}
 }
 
-async function toPng(svg: string, size: number): Promise<Uint8Array> {
-	return sharp(Buffer.from(svg, 'utf8'), { density: 300 })
+const toPng = (svg: string, size: number): Sharp =>
+	sharp(Buffer.from(svg, 'utf8'), { density: 300 })
 		.ensureAlpha()
 		.resize(size, size, { fit: 'contain' })
-		.png()
-		.toBuffer();
-}
+		.png();
+
+const toRaw = (svg: string, size: number) =>
+	toPng(svg, size)
+		.toColorspace('srgb')
+		.raw({ depth: 'uchar' })
+		.toBuffer({ resolveWithObject: true });
