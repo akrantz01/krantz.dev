@@ -5,17 +5,21 @@
 	interface Props {
 		title?: string;
 		description?: string;
+		image?: string;
 	}
 
-	const { title: partialTitle, description = meta.description }: Props = $props();
+	const {
+		title: partialTitle,
+		description = meta.description,
+		image = '/og/default'
+	}: Props = $props();
 
 	const url = $derived(page.url.toString());
 	const title = $derived(
 		partialTitle === undefined ? meta.siteName : `${partialTitle} | ${meta.siteName}`
 	);
+	const imageUrl = $derived(new URL(image, page.url).toString());
 </script>
-
-<!-- TODO: add og:image and twitter:image -->
 
 <svelte:head>
 	<title>{title}</title>
@@ -32,9 +36,11 @@
 	<meta property="og:description" content={description} />
 	<meta property="og:site_name" content={meta.siteName} />
 	<meta property="og:locale" content={meta.language} />
+	<meta property="og:image" content={imageUrl} />
 
 	<!-- Twitter -->
 	<meta name="twitter:card" content="summary" />
 	<meta name="twitter:title" content={title} />
 	<meta name="twitter:description" content={description} />
+	<meta name="twitter:image" content={imageUrl} />
 </svelte:head>
