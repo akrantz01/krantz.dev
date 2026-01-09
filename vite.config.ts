@@ -5,6 +5,7 @@ import devtoolsJson from 'vite-plugin-devtools-json';
 
 import cloudflareAssetsPlugin from './plugins/cloudflare-assets';
 import generateFavicons from './plugins/generate-favicons';
+import svgAs from './plugins/svg-as';
 
 const cloudflareAssets = cloudflareAssetsPlugin([
 	{
@@ -58,6 +59,7 @@ export default defineConfig({
 		devtoolsJson(),
 		generateFavicons({ source: 'src/lib/assets/favicon.svg' }),
 		cloudflareAssets,
+		svgAs(),
 		sveltekit()
 	],
 	server: {

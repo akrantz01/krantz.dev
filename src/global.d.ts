@@ -29,3 +29,8 @@ declare module '*.wasm?module' {
 	const wasm: WebAssembly.Module;
 	export default wasm;
 }
+
+declare module '*&svg-as' {
+	const image: Buffer;
+	export default image;
+}
