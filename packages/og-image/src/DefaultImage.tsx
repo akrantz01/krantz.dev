@@ -8,7 +8,7 @@ interface Props {
 
 const DefaultImage: FC<Props> = ({ title, description }) => (
 	<Wrapper style={{ justifyContent: 'center' }}>
-		<Tagline title={title} description={description} />
+		<Tagline title={title} description={description} size="lg" />
 	</Wrapper>
 );
 
