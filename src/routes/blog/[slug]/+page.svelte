@@ -5,10 +5,14 @@
 	import Date from '$lib/components/Date.svelte';
 	import SEO from '$lib/components/SEO.svelte';
 
-	const { data }: PageProps = $props();
+	const { data, params }: PageProps = $props();
 </script>
 
-<SEO title={data.meta.title} description={data.meta.description} />
+<SEO
+	title={data.meta.title}
+	description={data.meta.description}
+	image={`/og/post/${params.slug}`}
+/>
 
 <h1>{data.meta.title}</h1>
 
