@@ -1,9 +1,6 @@
-import * as z from 'zod';
 import type { RequestHandler } from './$types';
-import makeImage from '$lib/server/og-image';
+import render from '$lib/server/og-image';
+import * as meta from '$lib/meta';
 
-export const GET: RequestHandler = ({ url }) => {
-	const debug = z.parse(z.stringbool().catch(false), url.searchParams.get('debug'));
-
-	return makeImage({ debug });
-};
+export const GET: RequestHandler = ({ url }) =>
+	render(url, { type: 'default', title: meta.siteName, description: meta.description });
