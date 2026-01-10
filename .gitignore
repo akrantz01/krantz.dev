@@ -10,9 +10,9 @@ node_modules
 .vercel
 .netlify
 .wrangler
-/.svelte-kit
-/build
-dist/
+.svelte-kit
+build
+dist
 
 # OS
 .DS_Store
@@ -31,3 +31,6 @@ vite.config.ts.timestamp-*
 # Cloudflare Workers
 .dev.vars*
 !.dev.vars.example
+
+# Turbo
+.turbo

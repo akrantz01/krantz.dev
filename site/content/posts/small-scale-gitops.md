@@ -2,7 +2,7 @@
 title: Small Scale GitOps
 description: Implementing GitOps principles for a small organization
 date: 2021-09-11T00:00:00.000Z
-lastModified: 2022-09-27T02:19:00.000Z
+lastModified: null
 ---
 
 While working on a bunch of tools for WaffleHacks, a hackathon I helped organize that recently finished, I kept running

@@ -1,31 +1,32 @@
 {
-	"name": "@krantz-dev/highlight",
-	"version": "1.0.0",
-	"description": "A server-side syntax highlighter built on arborium",
-	"type": "module",
-	"exports": {
-		".": {
-			"import": "./dist/highlight.js",
-			"types": "./dist/index.d.ts"
-		},
-		"./host.wasm": "./dist/arborium_host_bg.wasm",
-		"./theme.css": "./dist/highlight.css"
-	},
-	"scripts": {
-		"build": "vite build",
-		"test": "vitest"
-	},
-	"dependencies": {
-		"@arborium/arborium": "^2.6.0"
-	},
-	"devDependencies": {
-		"@arborium/css": "^2.6.0",
-		"@arborium/rust": "^2.6.0",
-		"@arborium/svelte": "^2.6.0",
-		"@arborium/typescript": "^2.6.0",
-		"typescript": "^5.9.3",
-		"vite": "^7.3.0",
-		"vite-plugin-dts": "^4.5.4",
-		"vitest": "^4.0.16"
-	}
+  "name": "@krantz-dev/highlight",
+  "version": "1.0.0",
+  "description": "A server-side syntax highlighter built on arborium",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/highlight.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./host.wasm": "./dist/arborium_host_bg.wasm",
+    "./theme.css": "./dist/highlight.css"
+  },
+  "scripts": {
+    "build": "vite build",
+    "test": "vitest"
+  },
+  "dependencies": {
+    "@arborium/arborium": "^2.6.0"
+  },
+  "devDependencies": {
+    "@arborium/css": "^2.6.0",
+    "@arborium/rust": "^2.6.0",
+    "@arborium/svelte": "^2.6.0",
+    "@arborium/typescript": "^2.6.0",
+    "@types/node": "^24.10.4",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.0",
+    "vite-plugin-dts": "^4.5.4",
+    "vitest": "^4.0.16"
+  }
 }
