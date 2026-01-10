@@ -11,6 +11,7 @@ const render = (url: URL, image: Image) => {
 
 	return renderImage(image, {
 		module: takumi,
+		format: 'png',
 		debug,
 		images: [{ src: 'icon', data: icon }],
 		// This can be removed once using cloudflare vite plugin
