@@ -1,5 +1,6 @@
 <script lang="ts">
 	import * as meta from '$lib/meta';
+	import { publicUrl } from '$lib/urls';
 
 	import { page } from '$app/state';
 
@@ -15,11 +16,11 @@
 		image = '/og/default'
 	}: Props = $props();
 
-	const url = $derived(page.url.toString());
+	const url = $derived(publicUrl(page.url.pathname));
 	const title = $derived(
 		partialTitle === undefined ? meta.siteName : `${partialTitle} | ${meta.siteName}`
 	);
-	const imageUrl = $derived(new URL(image, page.url).toString());
+	const imageUrl = $derived(publicUrl(image));
 </script>
 
 <svelte:head>

@@ -2,7 +2,7 @@ import { compareDesc } from 'date-fns';
 import { Feed } from 'feed';
 
 import * as meta from '$lib/meta';
-import { PUBLIC_URL, publicUrl } from '$lib/urls';
+import { PUBLIC_URL_STRING, publicUrl } from '$lib/urls';
 import { renderToString } from '@krantz-dev/markdown';
 
 import { fs } from './posts';
@@ -20,8 +20,8 @@ export default async function populateFeed(): Promise<Feed> {
 	const feed = new Feed({
 		title: meta.siteName,
 		description: meta.description,
-		id: PUBLIC_URL,
-		link: PUBLIC_URL,
+		id: PUBLIC_URL_STRING,
+		link: PUBLIC_URL_STRING,
 		language: meta.language,
 		favicon: publicUrl('favicon.ico'),
 		copyright: `All rights reserved ${new Date().getFullYear()}, ${meta.author}`,
