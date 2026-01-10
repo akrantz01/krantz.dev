@@ -1,6 +1,8 @@
-import { resolve } from '$app/paths';
 import { publicUrl } from '$lib/urls';
+
 import type { RequestHandler } from './$types';
+
+import { resolve } from '$app/paths';
 
 export const prerender = true;
 

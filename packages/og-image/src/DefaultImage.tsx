@@ -1,5 +1,6 @@
 import type { FC } from 'hono/jsx';
-import { Wrapper, Tagline } from './components';
+
+import { Tagline, Wrapper } from './components';
 
 interface Props {
 	title: string;

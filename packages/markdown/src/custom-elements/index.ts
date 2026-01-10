@@ -1,13 +1,13 @@
 import type { ElementContent, Parent, Properties } from 'hast';
 import type { Node } from 'mdast';
+import type { ContainerDirective, LeafDirective, TextDirective } from 'mdast-util-directive';
 import type { Handler } from 'mdast-util-to-hast';
 import type { Options } from 'remark-rehype';
-import type { ContainerDirective, LeafDirective, TextDirective } from 'mdast-util-directive';
 
 import containerDirectives from './container-directive';
 import leafDirectives from './leaf-directive';
-import textDirectives from './text-directives';
 import Reporter from './reporter';
+import textDirectives from './text-directives';
 
 export interface CustomElement extends Parent {
 	type: 'custom-element';

@@ -1,9 +1,10 @@
 <script lang="ts">
-	import type { PageProps } from './$types';
-	import Markdown from '$lib/components/markdown';
-	import Link from '$lib/components/Link.svelte';
 	import Date from '$lib/components/Date.svelte';
+	import Link from '$lib/components/Link.svelte';
+	import Markdown from '$lib/components/markdown';
 	import SEO from '$lib/components/SEO.svelte';
+
+	import type { PageProps } from './$types';
 
 	const { data, params }: PageProps = $props();
 </script>

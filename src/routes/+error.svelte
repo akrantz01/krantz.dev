@@ -1,7 +1,8 @@
 <script lang="ts">
-	import { page } from '$app/state';
 	import Link from '$lib/components/Link.svelte';
 	import { dedent } from '$lib/text';
+
+	import { page } from '$app/state';
 
 	function makeIssueUrl(): string {
 		const url = new URL('https://github.com/akrantz01/krantz.dev/issues/new');

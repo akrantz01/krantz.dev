@@ -1,5 +1,6 @@
 import type { ElementContent } from 'hast';
 import type { ContainerDirective } from 'mdast-util-directive';
+
 import Reporter from './reporter';
 
 const containerDirectives = (

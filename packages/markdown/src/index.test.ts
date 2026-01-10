@@ -1,6 +1,7 @@
-import { describe, test, expect } from 'vitest';
+import type { Point, Position } from 'unist';
+import { describe, expect, test } from 'vitest';
+
 import { render, renderToString } from './index';
-import type { Position, Point } from 'unist';
 
 const point = (line: number, column: number, offset: number | undefined = undefined): Point => ({
 	line,

@@ -1,5 +1,6 @@
 import * as fs from 'node:fs/promises';
 import path from 'node:path';
+
 import sharp, { type Sharp } from 'sharp';
 import * as svgo from 'svgo';
 import type { Plugin } from 'vite';

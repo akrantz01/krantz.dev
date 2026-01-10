@@ -1,8 +1,10 @@
 <script lang="ts">
-	import { page } from '$app/state';
-	import Link, { type Matcher } from './Link.svelte';
 	import icon from '$lib/assets/favicon.svg';
+
+	import Link, { type Matcher } from './Link.svelte';
+
 	import { resolve } from '$app/paths';
+	import { page } from '$app/state';
 
 	const MINIMAL_ROUTES = ['/'];
 

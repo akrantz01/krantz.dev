@@ -1,14 +1,15 @@
 import { readFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
-import { describe, test, expect, beforeEach, beforeAll, vi } from 'vitest';
-import * as typescriptGrammar from '@arborium/typescript/grammar.js';
+
+import * as cssGrammar from '@arborium/css/grammar.js';
 import * as rustGrammar from '@arborium/rust/grammar.js';
 import * as svelteGrammar from '@arborium/svelte/grammar.js';
-import * as cssGrammar from '@arborium/css/grammar.js';
+import * as typescriptGrammar from '@arborium/typescript/grammar.js';
+import { beforeAll, beforeEach, describe, expect, test, vi } from 'vitest';
 
 import { resetHandles, setHostWasmModule } from './host';
+import { highlight, registerLanguage } from './index';
 import { hasLanguage, resetLanguages } from './languages';
-import { registerLanguage, highlight } from './index';
 
 const wasmModule = async (id: string): Promise<WebAssembly.Module> => {
 	const url = import.meta.resolve(`@arborium/${id}/grammar_bg.wasm`);

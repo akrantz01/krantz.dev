@@ -1,10 +1,12 @@
-import takumi from '@takumi-rs/wasm/takumi_wasm_bg.wasm?module';
 import notoSans400 from '@fontsource/noto-sans/files/noto-sans-latin-400-normal.woff2';
 import notoSans800 from '@fontsource/noto-sans/files/noto-sans-latin-800-normal.woff2';
+import takumi from '@takumi-rs/wasm/takumi_wasm_bg.wasm?module';
+import * as z from 'zod';
+
 import icon from '$lib/assets/favicon.svg?as=png&svg-as';
 import renderImage, { type Image } from '@krantz-dev/og-image';
+
 import { dev } from '$app/environment';
-import * as z from 'zod';
 
 const render = (url: URL, image: Image) => {
 	const debug = dev && z.parse(z.stringbool().catch(false), url.searchParams.get('debug'));

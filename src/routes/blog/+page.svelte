@@ -1,9 +1,11 @@
 <script lang="ts">
-	import Link from '$lib/components/Link.svelte';
-	import type { PageProps } from './$types';
-	import { resolve } from '$app/paths';
 	import Date from '$lib/components/Date.svelte';
+	import Link from '$lib/components/Link.svelte';
 	import SEO from '$lib/components/SEO.svelte';
+
+	import type { PageProps } from './$types';
+
+	import { resolve } from '$app/paths';
 
 	const { data }: PageProps = $props();
 </script>

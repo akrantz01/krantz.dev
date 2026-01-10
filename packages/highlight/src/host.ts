@@ -1,6 +1,6 @@
 import type { ParseResult } from '@arborium/arborium';
 
-import { loadLanguage, hasLanguage, type InitializedLanguagePlugin } from './languages';
+import { type InitializedLanguagePlugin, hasLanguage, loadLanguage } from './languages';
 
 const handles = new Map<number, InitializedLanguagePlugin>();
 let nextHandle = 1;
@@ -72,6 +72,7 @@ export default async function loadHost(): Promise<HostModule | null> {
 		console.debug('[highlight] loading host module');
 		try {
 			// @ts-expect-error cannot provide types for dynamic import of local file
+			// eslint-disable-next-line import-x/no-unresolved
 			const module = (await import('./arborium_host.js')) as ImportedHostModule;
 			await module.default({ module_or_path: hostWasm });
 

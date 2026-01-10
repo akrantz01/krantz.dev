@@ -6,9 +6,10 @@
 
 <script lang="ts">
 	import type { Snippet } from 'svelte';
-	import { page } from '$app/state';
-	import { resolve } from '$app/paths';
 	import type { HTMLAnchorAttributes } from 'svelte/elements';
+
+	import { resolve } from '$app/paths';
+	import { page } from '$app/state';
 
 	interface Props extends HTMLAnchorAttributes {
 		href: string;

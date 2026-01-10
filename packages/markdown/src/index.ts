@@ -1,18 +1,18 @@
-import { unified, type Processor } from 'unified';
-import type { Root as MdastRoot, Nodes as MdastNode } from 'mdast';
-import type { Root as HastRoot, Nodes as HastNode } from 'hast';
-import remarkParse from 'remark-parse';
-import remarkGfm from 'remark-gfm';
+import type { Nodes as HastNode, Root as HastRoot } from 'hast';
+import { toHtml } from 'hast-util-to-html';
+import type { Nodes as MdastNode, Root as MdastRoot } from 'mdast';
 import remarkDirective from 'remark-directive';
 import remarkEmoji from 'remark-emoji';
+import remarkGfm from 'remark-gfm';
+import remarkParse from 'remark-parse';
 import remarkRehype from 'remark-rehype';
+import { type Processor, unified } from 'unified';
 import type { Point, Position } from 'unist';
+import { remove } from 'unist-util-remove';
 import { VFile } from 'vfile';
 import type { VFileMessage } from 'vfile-message';
-import { remove } from 'unist-util-remove';
 
 import remarkRehypeOptions from './custom-elements';
-import { toHtml } from 'hast-util-to-html';
 
 const processor: Processor<MdastRoot, MdastRoot, HastRoot, undefined, undefined> = unified()
 	.use(remarkParse)

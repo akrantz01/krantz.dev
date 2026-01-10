@@ -1,4 +1,5 @@
 import { spansToHtml } from '@arborium/arborium';
+
 import loadHost from './host';
 import { loadLanguage } from './languages';
 

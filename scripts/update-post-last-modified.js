@@ -1,6 +1,7 @@
 import fs from 'node:fs/promises';
-import git from 'isomorphic-git';
+
 import matter from 'gray-matter';
+import git from 'isomorphic-git';
 
 /**
  * @typedef {Object} StagedFile

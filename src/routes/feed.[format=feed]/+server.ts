@@ -1,5 +1,6 @@
-import type { RequestHandler } from './$types';
 import populateFeed, { type FeedGenerator } from '$lib/server/feed';
+
+import type { RequestHandler } from './$types';
 
 export const prerender = true;
 

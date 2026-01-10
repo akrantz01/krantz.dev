@@ -1,7 +1,9 @@
 <script lang="ts">
-	import { render, type CustomElement } from '@krantz-dev/markdown';
-	import Renderer, { type CustomElements, type Overrides } from './Renderer.svelte';
 	import type { Snippet } from 'svelte';
+
+	import { type CustomElement, render } from '@krantz-dev/markdown';
+
+	import Renderer, { type CustomElements, type Overrides } from './Renderer.svelte';
 
 	interface Props {
 		src: string;

@@ -1,12 +1,15 @@
-import type { RequestHandler } from './$types';
-import { js2xml, type Element } from 'xml-js';
-import { fs, Metadata } from '$lib/server/posts';
-import type { MarkdownFile } from '$lib/server/filesystem';
-import { publicUrl } from '$lib/urls';
-import { resolve } from '$app/paths';
 import { UTCDate } from '@date-fns/utc';
 import { format } from 'date-fns';
-import { feedLink, SUPPORTED_FORMATS } from '$lib/server/feed';
+import { type Element, js2xml } from 'xml-js';
+
+import { SUPPORTED_FORMATS, feedLink } from '$lib/server/feed';
+import type { MarkdownFile } from '$lib/server/filesystem';
+import { Metadata, fs } from '$lib/server/posts';
+import { publicUrl } from '$lib/urls';
+
+import type { RequestHandler } from './$types';
+
+import { resolve } from '$app/paths';
 
 export const prerender = true;
 

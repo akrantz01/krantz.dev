@@ -1,16 +1,17 @@
 <script lang="ts">
-	import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome';
-	import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+	import type { IconProp } from '@fortawesome/fontawesome-svg-core';
 	import {
 		faGithub,
+		faInstagram,
 		faLinkedin,
 		faStackOverflow,
-		faInstagram,
 		faStrava
 	} from '@fortawesome/free-brands-svg-icons';
-	import SEO from '$lib/components/SEO.svelte';
+	import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+	import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome';
+
 	import Link from '$lib/components/Link.svelte';
-	import type { IconProp } from '@fortawesome/fontawesome-svg-core';
+	import SEO from '$lib/components/SEO.svelte';
 </script>
 
 <SEO />

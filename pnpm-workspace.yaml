@@ -6,4 +6,5 @@ linkWorkspacePackages: true
 onlyBuiltDependencies:
   - esbuild
   - sharp
+  - unrs-resolver
   - workerd

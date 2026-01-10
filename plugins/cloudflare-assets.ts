@@ -1,6 +1,7 @@
-import type { Plugin } from 'vite';
 import * as fs from 'node:fs/promises';
 import * as path from 'node:path';
+
+import type { Plugin } from 'vite';
 
 const MODULE_PREFIX = '\0cf-asset:';
 const MODULE_REGEXP = /^\0cf-asset:([a-z]+):(.+)$/g;

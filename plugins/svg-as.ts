@@ -1,7 +1,8 @@
-import type { Plugin } from 'vite';
-import * as querystring from 'node:querystring';
 import * as fs from 'node:fs/promises';
+import * as querystring from 'node:querystring';
+
 import sharp from 'sharp';
+import type { Plugin } from 'vite';
 
 const MODULE_ID = '\0svg-as:';
 

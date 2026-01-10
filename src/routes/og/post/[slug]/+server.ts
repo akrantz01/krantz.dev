@@ -1,8 +1,10 @@
-import type { RequestHandler } from './$types';
-import render from '$lib/server/og-image';
-import * as meta from '$lib/meta';
-import { fs } from '$lib/server/posts';
 import { error } from '@sveltejs/kit';
+
+import * as meta from '$lib/meta';
+import render from '$lib/server/og-image';
+import { fs } from '$lib/server/posts';
+
+import type { RequestHandler } from './$types';
 
 export const prerender = true;
 

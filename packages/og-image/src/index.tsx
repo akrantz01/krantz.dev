@@ -1,5 +1,6 @@
-import ImageResponse from '@takumi-rs/image-response/wasm';
+import { ImageResponse } from '@takumi-rs/image-response/wasm';
 import type { Font } from '@takumi-rs/wasm';
+
 import DefaultImage from './DefaultImage';
 import PostImage from './PostImage';
 

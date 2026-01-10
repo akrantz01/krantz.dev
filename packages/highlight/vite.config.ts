@@ -2,7 +2,8 @@
 import { copyFileSync } from 'node:fs';
 import * as path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { defineConfig, Plugin } from 'vite';
+
+import { Plugin, defineConfig } from 'vite';
 import dts from 'vite-plugin-dts';
 
 const copyArboriumHost: Plugin = {

@@ -1,5 +1,6 @@
-import { MarkdownFileSystem } from '$lib/server/filesystem';
 import * as z from 'zod';
+
+import { MarkdownFileSystem } from '$lib/server/filesystem';
 
 export const Metadata = z.object({
 	title: z.string().min(1),

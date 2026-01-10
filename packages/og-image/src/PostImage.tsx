@@ -1,5 +1,6 @@
-import type { FC } from 'hono/jsx';
 import { format } from 'date-fns';
+import type { FC } from 'hono/jsx';
+
 import { Tagline, Wrapper } from './components';
 
 interface Site {

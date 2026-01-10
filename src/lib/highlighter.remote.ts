@@ -1,8 +1,3 @@
-import { prerender } from '$app/server';
-import { highlight, registerLanguage, setHostWasmModule } from '@krantz-dev/highlight';
-import host from '@krantz-dev/highlight/host.wasm?module';
-import * as z from 'zod';
-
 import * as bashGrammar from '@arborium/bash/grammar.js';
 import bashWasm from '@arborium/bash/grammar_bg.wasm?module';
 import * as diffGrammar from '@arborium/diff/grammar.js';
@@ -21,8 +16,14 @@ import * as tomlGrammar from '@arborium/toml/grammar.js';
 import tomlWasm from '@arborium/toml/grammar_bg.wasm?module';
 import * as yamlGrammar from '@arborium/yaml/grammar.js';
 import yamlWasm from '@arborium/yaml/grammar_bg.wasm?module';
+import * as z from 'zod';
+
+import { highlight, registerLanguage, setHostWasmModule } from '@krantz-dev/highlight';
+import host from '@krantz-dev/highlight/host.wasm?module';
 
 import { once } from './once';
+
+import { prerender } from '$app/server';
 
 await once(Symbol.for('highlighter'), () => {
 	setHostWasmModule(host);

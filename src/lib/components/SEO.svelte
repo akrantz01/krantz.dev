@@ -1,5 +1,6 @@
 <script lang="ts">
 	import * as meta from '$lib/meta';
+
 	import { page } from '$app/state';
 
 	interface Props {

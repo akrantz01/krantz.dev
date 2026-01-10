@@ -1,6 +1,8 @@
-import type { PageServerLoad } from './$types';
-import { fs } from '$lib/server/posts';
 import { compareDesc } from 'date-fns';
+
+import { fs } from '$lib/server/posts';
+
+import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = () => {
 	const posts = fs.listWithFrontmatter();
