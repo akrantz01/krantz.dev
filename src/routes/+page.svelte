@@ -5,7 +5,8 @@
 		faGithub,
 		faLinkedin,
 		faStackOverflow,
-		faInstagram
+		faInstagram,
+		faStrava
 	} from '@fortawesome/free-brands-svg-icons';
 	import SEO from '$lib/components/SEO.svelte';
 	import Link from '$lib/components/Link.svelte';
@@ -59,11 +60,21 @@
 			'@bakingnotalex',
 			'https://www.instagram.com/bakingnotalex'
 		)}
+		{@render social_account(
+			faStrava,
+			'Strava',
+			'Alex Krantz',
+			'https://www.strava.com/athletes/118294715'
+		)}
 	</ul>
 
 	<h3>Fun facts</h3>
 	<ul class="fun-facts">
 		<li>I moved to Vancouver in 2020 during the height of the COVID-19 pandemic from California</li>
+		<li>
+			I bake an inordinate amount—only limited by how fast I can eat or pawn off to friends the last
+			thing I made.
+		</li>
 		<li>I daily drive Fedora on my laptop and NixOS on my homelab servers</li>
 		<li>
 			Recently, I've been playing lots of
