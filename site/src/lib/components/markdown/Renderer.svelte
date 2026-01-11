@@ -25,9 +25,8 @@
 </script>
 
 <script lang="ts">
-	import type { Component, Snippet } from 'svelte';
-
 	import type { CustomElement, HastNode } from '@krantz-dev/markdown';
+	import type { Component, Snippet } from 'svelte';
 
 	import Renderer from './Renderer.svelte';
 

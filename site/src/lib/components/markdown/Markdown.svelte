@@ -1,7 +1,6 @@
 <script lang="ts">
-	import type { Snippet } from 'svelte';
-
 	import { type CustomElement, render } from '@krantz-dev/markdown';
+	import type { Snippet } from 'svelte';
 
 	import Renderer, { type CustomElements, type Overrides } from './Renderer.svelte';
 

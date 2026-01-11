@@ -11,3 +11,4 @@ bun.lockb
 
 # Generated files
 dist/
+.svelte-kit/

@@ -16,10 +16,9 @@ import * as tomlGrammar from '@arborium/toml/grammar.js';
 import tomlWasm from '@arborium/toml/grammar_bg.wasm?module';
 import * as yamlGrammar from '@arborium/yaml/grammar.js';
 import yamlWasm from '@arborium/yaml/grammar_bg.wasm?module';
-import * as z from 'zod';
-
 import { highlight, registerLanguage, setHostWasmModule } from '@krantz-dev/highlight';
 import host from '@krantz-dev/highlight/host.wasm?module';
+import * as z from 'zod';
 
 import { once } from './once';
 

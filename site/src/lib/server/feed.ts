@@ -1,9 +1,9 @@
+import { renderToString } from '@krantz-dev/markdown';
 import { compareDesc } from 'date-fns';
 import { Feed } from 'feed';
 
 import * as meta from '$lib/meta';
 import { PUBLIC_URL_STRING, publicUrl } from '$lib/urls';
-import { renderToString } from '@krantz-dev/markdown';
 
 import { fs } from './posts';
 
