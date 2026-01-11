@@ -1,0 +1,7 @@
+@import '@arborium/arborium/themes/base.css';
+
+/* dark theme */
+@import '@arborium/arborium/themes/tokyo-night.css';
+
+/* light theme */
+@import '@arborium/arborium/themes/dayfox.css';

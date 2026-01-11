@@ -1,0 +1,15 @@
+{
+	"compilerOptions": {
+		"module": "esnext",
+		"moduleResolution": "bundler",
+		"target": "esnext",
+		"lib": ["esnext", "DOM"],
+		"noEmit": true,
+		"strict": true,
+		"esModuleInterop": true,
+		"isolatedModules": true,
+		"jsx": "react-jsx",
+		"jsxImportSource": "hono/jsx"
+	},
+	"include": ["src"]
+}

@@ -1,0 +1,11 @@
+packages:
+  - site
+  - packages/*
+
+linkWorkspacePackages: true
+
+onlyBuiltDependencies:
+  - esbuild
+  - sharp
+  - unrs-resolver
+  - workerd
