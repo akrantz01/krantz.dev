@@ -1,6 +1,7 @@
 # Personal Website
 
-This repository contains the source for my personal website.
-It's hosted on [Cloudflare Pages](https://pages.cloudflare.com) and uses [NextJS](https://nextjs.org) to generate it.
+This repository contains the source for my personal website. It's hosted on [Cloudflare Workers][]
+and uses [SvelteKit][] to generate it.
 
-The design is based on [NuroDev](https://nuro.dev)'s portfolio
+[Cloudflare Workers]: https://workers.cloudflare.com/
+[SvelteKit]: https://svelte.dev/docs/kit/introduction
