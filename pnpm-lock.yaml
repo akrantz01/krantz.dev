@@ -127,7 +127,7 @@ importers:
         version: 0.62.6
       '@takumi-rs/wasm':
         specifier: ^0.62.6
-        version: 0.62.6
+        version: 0.62.7
       date-fns:
         specifier: ^4.1.0
         version: 4.1.0
@@ -224,7 +224,7 @@ importers:
         version: 6.2.4(svelte@5.46.1)(vite@7.3.1(@types/node@24.10.4))
       '@takumi-rs/wasm':
         specifier: ^0.62.6
-        version: 0.62.6
+        version: 0.62.7
       '@types/hast':
         specifier: ^3.0.4
         version: 3.0.4
@@ -1410,6 +1410,9 @@ packages:
 
   '@takumi-rs/wasm@0.62.6':
     resolution: {integrity: sha512-txQkgHMT1jLvbqbH+xlztKeL8jyIe09BEyh+rZcaXhjtym0wl0OqgKO7v0m4JxBV4a2gkWxOmthzLLODRE7C9g==}
+
+  '@takumi-rs/wasm@0.62.7':
+    resolution: {integrity: sha512-+WiO1JZ6D0ylqC2IDheI2NfiZM0dN0K9grebotwOt0ensncl8WlylBvX8IWsjKspYvm0SThVRj+03VelOqp0Zg==}
 
   '@tybys/wasm-util@0.10.1':
     resolution: {integrity: sha512-9tTaPJLSiejZKx+Bmog4uSubteqTvFrVrURwkmHixBo0G4seD0zUxp98E1DzUBJxLQ3NPwXrGKDiVjwx/DpPsg==}
@@ -4197,6 +4200,8 @@ snapshots:
       '@takumi-rs/wasm': 0.62.6
 
   '@takumi-rs/wasm@0.62.6': {}
+
+  '@takumi-rs/wasm@0.62.7': {}
 
   '@tybys/wasm-util@0.10.1':
     dependencies:
