@@ -2,6 +2,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "prepare": "husky",
     "build": "turbo build",
     "test": "turbo test"
   },
@@ -10,6 +11,7 @@
     "isomorphic-git": "^1.36.1"
   },
   "devDependencies": {
+    "husky": "^9.1.7",
     "turbo": "^2.7.3",
     "wrangler": "^4.58.0"
   },
