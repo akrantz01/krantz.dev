@@ -4,6 +4,16 @@
     "build": {
       "dependsOn": ["^build"],
       "outputs": ["dist/**", ".svelte-kit/**"]
+    },
+    "dev": {
+      "dependsOn": ["build"],
+      "persistent": true,
+      "cache": false
+    },
+    "preview": {
+      "dependsOn": ["build"],
+      "persistent": true,
+      "cache": false
     }
   }
 }

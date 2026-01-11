@@ -4,7 +4,8 @@
   "scripts": {
     "prepare": "husky",
     "build": "turbo build",
-    "test": "turbo test"
+    "dev": "turbo dev",
+    "preview": "turbo preview"
   },
   "dependencies": {
     "gray-matter": "^4.0.3",
