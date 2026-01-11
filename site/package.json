@@ -25,7 +25,7 @@
 		"@arborium/toml": "^2.6.0",
 		"@arborium/yaml": "^2.6.0",
 		"@date-fns/utc": "^2.1.1",
-		"@eslint/compat": "^1.4.0",
+		"@eslint/compat": "^2.0.0",
 		"@eslint/js": "^9.39.1",
 		"@fontsource/noto-sans": "^5.2.10",
 		"@fortawesome/fontawesome-svg-core": "^7.1.0",
