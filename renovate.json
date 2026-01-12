@@ -1,4 +1,14 @@
 {
-	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
-	"extends": ["config:base"]
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended"],
+  "packageRules": [
+    {
+      "groupName": "Arborium",
+      "matchPackageNames": ["@arborium/**"]
+    },
+    {
+      "groupName": "Takumi",
+      "matchPackageNames": ["@takumi/**"]
+    }
+  ]
 }
