@@ -8,7 +8,7 @@
     },
     {
       "groupName": "Takumi",
-      "matchPackageNames": ["@takumi/**"]
+      "matchPackageNames": ["@takumi-rs/**"]
     }
   ]
 }
