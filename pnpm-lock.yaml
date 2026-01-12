@@ -42,7 +42,7 @@ importers:
         version: 2.6.0
       '@arborium/typescript':
         specifier: ^2.6.0
-        version: 2.6.0
+        version: 2.8.0
       '@types/node':
         specifier: ^24.10.4
         version: 24.10.4
@@ -361,8 +361,8 @@ packages:
     resolution: {integrity: sha512-cmbevLgmcoufu9J4+WO4S27Tt2cRjc4OFvmtCW8XMI7HNRNRTVXuKiBk+kL6KDteYhHBi+CQptOefKsuoO1/Cw==}
     engines: {node: '>=18'}
 
-  '@arborium/typescript@2.6.0':
-    resolution: {integrity: sha512-zOEJVGf6VoFRwtMO64Pi5BGBuEclRPpm9+4mU/LTuF4UmO8zHA7OJFYWAu0caHVObkz+/JJWDurwxexU+/LU+g==}
+  '@arborium/typescript@2.8.0':
+    resolution: {integrity: sha512-FvmbwdTt+Q6vcXPmH+ooD1HR+8B0NdShiln5IlcnQ+ONIZLdeNfebX7fAhUv8PyvgR28fKgT1+3yb3qxz/oxQQ==}
     engines: {node: '>=18'}
 
   '@arborium/yaml@2.7.0':
@@ -3419,7 +3419,7 @@ snapshots:
 
   '@arborium/toml@2.7.0': {}
 
-  '@arborium/typescript@2.6.0': {}
+  '@arborium/typescript@2.8.0': {}
 
   '@arborium/yaml@2.7.0': {}
 
