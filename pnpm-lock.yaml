@@ -39,7 +39,7 @@ importers:
         version: 2.6.0
       '@arborium/svelte':
         specifier: ^2.6.0
-        version: 2.6.0
+        version: 2.8.0
       '@arborium/typescript':
         specifier: ^2.6.0
         version: 2.6.0
@@ -353,8 +353,8 @@ packages:
     resolution: {integrity: sha512-z2S9YzKQbHahr3F/KEOk8nDu2ere63NA45rakkPFyaeqtub9jjz7xBVqLH/q94/mHa3TA5RRT9ca0CkEfb/yVA==}
     engines: {node: '>=18'}
 
-  '@arborium/svelte@2.6.0':
-    resolution: {integrity: sha512-u9lMgSmkdjEHUGHhfiXdzXIOHXxDOqqHLWAlQWhZHyaOOvXHZrJJjN1OQOPUQbwlFJtAWGhM6DgPxhOMi0aU0Q==}
+  '@arborium/svelte@2.8.0':
+    resolution: {integrity: sha512-HAS8Eu3Ez93cX/iYw+26IxshH7uYN3Q7roqLqwtfmkWsAmJiTZPcpnFucJ1Jqt8d7X7aPuUvvJlPjy68fMqGxw==}
     engines: {node: '>=18'}
 
   '@arborium/toml@2.7.0':
@@ -3415,7 +3415,7 @@ snapshots:
 
   '@arborium/rust@2.6.0': {}
 
-  '@arborium/svelte@2.6.0': {}
+  '@arborium/svelte@2.8.0': {}
 
   '@arborium/toml@2.7.0': {}
 
