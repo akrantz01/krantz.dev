@@ -225,9 +225,6 @@ importers:
       '@takumi-rs/wasm':
         specifier: ^0.62.6
         version: 0.62.6
-      '@types/hast':
-        specifier: ^3.0.4
-        version: 3.0.4
       '@types/node':
         specifier: ^24
         version: 24.10.4
@@ -267,21 +264,6 @@ importers:
       prettier-plugin-svelte:
         specifier: ^3.4.0
         version: 3.4.1(prettier@3.7.4)(svelte@5.46.1)
-      rehype-stringify:
-        specifier: ^10.0.1
-        version: 10.0.1
-      remark-directive:
-        specifier: ^4.0.0
-        version: 4.0.0
-      remark-gfm:
-        specifier: ^4.0.1
-        version: 4.0.1
-      remark-parse:
-        specifier: ^11.0.0
-        version: 11.0.0
-      remark-rehype:
-        specifier: ^11.1.2
-        version: 11.1.2
       sharp:
         specifier: ^0.34.5
         version: 0.34.5
@@ -2827,9 +2809,6 @@ packages:
   regexparam@3.0.0:
     resolution: {integrity: sha512-RSYAtP31mvYLkAHrOlh25pCNQ5hWnT106VukGaaFfuJrZFkGRX5GhUAdPqpSDXxOhA2c4akmRuplv1mRqnBn6Q==}
     engines: {node: '>=8'}
-
-  rehype-stringify@10.0.1:
-    resolution: {integrity: sha512-k9ecfXHmIPuFVI61B9DeLPN0qFHfawM6RsuX48hoqlaKSF61RskNjSm1lI8PhBEM0MRdLxVVm4WmTqJQccH9mA==}
 
   remark-directive@4.0.0:
     resolution: {integrity: sha512-7sxn4RfF1o3izevPV1DheyGDD6X4c9hrGpfdUpm7uC++dqrnJxIZVkk7CoKqcLm0VUMAuOol7Mno3m6g8cfMuA==}
@@ -5788,12 +5767,6 @@ snapshots:
   readdirp@4.1.2: {}
 
   regexparam@3.0.0: {}
-
-  rehype-stringify@10.0.1:
-    dependencies:
-      '@types/hast': 3.0.4
-      hast-util-to-html: 9.0.5
-      unified: 11.0.5
 
   remark-directive@4.0.0:
     dependencies:
