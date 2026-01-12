@@ -29,7 +29,7 @@ importers:
     dependencies:
       '@arborium/arborium':
         specifier: ^2.6.0
-        version: 2.6.0
+        version: 2.8.0
     devDependencies:
       '@arborium/css':
         specifier: ^2.6.0
@@ -318,8 +318,8 @@ importers:
 
 packages:
 
-  '@arborium/arborium@2.6.0':
-    resolution: {integrity: sha512-AFAj0SaNJRam427BleCBnKio4D4f5rjansARD0oL69Gx46dtCszOVXQYx4uDueUhyw3jBhw8NnevSfyX+watsA==}
+  '@arborium/arborium@2.8.0':
+    resolution: {integrity: sha512-m0jOs5b1K48+sDzoCXIi0Vh8ibaqSilxKUVKx+YMpdn5bq9GYCt+F3Or+0moJoxT+KYCVUf1TotGjzmBIIdikA==}
 
   '@arborium/bash@2.7.0':
     resolution: {integrity: sha512-s1plXDqqA95nrfH9SDei9ftVvB0tTm0hHKK9UZ/raUto5N94EUGCNe9NWsEEEzaMD593hYtLFjiyA/ieLeJpeg==}
@@ -3397,7 +3397,7 @@ packages:
 
 snapshots:
 
-  '@arborium/arborium@2.6.0': {}
+  '@arborium/arborium@2.8.0': {}
 
   '@arborium/bash@2.7.0': {}
 
