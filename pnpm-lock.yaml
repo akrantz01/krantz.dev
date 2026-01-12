@@ -33,7 +33,7 @@ importers:
     devDependencies:
       '@arborium/css':
         specifier: ^2.6.0
-        version: 2.6.0
+        version: 2.8.0
       '@arborium/rust':
         specifier: ^2.6.0
         version: 2.6.0
@@ -325,8 +325,8 @@ packages:
     resolution: {integrity: sha512-s1plXDqqA95nrfH9SDei9ftVvB0tTm0hHKK9UZ/raUto5N94EUGCNe9NWsEEEzaMD593hYtLFjiyA/ieLeJpeg==}
     engines: {node: '>=18'}
 
-  '@arborium/css@2.6.0':
-    resolution: {integrity: sha512-XGIZPS2AJdmtw+1gIM+eCGRwQbR86qLiq2PMq7Tf0zv2YglYPnCzDp3Y1ynhhD+y2OeHYlUsrKctCNLYCWCyIg==}
+  '@arborium/css@2.8.0':
+    resolution: {integrity: sha512-grZ9E/Iw58F5ALm+yo1U4rcVi3zdWwRdk+ydmu2R/DZFjoUdqepanFjSUYn6Ufqc7mdD2HIeC7nq74+Riq4VIg==}
     engines: {node: '>=18'}
 
   '@arborium/diff@2.7.0':
@@ -3401,7 +3401,7 @@ snapshots:
 
   '@arborium/bash@2.7.0': {}
 
-  '@arborium/css@2.6.0': {}
+  '@arborium/css@2.8.0': {}
 
   '@arborium/diff@2.7.0': {}
 
