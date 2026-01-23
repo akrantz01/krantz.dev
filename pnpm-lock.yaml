@@ -45,19 +45,19 @@ importers:
         version: 2.10.0
       '@types/node':
         specifier: ^24.10.4
-        version: 24.10.8
+        version: 24.10.9
       typescript:
         specifier: ^5.9.3
         version: 5.9.3
       vite:
         specifier: ^7.3.0
-        version: 7.3.1(@types/node@24.10.8)
+        version: 7.3.1(@types/node@24.10.9)
       vite-plugin-dts:
         specifier: ^4.5.4
-        version: 4.5.4(@types/node@24.10.8)(rollup@4.55.1)(typescript@5.9.3)(vite@7.3.1(@types/node@24.10.8))
+        version: 4.5.4(@types/node@24.10.9)(rollup@4.55.1)(typescript@5.9.3)(vite@7.3.1(@types/node@24.10.9))
       vitest:
         specifier: ^4.0.16
-        version: 4.0.17(@types/node@24.10.8)
+        version: 4.0.17(@types/node@24.10.9)
 
   packages/markdown:
     dependencies:
@@ -112,13 +112,13 @@ importers:
         version: 5.9.3
       vite:
         specifier: ^7.3.0
-        version: 7.3.1(@types/node@24.10.8)
+        version: 7.3.1(@types/node@24.10.9)
       vite-plugin-dts:
         specifier: ^4.5.4
-        version: 4.5.4(@types/node@24.10.8)(rollup@4.55.1)(typescript@5.9.3)(vite@7.3.1(@types/node@24.10.8))
+        version: 4.5.4(@types/node@24.10.9)(rollup@4.55.1)(typescript@5.9.3)(vite@7.3.1(@types/node@24.10.9))
       vitest:
         specifier: ^4.0.16
-        version: 4.0.17(@types/node@24.10.8)
+        version: 4.0.17(@types/node@24.10.9)
 
   packages/og-image:
     dependencies:
@@ -137,19 +137,19 @@ importers:
     devDependencies:
       '@types/node':
         specifier: ^24.10.4
-        version: 24.10.8
+        version: 24.10.9
       typescript:
         specifier: ^5.9.3
         version: 5.9.3
       vite:
         specifier: ^7.3.0
-        version: 7.3.1(@types/node@24.10.8)
+        version: 7.3.1(@types/node@24.10.9)
       vite-plugin-dts:
         specifier: ^4.5.4
-        version: 4.5.4(@types/node@24.10.8)(rollup@4.55.1)(typescript@5.9.3)(vite@7.3.1(@types/node@24.10.8))
+        version: 4.5.4(@types/node@24.10.9)(rollup@4.55.1)(typescript@5.9.3)(vite@7.3.1(@types/node@24.10.9))
       vitest:
         specifier: ^4.0.16
-        version: 4.0.17(@types/node@24.10.8)
+        version: 4.0.17(@types/node@24.10.9)
 
   site:
     devDependencies:
@@ -215,19 +215,19 @@ importers:
         version: link:../packages/og-image
       '@sveltejs/adapter-cloudflare':
         specifier: ^7.2.4
-        version: 7.2.5(@sveltejs/kit@2.50.0(@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.47.1)(vite@7.3.1(@types/node@24.10.8)))(svelte@5.47.1)(typescript@5.9.3)(vite@7.3.1(@types/node@24.10.8)))(wrangler@4.59.2(@cloudflare/workers-types@4.20260120.0))
+        version: 7.2.5(@sveltejs/kit@2.50.0(@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.47.1)(vite@7.3.1(@types/node@24.10.9)))(svelte@5.47.1)(typescript@5.9.3)(vite@7.3.1(@types/node@24.10.9)))(wrangler@4.59.2(@cloudflare/workers-types@4.20260120.0))
       '@sveltejs/kit':
         specifier: ^2.49.1
-        version: 2.50.0(@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.47.1)(vite@7.3.1(@types/node@24.10.8)))(svelte@5.47.1)(typescript@5.9.3)(vite@7.3.1(@types/node@24.10.8))
+        version: 2.50.0(@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.47.1)(vite@7.3.1(@types/node@24.10.9)))(svelte@5.47.1)(typescript@5.9.3)(vite@7.3.1(@types/node@24.10.9))
       '@sveltejs/vite-plugin-svelte':
         specifier: ^6.2.1
-        version: 6.2.4(svelte@5.47.1)(vite@7.3.1(@types/node@24.10.8))
+        version: 6.2.4(svelte@5.47.1)(vite@7.3.1(@types/node@24.10.9))
       '@takumi-rs/wasm':
         specifier: ^0.62.6
         version: 0.62.8
       '@types/node':
         specifier: ^24
-        version: 24.10.8
+        version: 24.10.9
       date-fns:
         specifier: ^4.1.0
         version: 4.1.0
@@ -284,10 +284,10 @@ importers:
         version: 8.53.0(eslint@9.39.2)(typescript@5.9.3)
       vite:
         specifier: ^7.2.6
-        version: 7.3.1(@types/node@24.10.8)
+        version: 7.3.1(@types/node@24.10.9)
       vite-plugin-devtools-json:
         specifier: ^1.0.0
-        version: 1.0.0(vite@7.3.1(@types/node@24.10.8))
+        version: 1.0.0(vite@7.3.1(@types/node@24.10.9))
       wrangler:
         specifier: ^4.54.0
         version: 4.59.2(@cloudflare/workers-types@4.20260120.0)
@@ -1340,8 +1340,8 @@ packages:
   '@types/ms@2.1.0':
     resolution: {integrity: sha512-GsCCIZDE/p3i96vtEqx+7dBUGXrc7zeSK3wwPHIaRThS+9OhWIXRqzs4d6k1SVU8g91DrNRWxWUGhp5KXQb2VA==}
 
-  '@types/node@24.10.8':
-    resolution: {integrity: sha512-r0bBaXu5Swb05doFYO2kTWHMovJnNVbCsII0fhesM8bNRlLhXIuckley4a2DaD+vOdmm5G+zGkQZAPZsF80+YQ==}
+  '@types/node@24.10.9':
+    resolution: {integrity: sha512-ne4A0IpG3+2ETuREInjPNhUGis1SFjv1d5asp8MzEAGtOZeTeHVDOYqOgqfhvseqg/iXty2hjBf1zAOb7RNiNw==}
 
   '@types/unist@2.0.11':
     resolution: {integrity: sha512-CmBKiL6NNo/OqgmMn95Fk9Whlp2mtvIv+KNpQKN2F4SjvrEesubTRWGYSg+BnWZOnlCaSTU1sMpsBOzgbYhnsA==}
@@ -3672,23 +3672,23 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
 
-  '@microsoft/api-extractor-model@7.32.2(@types/node@24.10.8)':
+  '@microsoft/api-extractor-model@7.32.2(@types/node@24.10.9)':
     dependencies:
       '@microsoft/tsdoc': 0.16.0
       '@microsoft/tsdoc-config': 0.18.0
-      '@rushstack/node-core-library': 5.19.1(@types/node@24.10.8)
+      '@rushstack/node-core-library': 5.19.1(@types/node@24.10.9)
     transitivePeerDependencies:
       - '@types/node'
 
-  '@microsoft/api-extractor@7.55.2(@types/node@24.10.8)':
+  '@microsoft/api-extractor@7.55.2(@types/node@24.10.9)':
     dependencies:
-      '@microsoft/api-extractor-model': 7.32.2(@types/node@24.10.8)
+      '@microsoft/api-extractor-model': 7.32.2(@types/node@24.10.9)
       '@microsoft/tsdoc': 0.16.0
       '@microsoft/tsdoc-config': 0.18.0
-      '@rushstack/node-core-library': 5.19.1(@types/node@24.10.8)
+      '@rushstack/node-core-library': 5.19.1(@types/node@24.10.9)
       '@rushstack/rig-package': 0.6.0
-      '@rushstack/terminal': 0.19.5(@types/node@24.10.8)
-      '@rushstack/ts-command-line': 5.1.5(@types/node@24.10.8)
+      '@rushstack/terminal': 0.19.5(@types/node@24.10.9)
+      '@rushstack/ts-command-line': 5.1.5(@types/node@24.10.9)
       diff: 8.0.2
       lodash: 4.17.21
       minimatch: 10.0.3
@@ -3812,7 +3812,7 @@ snapshots:
   '@rollup/rollup-win32-x64-msvc@4.55.1':
     optional: true
 
-  '@rushstack/node-core-library@5.19.1(@types/node@24.10.8)':
+  '@rushstack/node-core-library@5.19.1(@types/node@24.10.9)':
     dependencies:
       ajv: 8.13.0
       ajv-draft-04: 1.0.0(ajv@8.13.0)
@@ -3823,28 +3823,28 @@ snapshots:
       resolve: 1.22.11
       semver: 7.5.4
     optionalDependencies:
-      '@types/node': 24.10.8
+      '@types/node': 24.10.9
 
-  '@rushstack/problem-matcher@0.1.1(@types/node@24.10.8)':
+  '@rushstack/problem-matcher@0.1.1(@types/node@24.10.9)':
     optionalDependencies:
-      '@types/node': 24.10.8
+      '@types/node': 24.10.9
 
   '@rushstack/rig-package@0.6.0':
     dependencies:
       resolve: 1.22.11
       strip-json-comments: 3.1.1
 
-  '@rushstack/terminal@0.19.5(@types/node@24.10.8)':
+  '@rushstack/terminal@0.19.5(@types/node@24.10.9)':
     dependencies:
-      '@rushstack/node-core-library': 5.19.1(@types/node@24.10.8)
-      '@rushstack/problem-matcher': 0.1.1(@types/node@24.10.8)
+      '@rushstack/node-core-library': 5.19.1(@types/node@24.10.9)
+      '@rushstack/problem-matcher': 0.1.1(@types/node@24.10.9)
       supports-color: 8.1.1
     optionalDependencies:
-      '@types/node': 24.10.8
+      '@types/node': 24.10.9
 
-  '@rushstack/ts-command-line@5.1.5(@types/node@24.10.8)':
+  '@rushstack/ts-command-line@5.1.5(@types/node@24.10.9)':
     dependencies:
-      '@rushstack/terminal': 0.19.5(@types/node@24.10.8)
+      '@rushstack/terminal': 0.19.5(@types/node@24.10.9)
       '@types/argparse': 1.0.38
       argparse: 1.0.10
       string-argv: 0.3.2
@@ -3863,18 +3863,18 @@ snapshots:
     dependencies:
       acorn: 8.15.0
 
-  '@sveltejs/adapter-cloudflare@7.2.5(@sveltejs/kit@2.50.0(@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.47.1)(vite@7.3.1(@types/node@24.10.8)))(svelte@5.47.1)(typescript@5.9.3)(vite@7.3.1(@types/node@24.10.8)))(wrangler@4.59.2(@cloudflare/workers-types@4.20260120.0))':
+  '@sveltejs/adapter-cloudflare@7.2.5(@sveltejs/kit@2.50.0(@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.47.1)(vite@7.3.1(@types/node@24.10.9)))(svelte@5.47.1)(typescript@5.9.3)(vite@7.3.1(@types/node@24.10.9)))(wrangler@4.59.2(@cloudflare/workers-types@4.20260120.0))':
     dependencies:
       '@cloudflare/workers-types': 4.20260120.0
-      '@sveltejs/kit': 2.50.0(@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.47.1)(vite@7.3.1(@types/node@24.10.8)))(svelte@5.47.1)(typescript@5.9.3)(vite@7.3.1(@types/node@24.10.8))
+      '@sveltejs/kit': 2.50.0(@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.47.1)(vite@7.3.1(@types/node@24.10.9)))(svelte@5.47.1)(typescript@5.9.3)(vite@7.3.1(@types/node@24.10.9))
       worktop: 0.8.0-next.18
       wrangler: 4.59.2(@cloudflare/workers-types@4.20260120.0)
 
-  '@sveltejs/kit@2.50.0(@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.47.1)(vite@7.3.1(@types/node@24.10.8)))(svelte@5.47.1)(typescript@5.9.3)(vite@7.3.1(@types/node@24.10.8))':
+  '@sveltejs/kit@2.50.0(@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.47.1)(vite@7.3.1(@types/node@24.10.9)))(svelte@5.47.1)(typescript@5.9.3)(vite@7.3.1(@types/node@24.10.9))':
     dependencies:
       '@standard-schema/spec': 1.1.0
       '@sveltejs/acorn-typescript': 1.0.8(acorn@8.15.0)
-      '@sveltejs/vite-plugin-svelte': 6.2.4(svelte@5.47.1)(vite@7.3.1(@types/node@24.10.8))
+      '@sveltejs/vite-plugin-svelte': 6.2.4(svelte@5.47.1)(vite@7.3.1(@types/node@24.10.9))
       '@types/cookie': 0.6.0
       acorn: 8.15.0
       cookie: 0.6.0
@@ -3887,26 +3887,26 @@ snapshots:
       set-cookie-parser: 2.7.2
       sirv: 3.0.2
       svelte: 5.47.1
-      vite: 7.3.1(@types/node@24.10.8)
+      vite: 7.3.1(@types/node@24.10.9)
     optionalDependencies:
       typescript: 5.9.3
 
-  '@sveltejs/vite-plugin-svelte-inspector@5.0.2(@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.47.1)(vite@7.3.1(@types/node@24.10.8)))(svelte@5.47.1)(vite@7.3.1(@types/node@24.10.8))':
+  '@sveltejs/vite-plugin-svelte-inspector@5.0.2(@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.47.1)(vite@7.3.1(@types/node@24.10.9)))(svelte@5.47.1)(vite@7.3.1(@types/node@24.10.9))':
     dependencies:
-      '@sveltejs/vite-plugin-svelte': 6.2.4(svelte@5.47.1)(vite@7.3.1(@types/node@24.10.8))
+      '@sveltejs/vite-plugin-svelte': 6.2.4(svelte@5.47.1)(vite@7.3.1(@types/node@24.10.9))
       obug: 2.1.1
       svelte: 5.47.1
-      vite: 7.3.1(@types/node@24.10.8)
+      vite: 7.3.1(@types/node@24.10.9)
 
-  '@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.47.1)(vite@7.3.1(@types/node@24.10.8))':
+  '@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.47.1)(vite@7.3.1(@types/node@24.10.9))':
     dependencies:
-      '@sveltejs/vite-plugin-svelte-inspector': 5.0.2(@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.47.1)(vite@7.3.1(@types/node@24.10.8)))(svelte@5.47.1)(vite@7.3.1(@types/node@24.10.8))
+      '@sveltejs/vite-plugin-svelte-inspector': 5.0.2(@sveltejs/vite-plugin-svelte@6.2.4(svelte@5.47.1)(vite@7.3.1(@types/node@24.10.9)))(svelte@5.47.1)(vite@7.3.1(@types/node@24.10.9))
       deepmerge: 4.3.1
       magic-string: 0.30.21
       obug: 2.1.1
       svelte: 5.47.1
-      vite: 7.3.1(@types/node@24.10.8)
-      vitefu: 1.1.1(vite@7.3.1(@types/node@24.10.8))
+      vite: 7.3.1(@types/node@24.10.9)
+      vitefu: 1.1.1(vite@7.3.1(@types/node@24.10.9))
 
   '@takumi-rs/core-darwin-arm64@0.62.8':
     optional: true
@@ -3987,7 +3987,7 @@ snapshots:
 
   '@types/ms@2.1.0': {}
 
-  '@types/node@24.10.8':
+  '@types/node@24.10.9':
     dependencies:
       undici-types: 7.16.0
 
@@ -4158,13 +4158,13 @@ snapshots:
       chai: 6.2.2
       tinyrainbow: 3.0.3
 
-  '@vitest/mocker@4.0.17(vite@7.3.1(@types/node@24.10.8))':
+  '@vitest/mocker@4.0.17(vite@7.3.1(@types/node@24.10.9))':
     dependencies:
       '@vitest/spy': 4.0.17
       estree-walker: 3.0.3
       magic-string: 0.30.21
     optionalDependencies:
-      vite: 7.3.1(@types/node@24.10.8)
+      vite: 7.3.1(@types/node@24.10.9)
 
   '@vitest/pretty-format@4.0.17':
     dependencies:
@@ -5985,14 +5985,14 @@ snapshots:
       '@types/unist': 3.0.3
       vfile-message: 4.0.3
 
-  vite-plugin-devtools-json@1.0.0(vite@7.3.1(@types/node@24.10.8)):
+  vite-plugin-devtools-json@1.0.0(vite@7.3.1(@types/node@24.10.9)):
     dependencies:
       uuid: 11.1.0
-      vite: 7.3.1(@types/node@24.10.8)
+      vite: 7.3.1(@types/node@24.10.9)
 
-  vite-plugin-dts@4.5.4(@types/node@24.10.8)(rollup@4.55.1)(typescript@5.9.3)(vite@7.3.1(@types/node@24.10.8)):
+  vite-plugin-dts@4.5.4(@types/node@24.10.9)(rollup@4.55.1)(typescript@5.9.3)(vite@7.3.1(@types/node@24.10.9)):
     dependencies:
-      '@microsoft/api-extractor': 7.55.2(@types/node@24.10.8)
+      '@microsoft/api-extractor': 7.55.2(@types/node@24.10.9)
       '@rollup/pluginutils': 5.3.0(rollup@4.55.1)
       '@volar/typescript': 2.4.27
       '@vue/language-core': 2.2.0(typescript@5.9.3)
@@ -6003,13 +6003,13 @@ snapshots:
       magic-string: 0.30.21
       typescript: 5.9.3
     optionalDependencies:
-      vite: 7.3.1(@types/node@24.10.8)
+      vite: 7.3.1(@types/node@24.10.9)
     transitivePeerDependencies:
       - '@types/node'
       - rollup
       - supports-color
 
-  vite@7.3.1(@types/node@24.10.8):
+  vite@7.3.1(@types/node@24.10.9):
     dependencies:
       esbuild: 0.27.2
       fdir: 6.5.0(picomatch@4.0.3)
@@ -6018,17 +6018,17 @@ snapshots:
       rollup: 4.55.1
       tinyglobby: 0.2.15
     optionalDependencies:
-      '@types/node': 24.10.8
+      '@types/node': 24.10.9
       fsevents: 2.3.3
 
-  vitefu@1.1.1(vite@7.3.1(@types/node@24.10.8)):
+  vitefu@1.1.1(vite@7.3.1(@types/node@24.10.9)):
     optionalDependencies:
-      vite: 7.3.1(@types/node@24.10.8)
+      vite: 7.3.1(@types/node@24.10.9)
 
-  vitest@4.0.17(@types/node@24.10.8):
+  vitest@4.0.17(@types/node@24.10.9):
     dependencies:
       '@vitest/expect': 4.0.17
-      '@vitest/mocker': 4.0.17(vite@7.3.1(@types/node@24.10.8))
+      '@vitest/mocker': 4.0.17(vite@7.3.1(@types/node@24.10.9))
       '@vitest/pretty-format': 4.0.17
       '@vitest/runner': 4.0.17
       '@vitest/snapshot': 4.0.17
@@ -6045,10 +6045,10 @@ snapshots:
       tinyexec: 1.0.2
       tinyglobby: 0.2.15
       tinyrainbow: 3.0.3
-      vite: 7.3.1(@types/node@24.10.8)
+      vite: 7.3.1(@types/node@24.10.9)
       why-is-node-running: 2.3.0
     optionalDependencies:
-      '@types/node': 24.10.8
+      '@types/node': 24.10.9
     transitivePeerDependencies:
       - jiti
       - less
